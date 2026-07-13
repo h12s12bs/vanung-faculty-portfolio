@@ -250,11 +250,11 @@ document.addEventListener('DOMContentLoaded', () => {
   // ---- Typing Effect ----
   const typingElement = document.getElementById('typing-text');
   const phrases = [
-    '企業管理專家',
-    '產學合作推動者',
-    '數位行銷創新者',
-    '招生策略規劃師',
-    'AI 智慧應用先驅'
+    '決策科學與運籌管理專家',
+    'AI與智慧醫療研究者',
+    '全端系統開發工程師',
+    '產學轉型推動者',
+    '招生策略規劃師'
   ];
   let phraseIndex = 0;
   let charIndex = 0;
@@ -331,5 +331,5 @@ document.addEventListener('DOMContentLoaded', () => {
     card.style.transitionDelay = `${index * 0.08}s`;
   });
 
-  console.log('✨ 邱俊維教授個人網站已載入完成');
+  console.log('✨ 邱俊維老師個人網站已載入完成');
 });
