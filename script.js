@@ -9,39 +9,26 @@ document.addEventListener('DOMContentLoaded', () => {
   const sections = document.querySelectorAll('.section, .hero, .stats-section');
   const navLinks = document.querySelectorAll('.nav-links a');
 
+  const isSubpage = navbar.classList.contains('nav-scrolled');
+
   function handleScroll() {
     const scrollY = window.scrollY;
 
     // Nav background
-    if (scrollY > 50) {
-      navbar.classList.add('nav-scrolled');
-    } else {
-      navbar.classList.remove('nav-scrolled');
+    if (!isSubpage) {
+      if (scrollY > 50) {
+        navbar.classList.add('nav-scrolled');
+      } else {
+        navbar.classList.remove('nav-scrolled');
+      }
     }
 
     // Back to top
     if (scrollY > 500) {
-      backToTop.classList.add('visible');
+      if (backToTop) backToTop.classList.add('visible');
     } else {
-      backToTop.classList.remove('visible');
+      if (backToTop) backToTop.classList.remove('visible');
     }
-
-    // Active nav link
-    let current = '';
-    sections.forEach(section => {
-      const sectionTop = section.offsetTop - 120;
-      const sectionHeight = section.offsetHeight;
-      if (scrollY >= sectionTop && scrollY < sectionTop + sectionHeight) {
-        current = section.getAttribute('id');
-      }
-    });
-
-    navLinks.forEach(link => {
-      link.classList.remove('active');
-      if (link.getAttribute('href') === `#${current}`) {
-        link.classList.add('active');
-      }
-    });
   }
 
   window.addEventListener('scroll', handleScroll, { passive: true });
