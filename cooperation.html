@@ -13,20 +13,25 @@
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎓</text></svg>">
   <link rel="stylesheet" href="styles.css">
   <style>
-    /* Custom SVG logo classes for clean visualization */
+    /* Custom style for real company logo boxes */
     .company-logo-box {
-      width: 64px;
-      height: 64px;
-      background: var(--gray-100);
+      width: 120px;
+      height: 60px;
+      background: var(--white);
       border: 1px solid var(--border-color);
-      border-radius: 12px;
+      border-radius: 8px;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 28px;
-      font-weight: 700;
-      color: var(--navy);
+      padding: 6px;
       flex-shrink: 0;
+      overflow: hidden;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.04);
+    }
+    .company-logo-img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
     }
   </style>
 </head>
@@ -79,7 +84,9 @@
         
         <!-- Company 1 -->
         <div class="cooperation-item stagger-1">
-          <div class="company-logo-box" style="background: rgba(196,139,88,0.1); color: var(--gold-dark); border-color: var(--gold);">佑全</div>
+          <div class="company-logo-box">
+            <img class="company-logo-img" src="assets/images/logo-yourchance.svg" alt="佑全藥品 Logo">
+          </div>
           <div class="cooperation-item-content">
             <h3>💊 連鎖藥局智慧營運產學計畫</h3>
             <p>
@@ -96,7 +103,9 @@
 
         <!-- Company 2 -->
         <div class="cooperation-item stagger-2">
-          <div class="company-logo-box" style="background: rgba(92,113,94,0.1); color: var(--teal-dark); border-color: var(--teal);">新田</div>
+          <div class="company-logo-box">
+            <img class="company-logo-img" src="assets/images/logo-xintian.png" alt="新田管理顧問 Logo">
+          </div>
           <div class="cooperation-item-content">
             <h3>🏥 連鎖診所智慧管理計畫</h3>
             <p>
@@ -113,24 +122,28 @@
 
         <!-- Company 3 -->
         <div class="cooperation-item stagger-3">
-          <div class="company-logo-box" style="background: rgba(196,139,88,0.15); color: var(--gold-dark); border-color: var(--gold);">森稼</div>
+          <div class="company-logo-box">
+            <img class="company-logo-img" src="assets/images/logo-jiameat-dark.png" alt="森稼餐飲 Logo">
+          </div>
           <div class="cooperation-item-content">
             <h3>🍽️ 智慧餐飲 ERP 營運系統開發</h3>
             <p>
               <strong>合作對象：森稼餐飲有限公司</strong><br>
-              擬研發智慧餐飲管理模組（包含：智能預約、動態帶位、點餐流程數位化、排班最佳化等），解決餐飲業高變動人流與人力資源調配的痛點，以提升營運效率。
+              擬研發智慧AIaaS ERP（包含：智能預約、動態帶位、點餐流程數位化、排班最佳化等），解決餐飲業高變動人流與人力資源調配的痛點，以提升營運效率。
             </p>
             <div class="tags">
-              <span class="tag">餐飲 ERP</span>
-              <span class="tag">動態排程</span>
-              <span class="tag">智慧管理</span>
+              <span class="tag">智慧 AIaaS ERP</span>
+              <span class="tag">動態排班與帶位</span>
+              <span class="tag">排班最佳化</span>
             </div>
           </div>
         </div>
 
         <!-- Company 4 -->
         <div class="cooperation-item stagger-4">
-          <div class="company-logo-box" style="background: rgba(92,113,94,0.15); color: var(--teal-dark); border-color: var(--teal);">光明</div>
+          <div class="company-logo-box">
+            <img class="company-logo-img" src="assets/images/logo-brighthealth.png" alt="光明健康事業 Logo">
+          </div>
           <div class="cooperation-item-content">
             <h3>🩺 醫病共享決策支援系統優化</h3>
             <p>
@@ -147,7 +160,9 @@
 
         <!-- Company 5 -->
         <div class="cooperation-item stagger-5">
-          <div class="company-logo-box" style="background: rgba(196,139,88,0.1); color: var(--gold-dark); border-color: var(--gold);">明通</div>
+          <div class="company-logo-box">
+            <img class="company-logo-img" src="assets/images/logo-mintong.svg" alt="明通化學製藥 Logo">
+          </div>
           <div class="cooperation-item-content">
             <h3>💊 醫藥行銷數位轉型與 AI 決策支援</h3>
             <p>

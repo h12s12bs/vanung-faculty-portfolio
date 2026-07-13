@@ -101,11 +101,15 @@ document.addEventListener('DOMContentLoaded', () => {
         animateCounters();
       }
     });
-  }, { threshold: 0.3 });
+  }, { threshold: 0.1 });
 
-  const statsSection = document.querySelector('.stats-section');
+  // Watch stats section or stats grid (for research achievements page)
+  const statsSection = document.querySelector('.stats-section, .stats-grid');
   if (statsSection) {
     statsObserver.observe(statsSection);
+  } else {
+    // If not found, animate directly after a short delay
+    setTimeout(animateCounters, 800);
   }
 
   function animateCounters() {
@@ -294,6 +298,57 @@ document.addEventListener('DOMContentLoaded', () => {
         targetContent.classList.add('active');
       }
     });
+  });
+
+  // ---- Project Image Carousels ----
+  document.querySelectorAll('.project-img-wrapper').forEach(wrapper => {
+    const images = wrapper.querySelectorAll('.project-img');
+    const dotsContainer = wrapper.querySelector('.carousel-dots');
+    const prevBtn = wrapper.querySelector('.carousel-prev');
+    const nextBtn = wrapper.querySelector('.carousel-next');
+
+    if (images.length <= 1) return;
+
+    let currentIndex = 0;
+
+    // Clear existing dots first
+    if (dotsContainer) dotsContainer.innerHTML = '';
+
+    // Create dots
+    images.forEach((img, idx) => {
+      const dot = document.createElement('div');
+      dot.className = `carousel-dot ${idx === 0 ? 'active' : ''}`;
+      dot.addEventListener('click', () => showSlide(idx));
+      if (dotsContainer) dotsContainer.appendChild(dot);
+    });
+
+    const dots = wrapper.querySelectorAll('.carousel-dot');
+
+    function showSlide(index) {
+      images[currentIndex].classList.remove('active');
+      if (dots.length > 0) dots[currentIndex].classList.remove('active');
+
+      currentIndex = (index + images.length) % images.length;
+
+      images[currentIndex].classList.add('active');
+      if (dots.length > 0) dots[currentIndex].classList.add('active');
+    }
+
+    if (prevBtn) {
+      prevBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        showSlide(currentIndex - 1);
+      });
+    }
+
+    if (nextBtn) {
+      nextBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        showSlide(currentIndex + 1);
+      });
+    }
   });
 
   // ---- Lazy Loading Images ----
