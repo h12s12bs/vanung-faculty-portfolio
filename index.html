@@ -98,121 +98,80 @@
       object-fit: cover;
     }
 
-    /* Projects style with real images */
-    .project-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
-      gap: 30px;
+    /* Project List and Side-by-Side Galleries */
+    .project-list {
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
       margin-top: 30px;
     }
-    .project-card {
+    .project-list-item {
       background: var(--bg-card);
       border: 1px solid var(--border-color);
       border-radius: var(--card-radius);
-      overflow: hidden;
+      padding: 30px;
       box-shadow: var(--shadow-weight) var(--shadow-color);
-      transition: transform var(--transition-normal), box-shadow var(--transition-normal);
       display: flex;
       flex-direction: column;
+      gap: 24px;
     }
-    .project-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 15px 35px rgba(45, 34, 25, 0.12);
-    }
-    
-    /* Project Slideshow / Carousel styles */
-    .project-img-wrapper {
-      position: relative;
+    .project-info-side {
       width: 100%;
-      height: 240px;
-      overflow: hidden;
-      background: #eae6df;
-      border-bottom: 1px solid var(--border-color);
     }
-    .project-img {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      opacity: 0;
-      transition: opacity 0.5s ease-in-out;
-      pointer-events: none;
-    }
-    .project-img.active {
-      opacity: 1;
-      position: relative;
-      pointer-events: auto;
-    }
-    .carousel-btn {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      background: rgba(45, 34, 25, 0.6);
-      color: var(--white);
-      border: none;
-      width: 32px;
-      height: 32px;
-      border-radius: 50%;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 0.9rem;
-      z-index: 10;
-      transition: background var(--transition-fast);
-    }
-    .carousel-btn:hover {
-      background: rgba(196, 139, 88, 0.9);
-    }
-    .carousel-prev {
-      left: 10px;
-    }
-    .carousel-next {
-      right: 10px;
-    }
-    .carousel-dots {
-      position: absolute;
-      bottom: 10px;
-      left: 50%;
-      transform: translateX(-50%);
-      display: flex;
-      gap: 6px;
-      z-index: 10;
-    }
-    .carousel-dot {
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
-      background: rgba(255, 255, 255, 0.5);
-      cursor: pointer;
-      transition: background var(--transition-fast);
-    }
-    .carousel-dot.active {
-      background: var(--gold);
-      width: 12px;
-      border-radius: 4px;
-    }
-    
-    .project-card-body {
-      padding: 24px;
-      flex-grow: 1;
-      display: flex;
-      flex-direction: column;
-    }
-    .project-card-title {
-      font-size: 1.25rem;
-      font-weight: 700;
+    .project-item-title {
+      font-size: 1.4rem;
+      font-weight: 800;
       color: var(--navy);
       margin-bottom: 12px;
     }
-    .project-card-text {
-      font-size: 0.95rem;
+    .project-item-text {
+      font-size: 1rem;
       color: var(--text-secondary);
-      line-height: 1.6;
-      margin-bottom: 16px;
-      flex-grow: 1;
+      line-height: 1.7;
+    }
+    .project-gallery-side {
+      width: 100%;
+    }
+    .gallery-grid-4, .gallery-grid-6, .gallery-grid-3 {
+      display: grid;
+      gap: 15px;
+      width: 100%;
+    }
+    .gallery-grid-4 {
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    }
+    .gallery-grid-6 {
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    }
+    .gallery-grid-3 {
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+    .gallery-thumb {
+      background: #fdfcf7;
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .gallery-thumb:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 20px rgba(45,34,25,0.08);
+    }
+    .gallery-thumb img {
+      width: 100%;
+      height: 145px;
+      object-fit: cover;
+      border-bottom: 1px solid var(--border-color);
+    }
+    .thumb-lbl {
+      padding: 6px 10px;
+      font-size: 0.8rem;
+      color: var(--text-secondary);
+      text-align: center;
+      background: var(--gray-50);
+      font-weight: 600;
     }
   </style>
 </head>
@@ -396,7 +355,7 @@
           <div class="expertise-card-icon">🔬</div>
           <h4 class="expertise-card-title">國科會計畫 研究助理</h4>
           <p class="expertise-card-desc">
-            <strong>長庚大學數位應用與運籌管理實驗室 (2023.09 - 至今)</strong><br>
+            <strong>長庚大學數位應用與運籌管理實驗室 (2023.09 - 2025.07)</strong><br>
             協助國科會研究計畫之申請、管理、經費核銷。參與得舒飲食研究之定性定量分析、問卷設計，並協助撰寫期末報告與國際期刊論文。
           </p>
         </div>
@@ -410,89 +369,129 @@
         </div>
       </div>
 
-      <!-- Part 4: Project Execution and Screenshots -->
+      <!-- Part 4: Project Execution and Screenshots (Redesigned to full listed layout) -->
       <div class="profile-section-title animate-on-scroll">
-        <span>📁 專案執行成果 (附實體佐證)</span>
+        <span>📁 專案執行成果 (附全實體佐證)</span>
       </div>
 
-      <div class="project-grid animate-on-scroll">
+      <div class="project-list animate-on-scroll">
         <!-- Project 1 (NSTC Project) -->
-        <div class="project-card stagger-1">
-          <div class="project-img-wrapper">
-            <img class="project-img active" src="assets/images/project-plan-1.png" alt="國科會計畫成果 1">
-            <img class="project-img" src="assets/images/project-plan-2.png" alt="國科會計畫成果 2">
-            <img class="project-img" src="assets/images/project-plan-3.png" alt="國科會計畫成果 3">
-            <img class="project-img" src="assets/images/project-plan-4.png" alt="國科會計畫成果 4">
-            
-            <button class="carousel-btn carousel-prev">❮</button>
-            <button class="carousel-btn carousel-next">❯</button>
-            <div class="carousel-dots"></div>
-          </div>
-          <div class="project-card-body">
-            <h4 class="project-card-title">國科會計畫申請與書件撰寫</h4>
-            <p class="project-card-text">
+        <div class="project-list-item stagger-1">
+          <div class="project-info-side">
+            <h4 class="project-item-title">1. 國科會計畫申請與書件撰寫</h4>
+            <p class="project-item-text">
               負責國科會「高血壓患者使用得舒飲食之定性與定量分析」兩年期計畫書之撰寫、研究架構規劃與預算編列。具備獨立研提與執行政府專案的成熟能力。
             </p>
+          </div>
+          <div class="project-gallery-side">
+            <div class="gallery-grid-4">
+              <div class="gallery-thumb">
+                <a href="assets/images/project-plan-1.png" target="_blank"><img src="assets/images/project-plan-1.png" alt="計畫書成果 1"></a>
+                <div class="thumb-lbl">計畫研究架構</div>
+              </div>
+              <div class="gallery-thumb">
+                <a href="assets/images/project-plan-2.png" target="_blank"><img src="assets/images/project-plan-2.png" alt="計畫書成果 2"></a>
+                <div class="thumb-lbl">申請書封面</div>
+              </div>
+              <div class="gallery-thumb">
+                <a href="assets/images/project-plan-3.png" target="_blank"><img src="assets/images/project-plan-3.png" alt="計畫書成果 3"></a>
+                <div class="thumb-lbl">工作時程安排</div>
+              </div>
+              <div class="gallery-thumb">
+                <a href="assets/images/project-plan-4.png" target="_blank"><img src="assets/images/project-plan-4.png" alt="計畫書成果 4"></a>
+                <div class="thumb-lbl">計畫內容大綱</div>
+              </div>
+            </div>
           </div>
         </div>
 
         <!-- Project 2 (Healthcare SDM) -->
-        <div class="project-card stagger-2">
-          <div class="project-img-wrapper">
-            <img class="project-img active" src="assets/images/project-sdm-1.png" alt="共享決策系統開發 1">
-            <img class="project-img" src="assets/images/project-sdm-2.png" alt="共享決策系統開發 2">
-            <img class="project-img" src="assets/images/project-sdm-3.png" alt="共享決策系統開發 3">
-            
-            <button class="carousel-btn carousel-prev">❮</button>
-            <button class="carousel-btn carousel-next">❯</button>
-            <div class="carousel-dots"></div>
-          </div>
-          <div class="project-card-body">
-            <h4 class="project-card-title">醫病共享決策輔助系統開發</h4>
-            <p class="project-card-text">
+        <div class="project-list-item stagger-2">
+          <div class="project-info-side">
+            <h4 class="project-item-title">2. 醫病共享決策 (SDM) 輔助系統開發</h4>
+            <p class="project-item-text">
               主導開發醫病共享決策系統（Web MVC架構），以C#、.NET、MSSQL建構，並串接 Google OR-Tools 進行多準則模型計算，將醫療臨床決策數位化。
             </p>
+          </div>
+          <div class="project-gallery-side">
+            <div class="gallery-grid-3">
+              <div class="gallery-thumb">
+                <a href="assets/images/project-sdm-1.png" target="_blank"><img src="assets/images/project-sdm-1.png" alt="共享決策系統 1"></a>
+                <div class="thumb-lbl">系統運作流程</div>
+              </div>
+              <div class="gallery-thumb">
+                <a href="assets/images/project-sdm-2.png" target="_blank"><img src="assets/images/project-sdm-2.png" alt="共享決策系統 2"></a>
+                <div class="thumb-lbl">臨床評估介面</div>
+              </div>
+              <div class="gallery-thumb">
+                <a href="assets/images/project-sdm-3.png" target="_blank"><img src="assets/images/project-sdm-3.png" alt="共享決策系統 3"></a>
+                <div class="thumb-lbl">模型運算後台</div>
+              </div>
+            </div>
           </div>
         </div>
 
         <!-- Project 3 (Min Tong SOP) -->
-        <div class="project-card stagger-3">
-          <div class="project-img-wrapper">
-            <img class="project-img active" src="assets/images/project-mintong-1.png" alt="製藥行銷採購SOP 1">
-            <img class="project-img" src="assets/images/project-mintong-2.png" alt="製藥行銷採購SOP 2">
-            <img class="project-img" src="assets/images/project-mintong-3.png" alt="製藥行銷採購SOP 3">
-            <img class="project-img" src="assets/images/project-mintong-4.png" alt="製藥行銷採購SOP 4">
-            <img class="project-img" src="assets/images/project-mintong-5.png" alt="製藥行銷採購SOP 5">
-            <img class="project-img" src="assets/images/project-mintong-6.png" alt="製藥行銷採購SOP 6">
-            
-            <button class="carousel-btn carousel-prev">❮</button>
-            <button class="carousel-btn carousel-next">❯</button>
-            <div class="carousel-dots"></div>
-          </div>
-          <div class="project-card-body">
-            <h4 class="project-card-title">明通製藥行銷採購供應商選擇 SOP</h4>
-            <p class="project-card-text">
+        <div class="project-list-item stagger-3">
+          <div class="project-info-side">
+            <h4 class="project-item-title">3. 明通製藥行銷採購供應商選擇 SOP 制定</h4>
+            <p class="project-item-text">
               為明通製藥制定媒體採購與供應商篩選之 SOP，設計涵蓋成本、觸及率及品牌契合度的多元評估指標，降低採購風險並優化議價流程。
             </p>
+          </div>
+          <div class="project-gallery-side">
+            <div class="gallery-grid-6">
+              <div class="gallery-thumb">
+                <a href="assets/images/project-mintong-1.png" target="_blank"><img src="assets/images/project-mintong-1.png" alt="SOP成果 1"></a>
+                <div class="thumb-lbl">採購評估指標</div>
+              </div>
+              <div class="gallery-thumb">
+                <a href="assets/images/project-mintong-2.png" target="_blank"><img src="assets/images/project-mintong-2.png" alt="SOP成果 2"></a>
+                <div class="thumb-lbl">評審選擇權重</div>
+              </div>
+              <div class="gallery-thumb">
+                <a href="assets/images/project-mintong-3.png" target="_blank"><img src="assets/images/project-mintong-3.png" alt="SOP成果 3"></a>
+                <div class="thumb-lbl">供應商決策矩陣</div>
+              </div>
+              <div class="gallery-thumb">
+                <a href="assets/images/project-mintong-4.png" target="_blank"><img src="assets/images/project-mintong-4.png" alt="SOP成果 4"></a>
+                <div class="thumb-lbl">評估作業SOP</div>
+              </div>
+              <div class="gallery-thumb">
+                <a href="assets/images/project-mintong-5.png" target="_blank"><img src="assets/images/project-mintong-5.png" alt="SOP成果 5"></a>
+                <div class="thumb-lbl">優選計算報表</div>
+              </div>
+              <div class="gallery-thumb">
+                <a href="assets/images/project-mintong-6.png" target="_blank"><img src="assets/images/project-mintong-6.png" alt="SOP成果 6"></a>
+                <div class="thumb-lbl">媒體執行成果</div>
+              </div>
+            </div>
           </div>
         </div>
 
         <!-- Project 4 (IR Center) -->
-        <div class="project-card stagger-4">
-          <div class="project-img-wrapper">
-            <img class="project-img active" src="assets/images/project-ir-1.png" alt="校務研究中心成果 1">
-            <img class="project-img" src="assets/images/project-ir-2.png" alt="校務研究中心成果 2">
-            <img class="project-img" src="assets/images/project-ir-3.png" alt="校務研究中心成果 3">
-            
-            <button class="carousel-btn carousel-prev">❮</button>
-            <button class="carousel-btn carousel-next">❯</button>
-            <div class="carousel-dots"></div>
-          </div>
-          <div class="project-card-body">
-            <h4 class="project-card-title">長庚大學校務及財務公開專區</h4>
-            <p class="project-card-text">
+        <div class="project-list-item stagger-4">
+          <div class="project-info-side">
+            <h4 class="project-item-title">4. 長庚大學校務及財務公開專區</h4>
+            <p class="project-item-text">
               開發校務與財務公開系統，運用 .NET 與 MSSQL 優化資料庫結構，並透過 SAS 數據平台追蹤點擊指標，以視覺化報表支持行政決策。
             </p>
+          </div>
+          <div class="project-gallery-side">
+            <div class="gallery-grid-3">
+              <div class="gallery-thumb">
+                <a href="assets/images/project-ir-1.png" target="_blank"><img src="assets/images/project-ir-1.png" alt="校務研究成果 1"></a>
+                <div class="thumb-lbl">公開專區首頁</div>
+              </div>
+              <div class="gallery-thumb">
+                <a href="assets/images/project-ir-2.png" target="_blank"><img src="assets/images/project-ir-2.png" alt="校務研究成果 2"></a>
+                <div class="thumb-lbl">學雜費統計頁</div>
+              </div>
+              <div class="gallery-thumb">
+                <a href="assets/images/project-ir-3.png" target="_blank"><img src="assets/images/project-ir-3.png" alt="校務研究成果 3"></a>
+                <div class="thumb-lbl">SAS點擊報表</div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
