@@ -1,0 +1,335 @@
+/* ==========================================
+   邱俊維教授 | Faculty Portfolio - JavaScript
+   ========================================== */
+
+document.addEventListener('DOMContentLoaded', () => {
+  // ---- Navigation Scroll Effect ----
+  const navbar = document.querySelector('.navbar');
+  const backToTop = document.querySelector('.back-to-top');
+  const sections = document.querySelectorAll('.section, .hero, .stats-section');
+  const navLinks = document.querySelectorAll('.nav-links a');
+
+  function handleScroll() {
+    const scrollY = window.scrollY;
+
+    // Nav background
+    if (scrollY > 50) {
+      navbar.classList.add('nav-scrolled');
+    } else {
+      navbar.classList.remove('nav-scrolled');
+    }
+
+    // Back to top
+    if (scrollY > 500) {
+      backToTop.classList.add('visible');
+    } else {
+      backToTop.classList.remove('visible');
+    }
+
+    // Active nav link
+    let current = '';
+    sections.forEach(section => {
+      const sectionTop = section.offsetTop - 120;
+      const sectionHeight = section.offsetHeight;
+      if (scrollY >= sectionTop && scrollY < sectionTop + sectionHeight) {
+        current = section.getAttribute('id');
+      }
+    });
+
+    navLinks.forEach(link => {
+      link.classList.remove('active');
+      if (link.getAttribute('href') === `#${current}`) {
+        link.classList.add('active');
+      }
+    });
+  }
+
+  window.addEventListener('scroll', handleScroll, { passive: true });
+  handleScroll();
+
+  // ---- Smooth Scroll for Nav Links ----
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      e.preventDefault();
+      const targetId = this.getAttribute('href');
+      const targetEl = document.querySelector(targetId);
+      if (targetEl) {
+        const offsetTop = targetEl.offsetTop - 80;
+        window.scrollTo({ top: offsetTop, behavior: 'smooth' });
+      }
+
+      // Close mobile nav
+      const navLinksEl = document.querySelector('.nav-links');
+      const hamburger = document.querySelector('.hamburger');
+      if (navLinksEl.classList.contains('nav-open')) {
+        navLinksEl.classList.remove('nav-open');
+        hamburger.classList.remove('active');
+      }
+    });
+  });
+
+  // ---- Hamburger Menu ----
+  const hamburger = document.querySelector('.hamburger');
+  const navLinksEl = document.querySelector('.nav-links');
+
+  if (hamburger) {
+    hamburger.addEventListener('click', () => {
+      hamburger.classList.toggle('active');
+      navLinksEl.classList.toggle('nav-open');
+    });
+  }
+
+  // ---- Back to Top ----
+  if (backToTop) {
+    backToTop.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  }
+
+  // ---- Scroll Animations (IntersectionObserver) ----
+  const animateElements = document.querySelectorAll('.animate-on-scroll');
+
+  const animateObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('animate-in');
+        animateObserver.unobserve(entry.target);
+      }
+    });
+  }, {
+    threshold: 0.1,
+    rootMargin: '0px 0px -60px 0px'
+  });
+
+  animateElements.forEach(el => animateObserver.observe(el));
+
+  // ---- Statistics Counter Animation ----
+  const statNumbers = document.querySelectorAll('.stat-number[data-target]');
+  let statsAnimated = false;
+
+  const statsObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting && !statsAnimated) {
+        statsAnimated = true;
+        animateCounters();
+      }
+    });
+  }, { threshold: 0.3 });
+
+  const statsSection = document.querySelector('.stats-section');
+  if (statsSection) {
+    statsObserver.observe(statsSection);
+  }
+
+  function animateCounters() {
+    statNumbers.forEach(numEl => {
+      const target = parseInt(numEl.getAttribute('data-target'));
+      const suffix = numEl.getAttribute('data-suffix') || '';
+      const duration = 2000;
+      const startTime = performance.now();
+
+      function updateCounter(currentTime) {
+        const elapsed = currentTime - startTime;
+        const progress = Math.min(elapsed / duration, 1);
+
+        // Ease-out cubic
+        const easedProgress = 1 - Math.pow(1 - progress, 3);
+        const currentVal = Math.floor(easedProgress * target);
+
+        numEl.textContent = currentVal + suffix;
+
+        if (progress < 1) {
+          requestAnimationFrame(updateCounter);
+        } else {
+          numEl.textContent = target + suffix;
+        }
+      }
+
+      requestAnimationFrame(updateCounter);
+    });
+  }
+
+  // ---- Hero Stats Counter (smaller ones) ----
+  const heroStatNumbers = document.querySelectorAll('.hero-stat-number[data-target]');
+
+  heroStatNumbers.forEach(numEl => {
+    const target = parseInt(numEl.getAttribute('data-target'));
+    const suffix = numEl.getAttribute('data-suffix') || '';
+    const duration = 2500;
+    const startTime = performance.now();
+
+    function updateCounter(currentTime) {
+      const elapsed = currentTime - startTime;
+      const progress = Math.min(elapsed / duration, 1);
+      const easedProgress = 1 - Math.pow(1 - progress, 3);
+      const currentVal = Math.floor(easedProgress * target);
+      numEl.textContent = currentVal + suffix;
+      if (progress < 1) {
+        requestAnimationFrame(updateCounter);
+      } else {
+        numEl.textContent = target + suffix;
+      }
+    }
+
+    requestAnimationFrame(updateCounter);
+  });
+
+  // ---- Skill Bars Animation ----
+  const skillBars = document.querySelectorAll('.skill-bar-fill');
+  let skillsAnimated = false;
+
+  const skillsObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting && !skillsAnimated) {
+        skillsAnimated = true;
+        skillBars.forEach(bar => {
+          const percent = bar.getAttribute('data-percent');
+          setTimeout(() => {
+            bar.style.width = percent + '%';
+          }, 200);
+        });
+      }
+    });
+  }, { threshold: 0.3 });
+
+  const skillBarsContainer = document.querySelector('.skill-bars');
+  if (skillBarsContainer) {
+    skillsObserver.observe(skillBarsContainer);
+  }
+
+  // ---- Particles Background ----
+  const particlesContainer = document.getElementById('particles-container');
+
+  if (particlesContainer) {
+    const particleCount = 40;
+    for (let i = 0; i < particleCount; i++) {
+      const particle = document.createElement('div');
+      particle.classList.add('particle');
+
+      const size = Math.random() * 4 + 2;
+      const left = Math.random() * 100;
+      const delay = Math.random() * 15;
+      const duration = Math.random() * 10 + 15;
+      const opacity = Math.random() * 0.4 + 0.1;
+
+      particle.style.width = `${size}px`;
+      particle.style.height = `${size}px`;
+      particle.style.left = `${left}%`;
+      particle.style.bottom = `-10px`;
+      particle.style.animationDelay = `${delay}s`;
+      particle.style.animationDuration = `${duration}s`;
+      particle.style.opacity = opacity;
+
+      if (Math.random() > 0.5) {
+        particle.style.background = 'rgba(20, 184, 166, 0.3)';
+      }
+
+      particlesContainer.appendChild(particle);
+    }
+  }
+
+  // ---- Dark Mode Toggle ----
+  const darkModeToggle = document.getElementById('dark-mode-toggle');
+
+  // Check saved preference
+  const savedTheme = localStorage.getItem('theme');
+  if (savedTheme === 'dark') {
+    document.body.classList.add('dark-mode');
+    if (darkModeToggle) darkModeToggle.textContent = '☀️';
+  }
+
+  if (darkModeToggle) {
+    darkModeToggle.addEventListener('click', () => {
+      document.body.classList.toggle('dark-mode');
+      const isDark = document.body.classList.contains('dark-mode');
+      darkModeToggle.textContent = isDark ? '☀️' : '🌙';
+      localStorage.setItem('theme', isDark ? 'dark' : 'light');
+    });
+  }
+
+  // ---- Typing Effect ----
+  const typingElement = document.getElementById('typing-text');
+  const phrases = [
+    '企業管理專家',
+    '產學合作推動者',
+    '數位行銷創新者',
+    '招生策略規劃師',
+    'AI 智慧應用先驅'
+  ];
+  let phraseIndex = 0;
+  let charIndex = 0;
+  let isDeleting = false;
+  let typeSpeed = 120;
+
+  function typeEffect() {
+    if (!typingElement) return;
+
+    const currentPhrase = phrases[phraseIndex];
+
+    if (isDeleting) {
+      typingElement.textContent = currentPhrase.substring(0, charIndex - 1);
+      charIndex--;
+      typeSpeed = 60;
+    } else {
+      typingElement.textContent = currentPhrase.substring(0, charIndex + 1);
+      charIndex++;
+      typeSpeed = 120;
+    }
+
+    if (!isDeleting && charIndex === currentPhrase.length) {
+      typeSpeed = 2000; // Pause at end
+      isDeleting = true;
+    } else if (isDeleting && charIndex === 0) {
+      isDeleting = false;
+      phraseIndex = (phraseIndex + 1) % phrases.length;
+      typeSpeed = 500; // Pause before next phrase
+    }
+
+    setTimeout(typeEffect, typeSpeed);
+  }
+
+  setTimeout(typeEffect, 1000);
+
+  // ---- Tab Switching ----
+  const tabBtns = document.querySelectorAll('.tab-btn');
+  const tabContents = document.querySelectorAll('.tab-content');
+
+  tabBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const targetTab = btn.getAttribute('data-tab');
+
+      tabBtns.forEach(b => b.classList.remove('active'));
+      tabContents.forEach(c => c.classList.remove('active'));
+
+      btn.classList.add('active');
+      const targetContent = document.getElementById(targetTab);
+      if (targetContent) {
+        targetContent.classList.add('active');
+      }
+    });
+  });
+
+  // ---- Lazy Loading Images ----
+  const lazyImages = document.querySelectorAll('img[data-src]');
+
+  const imageObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const img = entry.target;
+        img.src = img.getAttribute('data-src');
+        img.removeAttribute('data-src');
+        imageObserver.unobserve(img);
+      }
+    });
+  }, { rootMargin: '100px' });
+
+  lazyImages.forEach(img => imageObserver.observe(img));
+
+  // ---- Smooth Reveal for Cards ----
+  const cards = document.querySelectorAll('.expertise-card, .dm-card, .cooperation-item, .timeline-item');
+  cards.forEach((card, index) => {
+    card.style.transitionDelay = `${index * 0.08}s`;
+  });
+
+  console.log('✨ 邱俊維教授個人網站已載入完成');
+});
