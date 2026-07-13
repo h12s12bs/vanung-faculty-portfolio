@@ -12,6 +12,134 @@
   <title>個人專長 | 邱俊維 — 萬能科技大學企業管理系專案助理教授應徵</title>
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎓</text></svg>">
   <link rel="stylesheet" href="styles.css">
+  <style>
+    /* Premium Timeline and Project styles */
+    .cgu-logo-wrapper {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+    .cgu-logo-svg {
+      width: 45px;
+      height: 45px;
+      flex-shrink: 0;
+    }
+    .edu-timeline {
+      position: relative;
+      margin: 40px 0;
+      padding-left: 30px;
+      border-left: 2px solid var(--gold-light);
+    }
+    .edu-timeline-item {
+      position: relative;
+      margin-bottom: 30px;
+    }
+    .edu-timeline-item::before {
+      content: '';
+      position: absolute;
+      left: -37px;
+      top: 4px;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: var(--gold);
+      border: 3px solid var(--white);
+      box-shadow: 0 0 0 3px var(--gold-light);
+      transition: all var(--transition-fast);
+    }
+    .edu-timeline-item:hover::before {
+      background: var(--teal);
+      box-shadow: 0 0 0 3px var(--teal-light);
+    }
+    .edu-time {
+      font-weight: 800;
+      color: var(--gold-dark);
+      font-size: 1.1rem;
+      margin-bottom: 4px;
+    }
+    .edu-title {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 8px;
+    }
+    .edu-desc {
+      color: var(--text-secondary);
+      font-size: 0.95rem;
+    }
+
+    /* Separation style for experience & expertise */
+    .profile-section-title {
+      font-size: 1.6rem;
+      font-weight: 800;
+      color: var(--navy);
+      margin: 40px 0 20px;
+      padding-bottom: 10px;
+      border-bottom: 2px solid var(--gray-200);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    /* Projects style with real images */
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+      gap: 30px;
+      margin-top: 30px;
+    }
+    .project-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--card-radius);
+      overflow: hidden;
+      box-shadow: var(--shadow-weight) var(--shadow-color);
+      transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+      display: flex;
+      flex-direction: column;
+    }
+    .project-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 35px rgba(45, 34, 25, 0.12);
+    }
+    .project-img-wrapper {
+      width: 100%;
+      height: 220px;
+      overflow: hidden;
+      position: relative;
+      border-bottom: 1px solid var(--border-color);
+      background: #eae6df;
+    }
+    .project-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform var(--transition-slow);
+    }
+    .project-card:hover .project-img {
+      transform: scale(1.05);
+    }
+    .project-card-body {
+      padding: 24px;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+    }
+    .project-card-title {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 12px;
+    }
+    .project-card-text {
+      font-size: 0.95rem;
+      color: var(--text-secondary);
+      line-height: 1.6;
+      margin-bottom: 16px;
+      flex-grow: 1;
+    }
+  </style>
 </head>
 <body>
 
@@ -94,14 +222,15 @@
   <section class="section" id="about">
     <div class="container">
       <div class="section-header animate-on-scroll">
-        <div class="section-label">ABOUT ME</div>
-        <h2 class="section-title">個人<span class="highlight">專長</span>介紹</h2>
+        <div class="section-label">PORTFOLIO</div>
+        <h2 class="section-title">個人<span class="highlight">基本資料與專長</span></h2>
         <p class="section-desc">
           長庚大學管理研究所博士，結合決策科學、人工智慧與產業實務，具備跨領域整合研究與應用開發能力。
         </p>
       </div>
 
-      <div class="about-grid">
+      <!-- Part 1: Academic Bio & Profile Photo -->
+      <div class="about-grid" style="margin-bottom: 50px;">
         <div class="about-image-wrapper animate-on-scroll animate-left">
           <div class="about-image-card" style="box-shadow: 0 20px 60px rgba(45, 34, 25, 0.15);">
             <img src="assets/images/profile.jpg" alt="邱俊維大頭貼">
@@ -110,109 +239,168 @@
         </div>
 
         <div class="animate-on-scroll animate-right">
-          <div class="about-info-tag" style="background: linear-gradient(135deg, var(--gold), var(--gold-dark)); color: var(--white);">🎓 學歷背景</div>
-          <h3 class="about-title">決策科學與 AI 跨域應用研究者</h3>
-          <p class="about-text">
-            本人畢業於長庚大學管理研究所博士班（2023–2025），碩士就讀長庚大學資訊管理研究所（2019–2021），學士為長庚大學資訊管理學系（2015–2019）。研究專長為決策分析、運籌管理及人工智慧之跨領域應用。博士期間聚焦於將多準則／多目標決策方法導入醫療健康管理與供應鏈策略評估，碩士階段以 LSTM 模型進行台灣指數期貨預測研究。研究成果發表於 <em>Expert Systems with Applications</em>（Q1, IF 8.5）、<em>Computers &amp; Industrial Engineering</em>（Q1, IF 6.7）等國際頂尖期刊。
+          <div class="cgu-logo-wrapper">
+            <!-- Long Gung University SVG Emblem -->
+            <svg class="cgu-logo-svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="50" cy="50" r="45" fill="#4d2818" />
+              <circle cx="50" cy="50" r="40" fill="#faf9f6" />
+              <path d="M50 20 L25 45 L50 70 L75 45 Z" fill="#8c5a30" />
+              <path d="M50 27 L32 45 L50 63 L68 45 Z" fill="#faf9f6" />
+              <circle cx="50" cy="45" r="8" fill="#5c715e" />
+              <rect x="47" y="53" width="6" height="15" fill="#c48b58" />
+            </svg>
+            <div>
+              <h4 style="margin: 0; color: var(--navy); font-weight: 800; font-size: 1.25rem;">長庚大學 CGU</h4>
+              <span style="font-size: 0.85rem; color: var(--text-secondary); font-weight: 500;">Chang Gung University</span>
+            </div>
+          </div>
+          
+          <h3 class="about-title" style="margin-bottom: 12px;">決策科學與 AI 跨域應用研究者</h3>
+          <p class="about-text" style="margin-bottom: 20px;">
+            本人畢業於長庚大學管理研究所博士班，研究專長為決策分析、運籌管理及人工智慧之跨領域應用。自學習歷程中，我逐漸體認到自身在數學建模與問題分析上的興趣與能力，因此在碩博士階段選擇深入智慧化決策技術的領域，並積極參與研究與系統開發實務。博士期間，我不僅投入研究論文撰寫與投稿，並成功申請與執行國科會研究計畫，研究成果陸續發表於 <em>Expert Systems with Applications</em>、<em>Computers &amp; Industrial Engineering</em> 等國際頂尖期刊。
           </p>
 
-          <div class="expertise-tags">
-            <span class="expertise-tag"><span class="tag-icon">🤖</span>AI Agent 應用開發 (如 Antigravity CLI)</span>
-            <span class="expertise-tag"><span class="tag-icon">💻</span>資訊軟體實務應用</span>
-            <span class="expertise-tag"><span class="tag-icon">📐</span>決策分析</span>
-            <span class="expertise-tag"><span class="tag-icon">🔬</span>運籌管理</span>
-            <span class="expertise-tag"><span class="tag-icon">🧮</span>多準則決策方法</span>
-            <span class="expertise-tag"><span class="tag-icon">🏥</span>智慧醫療</span>
-            <span class="expertise-tag"><span class="tag-icon">📊</span>模糊理論</span>
-            <span class="expertise-tag"><span class="tag-icon">💻</span>全端系統開發</span>
-          </div>
-
-          <div class="skill-bars">
-            <div class="skill-bar-item">
-              <div class="skill-bar-header">
-                <span class="skill-bar-name">決策分析與運籌管理</span>
-                <span class="skill-bar-percent">95%</span>
-              </div>
-              <div class="skill-bar-track">
-                <div class="skill-bar-fill" data-percent="95" style="background: linear-gradient(90deg, var(--gold), var(--teal));"></div>
-              </div>
+          <!-- Education Timeline -->
+          <div class="edu-timeline">
+            <div class="edu-timeline-item">
+              <div class="edu-time">2023 - 2025</div>
+              <div class="edu-title">長庚大學 ｜ 管理研究所 ｜ 博士學位</div>
+              <div class="edu-desc">專攻決策科學、智慧醫療與供應鏈不確定性下之混合式決策建模。</div>
             </div>
-            <div class="skill-bar-item">
-              <div class="skill-bar-header">
-                <span class="skill-bar-name">AI / 機器學習 / AI Agent 應用開發</span>
-                <span class="skill-bar-percent">90%</span>
-              </div>
-              <div class="skill-bar-track">
-                <div class="skill-bar-fill" data-percent="90" style="background: linear-gradient(90deg, var(--gold), var(--teal));"></div>
-              </div>
+            <div class="edu-timeline-item">
+              <div class="edu-time">2019 - 2021</div>
+              <div class="edu-title">長庚大學 ｜ 資訊管理研究所 ｜ 碩士學位</div>
+              <div class="edu-desc">專研時間序列建模，以 LSTM 模型進行台灣指數期貨預測研究。</div>
             </div>
-            <div class="skill-bar-item">
-              <div class="skill-bar-header">
-                <span class="skill-bar-name">全端與資訊軟體應用（.NET / MVC / CLI 工具）</span>
-                <span class="skill-bar-percent">88%</span>
-              </div>
-              <div class="skill-bar-track">
-                <div class="skill-bar-fill" data-percent="88" style="background: linear-gradient(90deg, var(--gold), var(--teal));"></div>
-              </div>
-            </div>
-            <div class="skill-bar-item">
-              <div class="skill-bar-header">
-                <span class="skill-bar-name">國科會計畫撰寫與執行</span>
-                <span class="skill-bar-percent">85%</span>
-              </div>
-              <div class="skill-bar-track">
-                <div class="skill-bar-fill" data-percent="85" style="background: linear-gradient(90deg, var(--gold), var(--teal));"></div>
-              </div>
+            <div class="edu-timeline-item">
+              <div class="edu-time">2015 - 2019</div>
+              <div class="edu-title">長庚大學 ｜ 資訊管理學系 ｜ 學士學位</div>
+              <div class="edu-desc">奠定資訊系統開發、資料庫設計與演算法實作之核心技術能力。</div>
             </div>
           </div>
         </div>
       </div>
 
-      <!-- Experience & Expertise Cards -->
-      <div class="expertise-cards">
+      <!-- Part 2: Core Expertise Section -->
+      <div class="profile-section-title animate-on-scroll">
+        <span>📐 核心專業專長領域</span>
+      </div>
+      
+      <div class="expertise-cards" style="margin-bottom: 50px;">
         <div class="expertise-card animate-on-scroll stagger-1">
-          <div class="expertise-card-icon" style="background: linear-gradient(135deg, rgba(196,139,88,0.15), rgba(92,113,94,0.15));">🏢</div>
-          <h4 class="expertise-card-title">研發工程師兼董事長特助</h4>
+          <div class="expertise-card-icon" style="background: rgba(196,139,88,0.15);">🤖</div>
+          <h4 class="expertise-card-title">AI Agent 與軟體實務應用</h4>
           <p class="expertise-card-desc">
-            光明健康事業股份有限公司（2022–2023）。主導開發醫病共享決策平台（Web MVC），將多準則決策演算法應用於臨床決策支援系統。協助明通製藥推動行銷制度轉型、媒體採購分析與決策 SOP 制定。
+            專精於新世代 AI Agent 自動化流程（如 Antigravity CLI 應用），能快速利用大語言模型、文字提取與 AI 機器人解決企業及校務實務問題。
           </p>
         </div>
         <div class="expertise-card animate-on-scroll stagger-2">
-          <div class="expertise-card-icon" style="background: linear-gradient(135deg, rgba(196,139,88,0.15), rgba(92,113,94,0.15));">🔬</div>
-          <h4 class="expertise-card-title">國科會計畫研究助理</h4>
+          <div class="expertise-card-icon" style="background: rgba(196,139,88,0.15);">📐</div>
+          <h4 class="expertise-card-title">決策分析與數學建模</h4>
           <p class="expertise-card-desc">
-            長庚大學數位應用與運籌管理實驗室（2023–至今）。參與國科會兩年期計畫「高血壓患者使用得舒飲食之定性與定量分析」，負責計畫申請、研究設計與期刊論文撰寫。
+            熟悉多準則決策方法（AHP、DEMATEL、TOPSIS）、多目標規劃（GP）、模糊理論，處理複雜不確定環境下的最適化配置。
           </p>
         </div>
         <div class="expertise-card animate-on-scroll stagger-3">
-          <div class="expertise-card-icon" style="background: linear-gradient(135deg, rgba(196,139,88,0.15), rgba(92,113,94,0.15));">💻</div>
-          <h4 class="expertise-card-title">全端工程師（研究助理）</h4>
+          <div class="expertise-card-icon" style="background: rgba(196,139,88,0.15);">💻</div>
+          <h4 class="expertise-card-title">全端開發與數據資料庫</h4>
           <p class="expertise-card-desc">
-            長庚大學校務研究中心（2019–2021）。負責校務及財務公開專區網站開發與維護，另開發校內數據分析平台（SAS Visual Analytics）進行資料視覺化分析，支援行政決策。
-          </p>
-        </div>
-        <div class="expertise-card animate-on-scroll stagger-4">
-          <div class="expertise-card-icon" style="background: linear-gradient(135deg, rgba(196,139,88,0.15), rgba(92,113,94,0.15));">📐</div>
-          <h4 class="expertise-card-title">決策分析與數學建模</h4>
-          <p class="expertise-card-desc">
-            專精多準則決策方法（AHP、DEMATEL、TOPSIS）、多目標規劃（Goal Programming）、模糊理論，解決多元衝突目標下的資源配置問題。
-          </p>
-        </div>
-        <div class="expertise-card animate-on-scroll stagger-5">
-          <div class="expertise-card-icon" style="background: linear-gradient(135deg, rgba(196,139,88,0.15), rgba(92,113,94,0.15));">🤖</div>
-          <h4 class="expertise-card-title">AI 與智慧軟體應用</h4>
-          <p class="expertise-card-desc">
-            熟悉機器學習模型與 AI Agent 技術，精通 CLI 工具（如 Antigravity CLI）的自動化流程應用，致力於將 AI 轉化為解決企管與招生實務的具體工具。
-          </p>
-        </div>
-        <div class="expertise-card animate-on-scroll stagger-6">
-          <div class="expertise-card-icon" style="background: linear-gradient(135deg, rgba(196,139,88,0.15), rgba(92,113,94,0.15));">🌐</div>
-          <h4 class="expertise-card-title">國際學術交流經驗</h4>
-          <p class="expertise-card-desc">
-            擔任 TSWIM 2025 國際研討會 Key Staff。2025 年 5 月隨指導教授赴越南胡志明市參訪孫德勝大學商管學院進行學術交流。
+            熟練掌握 Web MVC 架構、C#、.NET、MSSQL 資料庫設計與優化，能自主開發企業級系統，將決策模型轉換為實體軟體平台。
           </p>
         </div>
       </div>
+
+      <!-- Part 3: Personal Experience Section (Separated) -->
+      <div class="profile-section-title animate-on-scroll">
+        <span>🏢 個人經歷與歷練</span>
+      </div>
+
+      <div class="expertise-cards" style="margin-bottom: 50px;">
+        <div class="expertise-card animate-on-scroll stagger-1">
+          <div class="expertise-card-icon" style="background: rgba(92,113,94,0.15);">🏥</div>
+          <h4 class="expertise-card-title">研發工程師 兼 董事長特助</h4>
+          <p class="expertise-card-desc">
+            <strong>光明健康事業股份有限公司 (2022.05 - 2023.09)</strong><br>
+            主導醫病共享決策平台開發。協助同集團之明通化學製藥推動行銷制度轉型、媒體採購分析、風險評估與決策 SOP 制定。
+          </p>
+        </div>
+        <div class="expertise-card animate-on-scroll stagger-2">
+          <div class="expertise-card-icon">🔬</div>
+          <h4 class="expertise-card-title">國科會計畫 研究助理</h4>
+          <p class="expertise-card-desc">
+            <strong>長庚大學數位應用與運籌管理實驗室 (2023.09 - 至今)</strong><br>
+            協助國科會研究計畫之申請、管理、經費核銷。參與得舒飲食研究之定性定量分析、問卷設計，並協助撰寫期末報告與國際期刊論文。
+          </p>
+        </div>
+        <div class="expertise-card animate-on-scroll stagger-3">
+          <div class="expertise-card-icon">📊</div>
+          <h4 class="expertise-card-title">校務研究中心 研究助理</h4>
+          <p class="expertise-card-desc">
+            <strong>長庚大學校務研究中心 (2019.09 - 2021.03)</strong><br>
+            擔任全端工程師，負責開發維護校務與財務公開專區。另開發校內 SAS Visual Analytics 數據分析平台，進行使用者數據分析以支援校務決策。
+          </p>
+        </div>
+      </div>
+
+      <!-- Part 4: Project Execution and Screenshots -->
+      <div class="profile-section-title animate-on-scroll">
+        <span>📁 專案執行與實績成果 (附實體佐證)</span>
+      </div>
+
+      <div class="project-grid animate-on-scroll">
+        <!-- Project 1 -->
+        <div class="project-card stagger-1">
+          <div class="project-img-wrapper">
+            <img class="project-img" src="assets/images/project-plan.png" alt="國科會計畫申請書成果">
+          </div>
+          <div class="project-card-body">
+            <h4 class="project-card-title">國科會計畫申請與書件撰寫</h4>
+            <p class="project-card-text">
+              負責國科會「高血壓患者使用得舒飲食之定性與定量分析」兩年期計畫書之撰寫、研究架構規劃與預算編列。具備獨立研提與執行政府專案的成熟能力。
+            </p>
+          </div>
+        </div>
+
+        <!-- Project 2 -->
+        <div class="project-card stagger-2">
+          <div class="project-img-wrapper">
+            <img class="project-img" src="assets/images/project-sdm.png" alt="共享決策系統開發">
+          </div>
+          <div class="project-card-body">
+            <h4 class="project-card-title">醫病共享決策輔助系統開發</h4>
+            <p class="project-card-text">
+              主導開發醫病共享決策系統（Web MVC架構），以C#、.NET、MSSQL建構，並串接 Google OR-Tools 進行多準則模型計算，將醫療臨床決策數位化。
+            </p>
+          </div>
+        </div>
+
+        <!-- Project 3 -->
+        <div class="project-card stagger-3">
+          <div class="project-img-wrapper">
+            <img class="project-img" src="assets/images/project-mintong.png" alt="製藥行銷採購SOP">
+          </div>
+          <div class="project-card-body">
+            <h4 class="project-card-title">明通製藥行銷採購供應商選擇 SOP</h4>
+            <p class="project-card-text">
+              為明通製藥制定媒體採購與供應商篩選之 SOP，設計涵蓋成本、觸及率及品牌契合度的多元評估指標，降低採購風險並優化議價流程。
+            </p>
+          </div>
+        </div>
+
+        <!-- Project 4 -->
+        <div class="project-card stagger-4">
+          <div class="project-img-wrapper">
+            <img class="project-img" src="assets/images/project-ir.png" alt="校務研究中心成果">
+          </div>
+          <div class="project-card-body">
+            <h4 class="project-card-title">長庚大學校務及財務公開專區</h4>
+            <p class="project-card-text">
+              開發校務與財務公開系統，運用 .NET 與 MSSQL 優化資料庫結構，並透過 SAS 數據平台追蹤點擊指標，以視覺化報表支持行政決策。
+            </p>
+          </div>
+        </div>
+      </div>
+
     </div>
   </section>
 
