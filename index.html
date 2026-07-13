@@ -57,12 +57,7 @@
       flex-wrap: wrap;
       gap: 6px;
     }
-    .cgu-logo-inline {
-      height: 26px;
-      width: auto;
-      vertical-align: middle;
-      display: inline-block;
-    }
+
     .edu-desc {
       color: var(--text-secondary);
       font-size: 0.95rem;
@@ -207,7 +202,7 @@
       </div>
 
       <div class="nav-actions">
-        <button class="dark-mode-toggle" id="dark-mode-toggle" aria-label="切換深色模式">🌙</button>
+        <button class="lang-toggle" id="lang-toggle" aria-label="切換語言">EN</button>
         <button class="hamburger" id="hamburger" aria-label="選單">
           <span></span>
           <span></span>
@@ -281,7 +276,6 @@
           <div class="about-image-card">
             <img src="assets/images/profile.jpg" alt="邱俊維大頭貼">
           </div>
-          <div class="about-image-decoration" style="border-color: var(--gold);"></div>
         </div>
 
         <div class="animate-on-scroll animate-right">
@@ -295,21 +289,21 @@
             <div class="edu-timeline-item">
               <div class="edu-time">2023 - 2025</div>
               <div class="edu-title">
-                <img class="cgu-logo-inline" src="assets/images/cgu-logo.png" alt="長庚大學 Logo"> ｜ 管理研究所 ｜ 博士學位
+                長庚大學 ｜ 管理研究所 ｜ 博士學位
               </div>
               <div class="edu-desc">專攻決策科學、智慧醫療與供應鏈不確定性下之混合式決策建模。</div>
             </div>
             <div class="edu-timeline-item">
               <div class="edu-time">2019 - 2021</div>
               <div class="edu-title">
-                <img class="cgu-logo-inline" src="assets/images/cgu-logo.png" alt="長庚大學 Logo"> ｜ 資訊管理研究所 ｜ 碩士學位
+                長庚大學 ｜ 資訊管理研究所 ｜ 碩士學位
               </div>
               <div class="edu-desc">專研時間序列建模，以 LSTM 模型進行台灣指數期貨預測研究。</div>
             </div>
             <div class="edu-timeline-item">
               <div class="edu-time">2015 - 2019</div>
               <div class="edu-title">
-                <img class="cgu-logo-inline" src="assets/images/cgu-logo.png" alt="長庚大學 Logo"> ｜ 資訊管理學系 ｜ 學士學位
+                長庚大學 ｜ 資訊管理學系 ｜ 學士學位
               </div>
               <div class="edu-desc">奠定資訊系統開發、資料庫設計與演算法實作之核心技術能力。</div>
             </div>
@@ -327,14 +321,14 @@
           <div class="expertise-card-icon" style="background: rgba(196,139,88,0.15);">📐</div>
           <h4 class="expertise-card-title">決策分析與作業研究</h4>
           <p class="expertise-card-desc">
-            熟悉多準則決策方法（AHP、DEMATEL、TOPSIS）、多目標規劃、模糊理論，處理複雜不確定環境下的最適化配置。
+            熟悉多準則決策方法（AHP、DEMATEL、TOPSIS）、多目標規劃、模糊理論，處理複雜不確定環境下的最佳化配置。
           </p>
         </div>
         <div class="expertise-card animate-on-scroll stagger-2">
           <div class="expertise-card-icon" style="background: rgba(196,139,88,0.15);">🤖</div>
           <h4 class="expertise-card-title">AI Agent 與軟體實務應用</h4>
           <p class="expertise-card-desc">
-            專精於新世代 AI Agent 自動化流程（如 Antigravity CLI 應用），能快速利用大語言模型、文字提取與 AI 機器人解決企業及校務實務問題。
+            專精於新世代 AI Agent 自動化流程（如 Antigravity CLI 應用），能整合大型語言模型 (LLM)、自然語言處理 (NLP) 與智慧自動化技術，高效解決企業及校務實務問題。
           </p>
         </div>
         <div class="expertise-card animate-on-scroll stagger-3">
@@ -357,7 +351,7 @@
           <h4 class="expertise-card-title">研發工程師 兼 董事長特助</h4>
           <p class="expertise-card-desc">
             <strong>光明健康事業股份有限公司 (2022.05 - 2023.09)</strong><br>
-            主導醫病共享決策平台開發。協助同集團之明通化學製藥推動行銷制度轉型、媒體採購分析、風險評估與決策 SOP 制定。
+            主導醫病共享決策平台開發。因董事長兼任明通化學製藥董事長，亦協助明通化學製藥推動行銷制度轉型、媒體採購分析、風險評估與決策 SOP 制定。
           </p>
         </div>
         <div class="expertise-card animate-on-scroll stagger-2">
@@ -389,7 +383,7 @@
           <div class="project-info-side">
             <h4 class="project-item-title">1. 國科會計畫申請與書件撰寫</h4>
             <p class="project-item-text">
-              負責國科會「高血壓患者使用得舒飲食之定性與定量分析」兩年期計畫書之撰寫、研究架構規劃與預算編列。具備獨立研提與執行政府專案的成熟能力。
+              負責國科會「高血壓患者使用得舒飲食之定性與定量分析」兩年期計畫書之撰寫、研究架構規劃與預算編列。具備獨立撰寫研究提案與執行政府專案的成熟能力。
             </p>
           </div>
           <div class="project-gallery-side">
@@ -460,7 +454,7 @@
               </div>
               <div class="project-gallery-item">
                 <a href="assets/images/project-mintong-3.png" target="_blank"><img src="assets/images/project-mintong-3.png" alt="決策矩陣"></a>
-                <div class="project-gallery-caption">圖 3-3：多準則供應商優選決策矩陣</div>
+                <div class="project-gallery-caption">圖 3-3：供應商優選決策矩陣</div>
               </div>
               <div class="project-gallery-item">
                 <a href="assets/images/project-mintong-4.png" target="_blank"><img src="assets/images/project-mintong-4.png" alt="SOP流程"></a>
@@ -483,22 +477,22 @@
           <div class="project-info-side">
             <h4 class="project-item-title">4. 長庚大學校務及財務公開專區</h4>
             <p class="project-item-text">
-              開發校務與財務公開系統，運用 .NET 與 MSSQL 優化資料庫結構，並透過 SAS 數據平台追蹤點擊指標，以視覺化報表支持行政決策。
+              開發校務與財務公開系統與「重要決議暨校長裁示追蹤系統」，運用 .NET 與 MSSQL 優化資料庫結構，提供決策進度追蹤，以資訊化手段支持行政決策與校務管理。
             </p>
           </div>
           <div class="project-gallery-side">
             <div class="project-gallery-row">
               <div class="project-gallery-item">
                 <a href="assets/images/project-ir-1.png" target="_blank"><img src="assets/images/project-ir-1.png" alt="資訊公開首頁"></a>
-                <div class="project-gallery-caption">圖 4-1：校務研究公開專區資訊首頁</div>
+                <div class="project-gallery-caption">圖 4-1：長庚大學校務及財務公開專區首頁</div>
               </div>
               <div class="project-gallery-item">
                 <a href="assets/images/project-ir-2.png" target="_blank"><img src="assets/images/project-ir-2.png" alt="數據統計"></a>
                 <div class="project-gallery-caption">圖 4-2：學雜費與校務數據年度統計表</div>
               </div>
               <div class="project-gallery-item">
-                <a href="assets/images/project-ir-3.png" target="_blank"><img src="assets/images/project-ir-3.png" alt="SAS分析看板"></a>
-                <div class="project-gallery-caption">圖 4-3：SAS 點擊率與使用者軌跡看板</div>
+                <a href="assets/images/project-ir-3.png" target="_blank"><img src="assets/images/project-ir-3.png" alt="重要決議暨校長裁示追蹤系統首頁"></a>
+                <div class="project-gallery-caption">圖 4-3：重要決議暨校長裁示追蹤系統首頁</div>
               </div>
             </div>
           </div>

@@ -219,23 +219,66 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  // ---- Dark Mode Toggle ----
-  const darkModeToggle = document.getElementById('dark-mode-toggle');
-
-  // Check saved preference
-  const savedTheme = localStorage.getItem('theme');
-  if (savedTheme === 'dark') {
-    document.body.classList.add('dark-mode');
-    if (darkModeToggle) darkModeToggle.textContent = '☀️';
+  // ---- Toast Notification System ----
+  function showToast(message, icon = 'ℹ️') {
+    let container = document.querySelector('.toast-container');
+    if (!container) {
+      container = document.createElement('div');
+      container.className = 'toast-container';
+      document.body.appendChild(container);
+    }
+    
+    const toast = document.createElement('div');
+    toast.className = 'toast-message';
+    toast.innerHTML = `
+      <span class="toast-message-icon">${icon}</span>
+      <span class="toast-message-text">${message.replace(/\n/g, '<br>')}</span>
+    `;
+    
+    container.appendChild(toast);
+    
+    // Auto-remove after 4 seconds
+    setTimeout(() => {
+      toast.classList.add('fade-out');
+      toast.addEventListener('transitionend', () => {
+        toast.remove();
+        if (container.children.length === 0) {
+          container.remove();
+        }
+      });
+    }, 4000);
   }
 
-  if (darkModeToggle) {
-    darkModeToggle.addEventListener('click', () => {
-      document.body.classList.toggle('dark-mode');
-      const isDark = document.body.classList.contains('dark-mode');
-      darkModeToggle.textContent = isDark ? '☀️' : '🌙';
-      localStorage.setItem('theme', isDark ? 'dark' : 'light');
+  // ---- Language Toggle ----
+  const langToggle = document.getElementById('lang-toggle');
+  if (langToggle) {
+    // Read language state from session/local storage
+    let currentLang = localStorage.getItem('lang') || 'zh';
+    if (currentLang === 'en') {
+      langToggle.textContent = '中';
+    } else {
+      langToggle.textContent = 'EN';
+    }
+
+    langToggle.addEventListener('click', () => {
+      if (currentLang === 'zh') {
+        currentLang = 'en';
+        langToggle.textContent = '中';
+        localStorage.setItem('lang', 'en');
+        showToast('英文版網頁正積極建置中，敬請期待！\nEnglish version is under construction, stay tuned!', '🌐');
+      } else {
+        currentLang = 'zh';
+        langToggle.textContent = 'EN';
+        localStorage.setItem('lang', 'zh');
+        showToast('已切換至中文版網頁', '🌐');
+      }
     });
+  }
+
+  // ---- Automatic Dark Mode based on system preference ----
+  const prefersDark = window.matchMedia('(prefers-color-scheme: dark)');
+  if (prefersDark.matches && !localStorage.getItem('theme')) {
+    document.body.classList.add('dark-mode');
   }
 
   // ---- Typing Effect ----
