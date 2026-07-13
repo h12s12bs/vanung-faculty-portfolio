@@ -237,11 +237,11 @@ document.addEventListener('DOMContentLoaded', () => {
   // ---- Typing Effect ----
   const typingElement = document.getElementById('typing-text');
   const phrases = [
-    '決策科學與運籌管理專家',
-    'AI與智慧醫療研究者',
-    '全端系統開發工程師',
-    '產學轉型推動者',
-    '招生策略規劃師'
+    '決策科學與運籌管理研究',
+    'AI與智慧醫療跨域應用',
+    '資訊系統與全端軟體開發',
+    '產學鏈結與企業管理輔導',
+    '招生推廣與校務行政協助'
   ];
   let phraseIndex = 0;
   let charIndex = 0;

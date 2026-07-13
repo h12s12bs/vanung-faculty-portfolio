@@ -8,29 +8,29 @@
 
 /* ---- CSS Custom Properties ---- */
 :root {
-  /* Primary Palette */
-  --navy: #0a1628;
-  --navy-light: #121e36;
-  --navy-mid: #1a2744;
-  --gold: #c9a84c;
-  --gold-light: #e8d48b;
-  --gold-dark: #a88a2e;
-  --teal: #14b8a6;
-  --teal-light: #5eead4;
-  --teal-dark: #0d9488;
+  /* Primary Palette - Earth Tones */
+  --navy: #2d2219;
+  --navy-light: #3d3025;
+  --navy-mid: #4a3d32;
+  --gold: #c48b58;
+  --gold-light: #e3bfa0;
+  --gold-dark: #8c5a30;
+  --teal: #5c715e;
+  --teal-light: #8fa391;
+  --teal-dark: #3d4d3f;
 
   /* Neutrals */
   --white: #ffffff;
-  --off-white: #f8fafc;
-  --gray-100: #f1f5f9;
-  --gray-200: #e2e8f0;
-  --gray-300: #cbd5e1;
-  --gray-400: #94a3b8;
-  --gray-500: #64748b;
-  --gray-600: #475569;
-  --gray-700: #334155;
-  --gray-800: #1e293b;
-  --gray-900: #0f172a;
+  --off-white: #faf9f6;
+  --gray-100: #f4f2ed;
+  --gray-200: #e8e4db;
+  --gray-300: #dcd7cc;
+  --gray-400: #b5ad9e;
+  --gray-500: #8c8270;
+  --gray-600: #665d4f;
+  --gray-700: #4a4135;
+  --gray-800: #332b21;
+  --gray-900: #211a12;
 
   /* Semantic */
   --text-primary: #1e293b;
