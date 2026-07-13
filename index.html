@@ -14,20 +14,9 @@
   <link rel="stylesheet" href="styles.css">
   <style>
     /* Premium Timeline and Project styles */
-    .cgu-logo-wrapper {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      margin-bottom: 20px;
-    }
-    .cgu-logo-img {
-      width: auto;
-      height: 48px;
-      flex-shrink: 0;
-    }
     .edu-timeline {
       position: relative;
-      margin: 40px 0;
+      margin: 30px 0;
       padding-left: 30px;
       border-left: 2px solid var(--gold-light);
     }
@@ -39,7 +28,7 @@
       content: '';
       position: absolute;
       left: -37px;
-      top: 4px;
+      top: 6px;
       width: 12px;
       height: 12px;
       border-radius: 50%;
@@ -56,13 +45,23 @@
       font-weight: 800;
       color: var(--gold-dark);
       font-size: 1.1rem;
-      margin-bottom: 4px;
+      margin-bottom: 6px;
     }
     .edu-title {
-      font-size: 1.2rem;
+      font-size: 1.25rem;
       font-weight: 700;
       color: var(--navy);
       margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+    .cgu-logo-inline {
+      height: 26px;
+      width: auto;
+      vertical-align: middle;
+      display: inline-block;
     }
     .edu-desc {
       color: var(--text-secondary);
@@ -98,7 +97,7 @@
       object-fit: cover;
     }
 
-    /* Project List and Side-by-Side Galleries */
+    /* Project List and Horizontal Large Galleries (Uncropped, Auto Scrollable) */
     .project-list {
       display: flex;
       flex-direction: column;
@@ -113,7 +112,7 @@
       box-shadow: var(--shadow-weight) var(--shadow-color);
       display: flex;
       flex-direction: column;
-      gap: 24px;
+      gap: 20px;
     }
     .project-info-side {
       width: 100%;
@@ -122,7 +121,7 @@
       font-size: 1.4rem;
       font-weight: 800;
       color: var(--navy);
-      margin-bottom: 12px;
+      margin-bottom: 10px;
     }
     .project-item-text {
       font-size: 1rem;
@@ -131,46 +130,59 @@
     }
     .project-gallery-side {
       width: 100%;
+      margin-top: 10px;
     }
-    .gallery-grid-4, .gallery-grid-6, .gallery-grid-3 {
-      display: grid;
-      gap: 15px;
-      width: 100%;
+    .project-gallery-row {
+      display: flex;
+      gap: 20px;
+      overflow-x: auto;
+      padding: 10px 5px;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
     }
-    .gallery-grid-4 {
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    .project-gallery-row::-webkit-scrollbar {
+      height: 8px;
     }
-    .gallery-grid-6 {
-      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    .project-gallery-row::-webkit-scrollbar-track {
+      background: var(--gray-100);
+      border-radius: 4px;
     }
-    .gallery-grid-3 {
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    .project-gallery-row::-webkit-scrollbar-thumb {
+      background: var(--gold-light);
+      border-radius: 4px;
     }
-    .gallery-thumb {
-      background: #fdfcf7;
+    .project-gallery-row::-webkit-scrollbar-thumb:hover {
+      background: var(--gold);
+    }
+    .project-gallery-item {
+      flex: 0 0 460px; /* Large width so you see details */
+      scroll-snap-align: start;
+      background: var(--white);
       border: 1px solid var(--border-color);
-      border-radius: 8px;
+      border-radius: 10px;
       overflow: hidden;
+      box-shadow: 0 6px 15px rgba(45, 34, 25, 0.04);
       display: flex;
       flex-direction: column;
-      transition: transform 0.2s, box-shadow 0.2s;
     }
-    .gallery-thumb:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 8px 20px rgba(45,34,25,0.08);
+    @media (max-width: 768px) {
+      .project-gallery-item {
+        flex: 0 0 85vw; /* Adaptive on mobile */
+      }
     }
-    .gallery-thumb img {
+    .project-gallery-item img {
       width: 100%;
-      height: 145px;
-      object-fit: cover;
+      height: 280px;
+      object-fit: contain; /* DO NOT CROP IMAGE CONTENT */
+      background: #ffffff;
       border-bottom: 1px solid var(--border-color);
     }
-    .thumb-lbl {
-      padding: 6px 10px;
-      font-size: 0.8rem;
+    .project-gallery-caption {
+      padding: 8px 12px;
+      font-size: 0.85rem;
       color: var(--text-secondary);
       text-align: center;
-      background: var(--gray-50);
+      background: var(--off-white);
       font-weight: 600;
     }
   </style>
@@ -273,35 +285,32 @@
         </div>
 
         <div class="animate-on-scroll animate-right">
-          <div class="cgu-logo-wrapper">
-            <!-- Official Long Gung University Logo -->
-            <img class="cgu-logo-img" src="assets/images/cgu-logo.png" alt="長庚大學校徽">
-            <div>
-              <h4 style="margin: 0; color: var(--navy); font-weight: 800; font-size: 1.25rem;">長庚大學 CGU</h4>
-              <span style="font-size: 0.85rem; color: var(--text-secondary); font-weight: 500;">Chang Gung University</span>
-            </div>
-          </div>
-          
-          <h3 class="about-title" style="margin-bottom: 12px;">決策科學與 AI 跨域應用研究者</h3>
+          <h3 class="about-title" style="margin-bottom: 12px; font-size: 1.6rem; color: var(--navy);">決策科學與 AI 跨域應用研究者</h3>
           <p class="about-text" style="margin-bottom: 20px;">
             本人畢業於長庚大學管理研究所博士班，研究專長為決策分析、運籌管理及人工智慧之跨領域應用。自學習歷程中，我逐漸體認到自身在數學建模與問題分析上的興趣與能力，因此在碩博士階段選擇深入智慧化決策技術的領域，並積極參與研究與系統開發實務。博士期間，我不僅投入研究論文撰寫與投稿，並成功申請與執行國科會研究計畫，研究成果陸續發表於 <em>Expert Systems with Applications</em>、<em>Computers &amp; Industrial Engineering</em> 等國際頂尖期刊。
           </p>
 
-          <!-- Education Timeline -->
+          <!-- Education Timeline with CGU Logo inline -->
           <div class="edu-timeline">
             <div class="edu-timeline-item">
               <div class="edu-time">2023 - 2025</div>
-              <div class="edu-title">長庚大學 ｜ 管理研究所 ｜ 博士學位</div>
+              <div class="edu-title">
+                <img class="cgu-logo-inline" src="assets/images/cgu-logo.png" alt="長庚大學 Logo"> ｜ 管理研究所 ｜ 博士學位
+              </div>
               <div class="edu-desc">專攻決策科學、智慧醫療與供應鏈不確定性下之混合式決策建模。</div>
             </div>
             <div class="edu-timeline-item">
               <div class="edu-time">2019 - 2021</div>
-              <div class="edu-title">長庚大學 ｜ 資訊管理研究所 ｜ 碩士學位</div>
+              <div class="edu-title">
+                <img class="cgu-logo-inline" src="assets/images/cgu-logo.png" alt="長庚大學 Logo"> ｜ 資訊管理研究所 ｜ 碩士學位
+              </div>
               <div class="edu-desc">專研時間序列建模，以 LSTM 模型進行台灣指數期貨預測研究。</div>
             </div>
             <div class="edu-timeline-item">
               <div class="edu-time">2015 - 2019</div>
-              <div class="edu-title">長庚大學 ｜ 資訊管理學系 ｜ 學士學位</div>
+              <div class="edu-title">
+                <img class="cgu-logo-inline" src="assets/images/cgu-logo.png" alt="長庚大學 Logo"> ｜ 資訊管理學系 ｜ 學士學位
+              </div>
               <div class="edu-desc">奠定資訊系統開發、資料庫設計與演算法實作之核心技術能力。</div>
             </div>
           </div>
@@ -369,9 +378,9 @@
         </div>
       </div>
 
-      <!-- Part 4: Project Execution and Screenshots (Redesigned to full listed layout) -->
+      <!-- Part 4: Project Execution and Screenshots (Horizontal scroll, non-cropped large images) -->
       <div class="profile-section-title animate-on-scroll">
-        <span>📁 專案執行成果 (附全實體佐證)</span>
+        <span>📁 專案執行與實績成果 (附全實體佐證)</span>
       </div>
 
       <div class="project-list animate-on-scroll">
@@ -384,22 +393,22 @@
             </p>
           </div>
           <div class="project-gallery-side">
-            <div class="gallery-grid-4">
-              <div class="gallery-thumb">
-                <a href="assets/images/project-plan-1.png" target="_blank"><img src="assets/images/project-plan-1.png" alt="計畫書成果 1"></a>
-                <div class="thumb-lbl">計畫研究架構</div>
+            <div class="project-gallery-row">
+              <div class="project-gallery-item">
+                <a href="assets/images/project-plan-1.png" target="_blank"><img src="assets/images/project-plan-1.png" alt="得舒飲食計畫研究架構"></a>
+                <div class="project-gallery-caption">圖 1-1：計畫研究架構與流程</div>
               </div>
-              <div class="gallery-thumb">
-                <a href="assets/images/project-plan-2.png" target="_blank"><img src="assets/images/project-plan-2.png" alt="計畫書成果 2"></a>
-                <div class="thumb-lbl">申請書封面</div>
+              <div class="project-gallery-item">
+                <a href="assets/images/project-plan-2.png" target="_blank"><img src="assets/images/project-plan-2.png" alt="得舒飲食計畫書封面"></a>
+                <div class="project-gallery-caption">圖 1-2：國科會專案申請書封面</div>
               </div>
-              <div class="gallery-thumb">
-                <a href="assets/images/project-plan-3.png" target="_blank"><img src="assets/images/project-plan-3.png" alt="計畫書成果 3"></a>
-                <div class="thumb-lbl">工作時程安排</div>
+              <div class="project-gallery-item">
+                <a href="assets/images/project-plan-3.png" target="_blank"><img src="assets/images/project-plan-3.png" alt="工作時程與甘特圖"></a>
+                <div class="project-gallery-caption">圖 1-3：工作時程與進度規畫表</div>
               </div>
-              <div class="gallery-thumb">
-                <a href="assets/images/project-plan-4.png" target="_blank"><img src="assets/images/project-plan-4.png" alt="計畫書成果 4"></a>
-                <div class="thumb-lbl">計畫內容大綱</div>
+              <div class="project-gallery-item">
+                <a href="assets/images/project-plan-4.png" target="_blank"><img src="assets/images/project-plan-4.png" alt="計畫書內容大綱"></a>
+                <div class="project-gallery-caption">圖 1-4：計畫書具體研究大綱</div>
               </div>
             </div>
           </div>
@@ -414,18 +423,18 @@
             </p>
           </div>
           <div class="project-gallery-side">
-            <div class="gallery-grid-3">
-              <div class="gallery-thumb">
-                <a href="assets/images/project-sdm-1.png" target="_blank"><img src="assets/images/project-sdm-1.png" alt="共享決策系統 1"></a>
-                <div class="thumb-lbl">系統運作流程</div>
+            <div class="project-gallery-row">
+              <div class="project-gallery-item">
+                <a href="assets/images/project-sdm-1.png" target="_blank"><img src="assets/images/project-sdm-1.png" alt="共享決策系統架構"></a>
+                <div class="project-gallery-caption">圖 2-1：共享決策系統運作流程與功能</div>
               </div>
-              <div class="gallery-thumb">
-                <a href="assets/images/project-sdm-2.png" target="_blank"><img src="assets/images/project-sdm-2.png" alt="共享決策系統 2"></a>
-                <div class="thumb-lbl">臨床評估介面</div>
+              <div class="project-gallery-item">
+                <a href="assets/images/project-sdm-2.png" target="_blank"><img src="assets/images/project-sdm-2.png" alt="臨床評估介面"></a>
+                <div class="project-gallery-caption">圖 2-2：病患與臨床評估多準則評估介面</div>
               </div>
-              <div class="gallery-thumb">
-                <a href="assets/images/project-sdm-3.png" target="_blank"><img src="assets/images/project-sdm-3.png" alt="共享決策系統 3"></a>
-                <div class="thumb-lbl">模型運算後台</div>
+              <div class="project-gallery-item">
+                <a href="assets/images/project-sdm-3.png" target="_blank"><img src="assets/images/project-sdm-3.png" alt="數據分析後台"></a>
+                <div class="project-gallery-caption">圖 2-3：後台演算法決策運算引擎</div>
               </div>
             </div>
           </div>
@@ -440,30 +449,30 @@
             </p>
           </div>
           <div class="project-gallery-side">
-            <div class="gallery-grid-6">
-              <div class="gallery-thumb">
-                <a href="assets/images/project-mintong-1.png" target="_blank"><img src="assets/images/project-mintong-1.png" alt="SOP成果 1"></a>
-                <div class="thumb-lbl">採購評估指標</div>
+            <div class="project-gallery-row">
+              <div class="project-gallery-item">
+                <a href="assets/images/project-mintong-1.png" target="_blank"><img src="assets/images/project-mintong-1.png" alt="行銷採購指標"></a>
+                <div class="project-gallery-caption">圖 3-1：採購決策評估核心指標設計</div>
               </div>
-              <div class="gallery-thumb">
-                <a href="assets/images/project-mintong-2.png" target="_blank"><img src="assets/images/project-mintong-2.png" alt="SOP成果 2"></a>
-                <div class="thumb-lbl">評審選擇權重</div>
+              <div class="project-gallery-item">
+                <a href="assets/images/project-mintong-2.png" target="_blank"><img src="assets/images/project-mintong-2.png" alt="評審選擇權重"></a>
+                <div class="project-gallery-caption">圖 3-2：評估委員與權重分配設定</div>
               </div>
-              <div class="gallery-thumb">
-                <a href="assets/images/project-mintong-3.png" target="_blank"><img src="assets/images/project-mintong-3.png" alt="SOP成果 3"></a>
-                <div class="thumb-lbl">供應商決策矩陣</div>
+              <div class="project-gallery-item">
+                <a href="assets/images/project-mintong-3.png" target="_blank"><img src="assets/images/project-mintong-3.png" alt="決策矩陣"></a>
+                <div class="project-gallery-caption">圖 3-3：多準則供應商優選決策矩陣</div>
               </div>
-              <div class="gallery-thumb">
-                <a href="assets/images/project-mintong-4.png" target="_blank"><img src="assets/images/project-mintong-4.png" alt="SOP成果 4"></a>
-                <div class="thumb-lbl">評估作業SOP</div>
+              <div class="project-gallery-item">
+                <a href="assets/images/project-mintong-4.png" target="_blank"><img src="assets/images/project-mintong-4.png" alt="SOP流程"></a>
+                <div class="project-gallery-caption">圖 3-4：採購選擇標準化 SOP 作業流程</div>
               </div>
-              <div class="gallery-thumb">
-                <a href="assets/images/project-mintong-5.png" target="_blank"><img src="assets/images/project-mintong-5.png" alt="SOP成果 5"></a>
-                <div class="thumb-lbl">優選計算報表</div>
+              <div class="project-gallery-item">
+                <a href="assets/images/project-mintong-5.png" target="_blank"><img src="assets/images/project-mintong-5.png" alt="優選計算報表"></a>
+                <div class="project-gallery-caption">圖 3-5：評分計算與排序報表輸出</div>
               </div>
-              <div class="gallery-thumb">
-                <a href="assets/images/project-mintong-6.png" target="_blank"><img src="assets/images/project-mintong-6.png" alt="SOP成果 6"></a>
-                <div class="thumb-lbl">媒體執行成果</div>
+              <div class="project-gallery-item">
+                <a href="assets/images/project-mintong-6.png" target="_blank"><img src="assets/images/project-mintong-6.png" alt="執行成效分析"></a>
+                <div class="project-gallery-caption">圖 3-6：媒體採購成效與執行績效分析</div>
               </div>
             </div>
           </div>
@@ -478,18 +487,18 @@
             </p>
           </div>
           <div class="project-gallery-side">
-            <div class="gallery-grid-3">
-              <div class="gallery-thumb">
-                <a href="assets/images/project-ir-1.png" target="_blank"><img src="assets/images/project-ir-1.png" alt="校務研究成果 1"></a>
-                <div class="thumb-lbl">公開專區首頁</div>
+            <div class="project-gallery-row">
+              <div class="project-gallery-item">
+                <a href="assets/images/project-ir-1.png" target="_blank"><img src="assets/images/project-ir-1.png" alt="資訊公開首頁"></a>
+                <div class="project-gallery-caption">圖 4-1：校務研究公開專區資訊首頁</div>
               </div>
-              <div class="gallery-thumb">
-                <a href="assets/images/project-ir-2.png" target="_blank"><img src="assets/images/project-ir-2.png" alt="校務研究成果 2"></a>
-                <div class="thumb-lbl">學雜費統計頁</div>
+              <div class="project-gallery-item">
+                <a href="assets/images/project-ir-2.png" target="_blank"><img src="assets/images/project-ir-2.png" alt="數據統計"></a>
+                <div class="project-gallery-caption">圖 4-2：學雜費與校務數據年度統計表</div>
               </div>
-              <div class="gallery-thumb">
-                <a href="assets/images/project-ir-3.png" target="_blank"><img src="assets/images/project-ir-3.png" alt="校務研究成果 3"></a>
-                <div class="thumb-lbl">SAS點擊報表</div>
+              <div class="project-gallery-item">
+                <a href="assets/images/project-ir-3.png" target="_blank"><img src="assets/images/project-ir-3.png" alt="SAS分析看板"></a>
+                <div class="project-gallery-caption">圖 4-3：SAS 點擊率與使用者軌跡看板</div>
               </div>
             </div>
           </div>

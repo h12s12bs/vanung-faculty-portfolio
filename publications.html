@@ -12,6 +12,35 @@
   <title>研究成果 | 邱俊維 — 萬能科技大學企業管理系專案助理教授應徵</title>
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎓</text></svg>">
   <link rel="stylesheet" href="styles.css">
+  <style>
+    /* Premium style for stats card on light page */
+    .stats-premium-panel {
+      background: linear-gradient(135deg, var(--navy), var(--navy-light));
+      border-radius: var(--card-radius);
+      padding: 40px 30px;
+      margin-bottom: 60px;
+      box-shadow: 0 15px 40px rgba(45, 34, 25, 0.18);
+      position: relative;
+      overflow: hidden;
+    }
+    .stats-premium-panel::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle at 30% 50%, rgba(196,139,88,0.12) 0%, transparent 50%);
+      pointer-events: none;
+    }
+    /* Restored list style helper */
+    .pub-meta-text {
+      font-size: 1rem;
+      color: var(--text-secondary);
+      line-height: 1.7;
+      margin-top: 10px;
+    }
+  </style>
 </head>
 <body>
 
@@ -53,204 +82,192 @@
         <div class="section-label">ACADEMIC RESEARCH</div>
         <h2 class="section-title">學術<span class="highlight">研究成果</span></h2>
         <p class="section-desc">
-          聚焦於多準則決策方法、模糊理論及人工智慧之跨領域實證研究，並具備優異的計畫提案與國際期刊發表實力。
+          聚焦於多準則決策方法、模糊理論及人工智慧之跨領域實證研究，並具備優秀的計畫提案與國際期刊發表實力。
         </p>
       </div>
 
-      <!-- Stats Grid (Dashboard) -->
-      <div class="stats-grid">
-        <!-- Card 1 -->
-        <div class="stat-card animate-on-scroll stagger-1">
-          <div class="stat-card-icon">📄</div>
-          <div class="stat-number" data-target="2" data-suffix=" 篇">0</div>
-          <div class="stat-label">SCI Q1 頂尖期刊論文</div>
-        </div>
+      <!-- Stats section inside a premium dark block for high visibility -->
+      <div class="stats-premium-panel animate-on-scroll">
+        <div class="stats-grid">
+          <!-- Card 1 -->
+          <div class="stat-card">
+            <div class="stat-icon">📄</div>
+            <div class="stat-number" data-target="2" data-suffix=" 篇">0</div>
+            <div class="stat-label" style="color: rgba(255, 255, 255, 0.8); font-weight: 600;">SCI Q1 頂尖期刊論文</div>
+          </div>
 
-        <!-- Card 2 -->
-        <div class="stat-card animate-on-scroll stagger-2">
-          <div class="stat-card-icon">📝</div>
-          <div class="stat-number" data-target="2" data-suffix=" 篇">0</div>
-          <div class="stat-label">頂尖期刊 投稿中/審稿中</div>
-        </div>
+          <!-- Card 2 -->
+          <div class="stat-card">
+            <div class="stat-icon">📝</div>
+            <div class="stat-number" data-target="2" data-suffix=" 篇">0</div>
+            <div class="stat-label" style="color: rgba(255, 255, 255, 0.8); font-weight: 600;">頂尖期刊 投稿中/審稿中</div>
+          </div>
 
-        <!-- Card 3 -->
-        <div class="stat-card animate-on-scroll stagger-3">
-          <div class="stat-card-icon">🏅</div>
-          <div class="stat-number" data-target="1" data-suffix=" 次">0</div>
-          <div class="stat-label">教育部博士生獎學金</div>
-        </div>
+          <!-- Card 3 -->
+          <div class="stat-card">
+            <div class="stat-icon">🏅</div>
+            <div class="stat-number" data-target="1" data-suffix=" 次">0</div>
+            <div class="stat-label" style="color: rgba(255, 255, 255, 0.8); font-weight: 600;">教育部博士生獎學金</div>
+          </div>
 
-        <!-- Card 4 -->
-        <div class="stat-card animate-on-scroll stagger-4">
-          <div class="stat-card-icon">🔬</div>
-          <div class="stat-number" data-target="2" data-suffix=" 件">0</div>
-          <div class="stat-label">國科會計畫 (已結案1/核准未執行1)</div>
+          <!-- Card 4 -->
+          <div class="stat-card">
+            <div class="stat-icon">🔬</div>
+            <div class="stat-number" data-target="2" data-suffix=" 件">0</div>
+            <div class="stat-label" style="color: rgba(255, 255, 255, 0.8); font-weight: 600;">國科會計畫 (已結案1/核准1)</div>
+          </div>
         </div>
       </div>
 
-      <div class="publications-layout" style="margin-top: 50px;">
-        <!-- Left Side: Paper list -->
-        <div class="publications-list">
-          
-          <!-- Section 1: Journal Publications -->
-          <div class="pub-section animate-on-scroll">
-            <h3 class="pub-section-title">📘 代表期刊發表 (Journal Publications)</h3>
-            
-            <!-- Paper 1 -->
-            <div class="pub-card stagger-1">
-              <div class="pub-badge" style="background: var(--gold); color: var(--white);">SCI Q1 (IF: 7.5)</div>
-              <h4 class="pub-title">
-                A hybrid MCDM model for medical shared decision-making under uncertainty
-              </h4>
-              <p class="pub-meta">
-                <strong>Chun-Wei Chiu</strong>, &amp; Jih-Jeng Huang. (2025). <em>Expert Systems with Applications</em>, 238, 122345.
-              </p>
-              <div class="tags">
-                <span class="tag">RMCGP 模型</span>
-                <span class="tag">醫療共享決策</span>
-                <span class="tag">不確定性決策</span>
-                <span class="tag">醫病共享決策 (SDM)</span>
-              </div>
-            </div>
-
-            <!-- Paper 2 -->
-            <div class="pub-card stagger-2">
-              <div class="pub-badge" style="background: var(--gold); color: var(--white);">SCI Q1 (IF: 6.8)</div>
-              <h4 class="pub-title">
-                Optimizing sustainable supply chain partner selection using fuzzy mathematical programming
-              </h4>
-              <p class="pub-meta">
-                Jih-Jeng Huang, &amp; <strong>Chun-Wei Chiu</strong>. (2024). <em>Computers &amp; Industrial Engineering</em>, 182, 110123.
-              </p>
-              <div class="tags">
-                <span class="tag">非線性多段目標規劃法</span>
-                <span class="tag">綠色供應鏈</span>
-                <span class="tag">模糊數學規劃</span>
-                <span class="tag">夥伴選擇最佳化</span>
-              </div>
+      <!-- Restored Original list styles: Journal Publications -->
+      <h3 class="about-title animate-on-scroll" style="margin-bottom: 24px;">📘 代表期刊發表 (Journal Publications)</h3>
+      <div class="cooperation-items animate-on-scroll" style="margin-bottom: 50px;">
+        <!-- Paper 1 -->
+        <div class="cooperation-item stagger-1">
+          <div class="cooperation-item-number" style="background: var(--gold); color: var(--white);">01</div>
+          <div class="cooperation-item-content">
+            <h3>Expert Systems with Applications (Q1, SCI/IF: 7.5)</h3>
+            <p class="pub-meta-text">
+              <strong>Chun-Wei Chiu</strong>, &amp; Jih-Jeng Huang. (2025). A hybrid MCDM model for medical shared decision-making under uncertainty. <em>Expert Systems with Applications</em>, 238, 122345.
+            </p>
+            <div class="tags">
+              <span class="tag">RMCGP 模型</span>
+              <span class="tag">醫療共享決策</span>
+              <span class="tag">不確定性決策</span>
+              <span class="tag">醫病共享決策 (SDM)</span>
             </div>
           </div>
+        </div>
 
-          <!-- Section 2: Under Review & Working Papers -->
-          <div class="pub-section animate-on-scroll">
-            <h3 class="pub-section-title">📝 進行中研究 (Under Review &amp; Working Papers)</h3>
-            
-            <!-- Working Paper 1 -->
-            <div class="pub-card stagger-1">
-              <div class="pub-badge" style="background: var(--teal); color: var(--white);">Under Review</div>
-              <h4 class="pub-title">
-                Optimizing Shared Decision Making in Healthcare Using Fuzzy MCDM and Generative Adversarial Network
-              </h4>
-              <p class="pub-meta">
-                <strong>Chun-Wei Chiu</strong>, Jih-Jeng Huang. (2025). <em>SSCI 國際期刊投稿中</em>.
-              </p>
-              <div class="tags">
-                <span class="tag">共享決策優化</span>
-                <span class="tag">生成對抗網路 (GAN)</span>
-                <span class="tag">Fuzzy MCDM</span>
-              </div>
-            </div>
-
-            <!-- Working Paper 2 -->
-            <div class="pub-card stagger-2">
-              <div class="pub-badge" style="background: var(--teal); color: var(--white);">Under Review</div>
-              <h4 class="pub-title">
-                Cross-Cultural Analysis of Super App Adoption: A Study of Psychological Responses in Taiwan, Vietnam, and Indonesia
-              </h4>
-              <p class="pub-meta">
-                <strong>Chun-Wei Chiu</strong>, et al. (2025). <em>SSCI 國際期刊投稿中</em>.
-              </p>
-              <div class="tags">
-                <span class="tag">跨文化分析</span>
-                <span class="tag">Super App 採用行為</span>
-                <span class="tag">心理反應模式</span>
-              </div>
-            </div>
-
-            <!-- Working Paper 3 -->
-            <div class="pub-card stagger-3">
-              <div class="pub-badge" style="background: var(--navy-light); color: var(--white);">Working Paper</div>
-              <h4 class="pub-title">
-                Chatbot anthropomorphic characteristics and customer interaction: A perspective from perceived competence, warmth, and autonomy
-              </h4>
-              <p class="pub-meta">
-                <strong>Chun-Wei Chiu</strong>. (2025). <em>學術論文撰寫中</em>.
-              </p>
-              <div class="tags">
-                <span class="tag">聊天機器人擬人化</span>
-                <span class="tag">顧客互動</span>
-                <span class="tag">感知能力與溫暖</span>
-                <span class="tag">自我決定論 (Autonomy)</span>
-              </div>
+        <!-- Paper 2 -->
+        <div class="cooperation-item stagger-2">
+          <div class="cooperation-item-number" style="background: var(--gold); color: var(--white);">02</div>
+          <div class="cooperation-item-content">
+            <h3>Computers &amp; Industrial Engineering (Q1, SCI/IF: 6.8)</h3>
+            <p class="pub-meta-text">
+              Jih-Jeng Huang, &amp; <strong>Chun-Wei Chiu</strong>. (2024). Optimizing sustainable supply chain partner selection using fuzzy mathematical programming. <em>Computers &amp; Industrial Engineering</em>, 182, 110123.
+            </p>
+            <div class="tags">
+              <span class="tag">非線性多段目標規劃法</span>
+              <span class="tag">綠色供應鏈</span>
+              <span class="tag">模糊數學規劃</span>
+              <span class="tag">夥伴選擇最佳化</span>
             </div>
           </div>
-
-          <!-- Section 3: Ph.D. Dissertation -->
-          <div class="pub-section animate-on-scroll">
-            <h3 class="pub-section-title">🎓 學位論文與學術著作 (Academic Dissertation)</h3>
-            
-            <div class="pub-card stagger-1">
-              <div class="pub-badge" style="background: var(--gold-dark); color: var(--white);">博士學位論文</div>
-              <h4 class="pub-title">
-                不確定環境下基於多目標規劃之決策分析與運籌管理研究
-              </h4>
-              <p class="pub-meta">
-                指導教授：黃日鉦 博士 ｜ 畢業學校：長庚大學管理研究所 ｜ 畢業年度：2025年
-              </p>
-              <div class="tags">
-                <span class="tag">多準則決策 (MCDM)</span>
-                <span class="tag">模糊數學</span>
-                <span class="tag">運籌決策模型</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- Section 4: NSTC Projects -->
-          <div class="pub-section animate-on-scroll">
-            <h3 class="pub-section-title">🔬 國科會計畫執行與申請紀錄 (NSTC Projects)</h3>
-            
-            <!-- Project 1 -->
-            <div class="pub-card stagger-1">
-              <div class="pub-badge" style="background: var(--navy); color: var(--white);">已結案</div>
-              <h4 class="pub-title">
-                高血壓患者使用得舒飲食之定性與定量分析
-              </h4>
-              <p class="pub-meta">
-                計畫編號：NSTC 112-2410-H-182-012-MY2 ｜ 擔任角色：研究助理 (長庚大學)
-              </p>
-              <p class="pub-meta" style="font-size: 0.9rem; color: var(--text-secondary); margin-top: 6px;">
-                <strong>計畫特色：</strong>運用混合多準則決策方法 (MCDM)，建構結合臨床生理指標與病患生活型態的雙軌評估模型，針對高血壓患者提供高度個人化的得舒飲食 (DASH) 指引策略，以降低心血管併發症風險。
-              </p>
-              <div class="tags">
-                <span class="tag">得舒飲食 (DASH)</span>
-                <span class="tag">個人化健康管理</span>
-                <span class="tag">多目標規劃</span>
-                <span class="tag">定性與定量分析</span>
-              </div>
-            </div>
-
-            <!-- Project 2 -->
-            <div class="pub-card stagger-2">
-              <div class="pub-badge" style="background: var(--gray-500); color: var(--white);">通過未執行</div>
-              <h4 class="pub-title">
-                長期照顧服務照護人員派遣和定價策略之定性與定量分析
-              </h4>
-              <p class="pub-meta">
-                計畫類型：國科會專題計畫 ｜ 擔任角色：計畫主要撰寫人與申請人
-              </p>
-              <p class="pub-meta" style="font-size: 0.9rem; color: var(--text-secondary); margin-top: 6px;">
-                <strong>說明：</strong>本計畫由本人主要撰寫，並成功獲國科會審查核准。惟因原指導教授於計畫執行前屆齡退休，故最終未予執行。本計畫之研究架構與數學派遣模型已完整建立，具備極高的學術與產業應用價值。
-              </p>
-              <div class="tags">
-                <span class="tag">長期照顧服務</span>
-                <span class="tag">智慧派遣演算法</span>
-                <span class="tag">定價策略最佳化</span>
-              </div>
-            </div>
-          </div>
-
         </div>
       </div>
+
+      <!-- Restored Original list styles: Under Review & Working Papers -->
+      <h3 class="about-title animate-on-scroll" style="margin-bottom: 24px;">📝 進行中研究 (Under Review &amp; Working Papers)</h3>
+      <div class="cooperation-items animate-on-scroll" style="margin-bottom: 50px;">
+        <!-- Paper 1 -->
+        <div class="cooperation-item stagger-1" style="border-color: var(--teal);">
+          <div class="cooperation-item-number" style="background: var(--teal); color: var(--white);">投稿</div>
+          <div class="cooperation-item-content">
+            <h3>Optimizing Shared Decision Making in Healthcare Using Fuzzy MCDM and Generative Adversarial Network</h3>
+            <p class="pub-meta-text">
+              <strong>Chun-Wei Chiu</strong>, Jih-Jeng Huang. (2025). <em>SSCI 國際期刊投稿中</em>.
+            </p>
+            <div class="tags">
+              <span class="tag">共享決策優化</span>
+              <span class="tag">生成對抗網路 (GAN)</span>
+              <span class="tag">Fuzzy MCDM</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Paper 2 -->
+        <div class="cooperation-item stagger-2" style="border-color: var(--teal);">
+          <div class="cooperation-item-number" style="background: var(--teal); color: var(--white);">投稿</div>
+          <div class="cooperation-item-content">
+            <h3>Cross-Cultural Analysis of Super App Adoption: A Study of Psychological Responses in Taiwan, Vietnam, and Indonesia</h3>
+            <p class="pub-meta-text">
+              <strong>Chun-Wei Chiu</strong>, et al. (2025). <em>SSCI 國際期刊投稿中</em>.
+            </p>
+            <div class="tags">
+              <span class="tag">跨文化分析</span>
+              <span class="tag">Super App 採用行為</span>
+              <span class="tag">心理反應模式</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Paper 3 -->
+        <div class="cooperation-item stagger-3" style="border-color: var(--navy-light);">
+          <div class="cooperation-item-number" style="background: var(--navy-light); color: var(--white);">撰寫</div>
+          <div class="cooperation-item-content">
+            <h3>Chatbot anthropomorphic characteristics and customer interaction: A perspective from perceived competence, warmth, and autonomy</h3>
+            <p class="pub-meta-text">
+              <strong>Chun-Wei Chiu</strong>. (2025). <em>學術論文撰寫中</em>.
+            </p>
+            <div class="tags">
+              <span class="tag">聊天機器人擬人化</span>
+              <span class="tag">顧客互動</span>
+              <span class="tag">感知能力與溫暖</span>
+              <span class="tag">自我決定論 (Autonomy)</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Restored Original list styles: Published Degree Theses -->
+      <h3 class="about-title animate-on-scroll" style="margin-bottom: 24px;">🎓 學位論文與學術著作 (Academic Dissertation)</h3>
+      <div class="cooperation-items animate-on-scroll" style="margin-bottom: 50px;">
+        <div class="cooperation-item stagger-1">
+          <div class="cooperation-item-number">PHD</div>
+          <div class="cooperation-item-content">
+            <h3>博士學位論文 (2025)</h3>
+            <p class="pub-meta-text">
+              不確定環境下基於多目標規劃之決策分析與運籌管理研究。<br>
+              指導教授：黃日鉦 博士 ｜ 畢業學校：長庚大學管理研究所
+            </p>
+            <div class="tags">
+              <span class="tag">博士論文</span>
+              <span class="tag">多準則決策 (MCDM)</span>
+              <span class="tag">模糊數學</span>
+              <span class="tag">運籌決策模型</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Restored Original list styles: NSTC Projects -->
+      <h3 class="about-title animate-on-scroll" style="margin-bottom: 24px;">🔬 國科會計畫執行與申請紀錄 (NSTC Projects)</h3>
+      <div class="cooperation-items animate-on-scroll">
+        <!-- Project 1 -->
+        <div class="cooperation-item stagger-1" style="border-color: var(--teal);">
+          <div class="cooperation-item-number" style="background: var(--teal); color: var(--white);">已結案</div>
+          <div class="cooperation-item-content">
+            <h3>國科會計畫：高血壓患者使用得舒飲食之定性與定量分析 (已結案)</h3>
+            <p class="pub-meta-text">
+              擔任計畫研究助理。計畫編號：NSTC 112-2410-H-182-012-MY2。運用混合多準則決策方法 (MCDM)，建構結合臨床生理指標與病患生活型態的雙軌評估模型，針對高血壓患者提供高度個人化的得舒飲食 (DASH) 指引策略，以降低心血管併發症風險。
+            </p>
+            <div class="tags">
+              <span class="tag">得舒飲食 (DASH)</span>
+              <span class="tag">個人化健康管理</span>
+              <span class="tag">多目標規劃</span>
+              <span class="tag">定性與定量分析</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 2 -->
+        <div class="cooperation-item stagger-2" style="border-color: var(--gold-dark);">
+          <div class="cooperation-item-number" style="background: var(--gold-dark); color: var(--white);">核准</div>
+          <div class="cooperation-item-content">
+            <h3>國科會計畫：長期照顧服務照護人員派遣和定價策略之定性與定量分析 (已核准/未執行)</h3>
+            <p class="pub-meta-text">
+              本計畫由本人主要撰寫，並成功獲國科會審查核准。此計畫以作業研究與數量方法為基礎，透過定性研究與數學建模分析長照派遣定價，<strong>惟因指導教授屆齡退休，故該計畫最終未予執行。</strong>本計畫之研究架構與數學派遣模型已完整建立，具備極高的學術與產業應用價值。
+            </p>
+            <div class="tags">
+              <span class="tag">長期照顧服務</span>
+              <span class="tag">智慧派遣演算法</span>
+              <span class="tag">定價策略最佳化</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
     </div>
   </section>
 

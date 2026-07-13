@@ -33,6 +33,25 @@
       max-height: 100%;
       object-fit: contain;
     }
+    /* Logo style for Internship cards */
+    .internship-logo-wrapper {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 15px;
+      width: 100%;
+    }
+    .internship-logo-box {
+      width: 120px;
+      height: 55px;
+      background: var(--white);
+      border: 1px solid var(--border-color);
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 4px;
+      overflow: hidden;
+    }
   </style>
 </head>
 <body>
@@ -85,7 +104,7 @@
         <!-- Company 1 -->
         <div class="cooperation-item stagger-1">
           <div class="company-logo-box">
-            <img class="company-logo-img" src="assets/images/logo-yourchance.png" alt="佑全藥品 Logo">
+            <img class="company-logo-img" src="assets/images/logo-yourchance.svg" alt="佑全藥品 Logo">
           </div>
           <div class="cooperation-item-content">
             <h3>💊 連鎖藥局智慧營運產學計畫</h3>
@@ -110,7 +129,7 @@
             <h3>🏥 連鎖診所智慧管理計畫</h3>
             <p>
               <strong>合作對象：新田管理顧問股份有限公司</strong><br>
-              運用決策模型與數據分析，優化連鎖心理診所的醫病預約媒合與行政資源配置，有效降低營運成本並擴大服務量能，打造數據驅動的現代化管理模式。
+              運用決策模型與數據分析，優化連鎖心理診所的醫病預約媒合與行政資源配置，有效降低營運成本並擴大服務量能，打造數據驱动的現代化管理模式。
             </p>
             <div class="tags">
               <span class="tag">預估金額：30–50萬/年</span>
@@ -142,7 +161,7 @@
         <!-- Company 4 -->
         <div class="cooperation-item stagger-4">
           <div class="company-logo-box">
-            <img class="company-logo-img" src="assets/images/logo-brighthealth.png" alt="光明診所 Logo">
+            <img class="company-logo-img" src="assets/images/logo-brighthealth.png" alt="光明健康事業 Logo">
           </div>
           <div class="cooperation-item-content">
             <h3>🩺 醫病共享決策支援系統優化</h3>
@@ -161,7 +180,7 @@
         <!-- Company 5 -->
         <div class="cooperation-item stagger-5">
           <div class="company-logo-box">
-            <img class="company-logo-img" src="assets/images/logo-mintong.png" alt="明通化學製藥 Logo">
+            <img class="company-logo-img" src="assets/images/logo-mintong.svg" alt="明通化學製藥 Logo">
           </div>
           <div class="cooperation-item-content">
             <h3>💊 醫藥行銷數位轉型與 AI 決策支援</h3>
@@ -189,32 +208,52 @@
       </div>
 
       <div class="expertise-cards animate-on-scroll">
+        <!-- Card 1 (Yourchance) -->
         <div class="expertise-card stagger-1">
-          <div class="expertise-card-icon">🏬</div>
+          <div class="internship-logo-wrapper">
+            <div class="internship-logo-box">
+              <img class="company-logo-img" src="assets/images/logo-yourchance.svg" alt="佑全藥品 Logo">
+            </div>
+          </div>
           <h4 class="expertise-card-title">連鎖藥局實習 (佑全藥品)</h4>
           <p class="expertise-card-desc">
             提供學生參與連鎖藥局門市營運、庫存管理、顧客經營（CRM）及數位行銷實作，並輔導學生考取「門市服務乙級/丙級」證照，培育現代零售管理人才。
           </p>
         </div>
 
+        <!-- Card 2 (Xintian) -->
         <div class="expertise-card stagger-2">
-          <div class="expertise-card-icon">👩‍💼</div>
+          <div class="internship-logo-wrapper">
+            <div class="internship-logo-box">
+              <img class="company-logo-img" src="assets/images/logo-xintian.png" alt="新田管顧 Logo">
+            </div>
+          </div>
           <h4 class="expertise-card-title">健康諮詢與行政實習 (新田管顧)</h4>
           <p class="expertise-card-desc">
             提供學生於連鎖心理診所進行行政管理、預約系統操作、公關接待與顧客溝通實習，對接企管系「公關行政管理」專長模組。
           </p>
         </div>
 
+        <!-- Card 3 (Jiameat) -->
         <div class="expertise-card stagger-3">
-          <div class="expertise-card-icon">🍽️</div>
+          <div class="internship-logo-wrapper">
+            <div class="internship-logo-box">
+              <img class="company-logo-img" src="assets/images/logo-jiameat-dark.png" alt="稼Meat燒肉 Logo">
+            </div>
+          </div>
           <h4 class="expertise-card-title">微型餐飲創業與行銷實習 (森稼餐飲)</h4>
           <p class="expertise-card-desc">
             提供學生參與電商營運、短影音行銷、智慧 ERP 操作、店務排班、人流管理與現場營運實作實務，高度對接「觀休餐旅微型創業」專長模組。
           </p>
         </div>
 
+        <!-- Card 4 (Mintong) -->
         <div class="expertise-card stagger-4">
-          <div class="expertise-card-icon">💊</div>
+          <div class="internship-logo-wrapper">
+            <div class="internship-logo-box">
+              <img class="company-logo-img" src="assets/images/logo-mintong.svg" alt="明通製藥 Logo">
+            </div>
+          </div>
           <h4 class="expertise-card-title">行銷採購與電商實習 (明通製藥)</h4>
           <p class="expertise-card-desc">
             提供學生參與醫藥行銷策劃、社群媒體經營、媒體採購決策流程以及電商平台實務，培育新一代企業行銷企劃與專案管理人才。
