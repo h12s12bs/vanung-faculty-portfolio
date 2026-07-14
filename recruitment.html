@@ -48,8 +48,9 @@
   <div style="height: 100px; background: var(--navy);"></div>
 
   <!-- ==================== RECRUITMENT PLAN ==================== -->
-  <section class="section" id="recruitment-page">
-    <div class="container">
+  <section class="section" id="recruitment-page" style="padding: 0;">
+    <!-- Slide 1: Recruitment Highlights -->
+    <div class="container slide-section">
       <div class="section-header animate-on-scroll">
         <div class="section-label">RECRUITMENT PLAN</div>
         <h2 class="section-title">萬能企管系<span class="highlight">特色招生計畫</span></h2>
@@ -75,16 +76,11 @@
         <img src="assets/images/recruitment.jpg" alt="招生推廣亮點">
       </div>
 
-      <!-- Tabs -->
-      <div class="recruitment-tabs animate-on-scroll">
-        <button class="tab-btn active" data-tab="tab-traditional">🏫 傳統招生加值</button>
-        <button class="tab-btn" data-tab="tab-innovative">🤖 AI Agent 創新策略</button>
-        <button class="tab-btn" data-tab="tab-timeline">📅 執行時程規劃</button>
-        <button class="tab-btn" data-tab="tab-admin">🌐 國際交流</button>
-      </div>
+    </div>
 
-      <!-- Tab 1: Traditional -->
-      <div class="tab-content active" id="tab-traditional">
+    <!-- Slide 2: Traditional Recruitment -->
+    <div class="container slide-section" id="tab-traditional">
+      <h3 class="about-title animate-on-scroll" style="margin-bottom: 24px; text-align: center;">🏫 傳統特色招生加值計畫</h3>
         <div class="expertise-cards">
           <div class="expertise-card animate-on-scroll stagger-1">
             <div class="expertise-card-icon">🏫</div>
@@ -124,8 +120,11 @@
         </div>
       </div>
 
-      <!-- Tab 2: Innovative -->
-      <div class="tab-content" id="tab-innovative">
+    </div>
+
+    <!-- Slide 3: AI Agent Innovation -->
+    <div class="container slide-section" id="tab-innovative">
+      <h3 class="about-title animate-on-scroll" style="margin-bottom: 24px; text-align: center;">🤖 AI Agent 創新招生策略</h3>
         <div class="expertise-cards">
           <div class="expertise-card animate-on-scroll stagger-1">
             <div class="expertise-card-icon">🤖</div>
@@ -165,8 +164,11 @@
         </div>
       </div>
 
-      <!-- Tab 3: Timeline -->
-      <div class="tab-content" id="tab-timeline">
+    </div>
+
+    <!-- Slide 4: Timeline & Schedule -->
+    <div class="container slide-section" id="tab-timeline">
+      <h3 class="about-title animate-on-scroll" style="margin-bottom: 24px; text-align: center;">📅 招生執行時程規劃</h3>
         <div class="timeline">
           <div class="timeline-item animate-on-scroll stagger-1">
             <div class="timeline-item-header">
@@ -223,8 +225,10 @@
         </div>
       </div>
 
-      <!-- Tab 4: Administration & International Cooperation -->
-      <div class="tab-content" id="tab-admin">
+    </div>
+
+    <!-- Slide 5: International Cooperation -->
+    <div class="container slide-section" id="tab-admin">
         <div class="admin-grid" style="display: grid; grid-template-columns: 1.2fr 1fr; gap: 30px; margin-top: 20px; align-items: start;">
           <!-- Text details -->
           <div class="expertise-card animate-on-scroll" style="padding: 30px; background: rgba(10, 25, 50, 0.4); border: 1px solid var(--border-color); border-radius: 12px; height: 100%;">
@@ -264,6 +268,12 @@
             <p style="color: var(--gold-light); font-size: 0.9rem; text-align: center; margin-top: 5px; margin-bottom: 0; font-weight: 500;">圖：籌辦 TSWIM 國際研討會與越南孫德勝大學合作交流現場照</p>
           </div>
         </div>
+      </div>
+      <!-- Next Page Button -->
+      <div class="next-page-btn-container" style="text-align: center; margin-top: 50px;">
+        <a href="contact.html" class="btn btn-primary" style="font-size: 1.1rem; padding: 14px 36px; background: linear-gradient(135deg, var(--gold), var(--gold-dark)); box-shadow: 0 4px 20px rgba(196, 139, 88, 0.3); color: var(--white); display: inline-flex; align-items: center; gap: 8px;">
+          下一頁：聯繫與結語 (Contact) ▶️
+        </a>
       </div>
     </div>
   </section>

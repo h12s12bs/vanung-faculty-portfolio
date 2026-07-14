@@ -214,7 +214,7 @@
   </nav>
 
   <!-- ==================== HERO SECTION ==================== -->
-  <section class="hero" id="hero" style="min-height: 90vh; padding: 120px 0 60px;">
+  <section class="hero slide-section" id="hero" style="min-height: 90vh; padding: 120px 0 60px;">
     <div class="hero-bg">
       <img src="assets/images/hero-bg-earth.jpg" alt="Background">
     </div>
@@ -247,29 +247,24 @@
         <span id="typing-text" style="color: var(--teal); font-weight: 700;"></span>
       </div>
 
-      <div class="hero-buttons" style="display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; width: 100%;">
-        <a href="publications-en.html" class="btn btn-primary" style="background: linear-gradient(135deg, var(--gold), var(--gold-dark)); color: var(--white); box-shadow: 0 4px 20px rgba(196, 139, 88, 0.3); padding: 10px 20px; font-size: 0.95rem;">
-          📄 Research Publications
+      <div class="hero-buttons" style="display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; width: 100%;">
+        <a href="#about" class="btn btn-primary" style="background: linear-gradient(135deg, var(--gold), var(--gold-dark)); color: var(--white); box-shadow: 0 4px 20px rgba(196, 139, 88, 0.3); padding: 12px 24px; font-size: 1rem;">
+          👤 Personal Expertise
         </a>
-        <a href="future-research-en.html" class="btn btn-outline" style="padding: 10px 20px; font-size: 0.95rem;">
-          💡 Future Research Plans
-        </a>
-        <a href="courses-en.html" class="btn btn-outline" style="padding: 10px 20px; font-size: 0.95rem;">
-          🎓 Teachable Courses
-        </a>
-        <a href="cooperation-en.html" class="btn btn-outline" style="padding: 10px 20px; font-size: 0.95rem;">
+        <a href="cooperation-en.html" class="btn btn-outline" style="padding: 12px 24px; font-size: 1rem; border-color: rgba(255,255,255,0.3); color: var(--white);">
           🤝 Industry-Academia
         </a>
-        <a href="recruitment-en.html" class="btn btn-outline" style="padding: 10px 20px; font-size: 0.95rem;">
-          🎯 Admissions Proposal
+        <a href="recruitment-en.html" class="btn btn-outline" style="padding: 12px 24px; font-size: 1rem; border-color: rgba(255,255,255,0.3); color: var(--white);">
+          🎯 Admissions Capability
         </a>
       </div>
     </div>
   </section>
 
   <!-- ==================== ABOUT / EXPERTISE ==================== -->
-  <section class="section" id="about">
-    <div class="container">
+  <section class="section" id="about" style="padding: 0;">
+    <!-- Slide 2: Bio -->
+    <div class="container slide-section" id="about-bio">
       <div class="section-header animate-on-scroll">
         <div class="section-label">PORTFOLIO</div>
         <h2 class="section-title">Academic Profile &amp; <span class="highlight">Expertise</span></h2>
@@ -287,41 +282,50 @@
         </div>
 
         <div class="animate-on-scroll animate-right">
-          <h3 class="about-title" style="margin-bottom: 12px; font-size: 1.6rem; color: var(--navy);">Decision Science &amp; AI Cross-domain Researcher</h3>
+          <h3 class="about-title" style="margin-bottom: 12px; font-size: 1.6rem; color: var(--navy);">Scholar in Decision Science &amp; AI Cross-Domain Applications</h3>
           <p class="about-text" style="margin-bottom: 20px;">
-            I graduated with a Doctor of Philosophy (Ph.D.) in Management from Chang Gung University. My research interests focus on Decision Analysis, Operations Research, and cross-domain applications of Artificial Intelligence. Throughout my academic journey, I have cultivated a strong interest and capability in mathematical modeling and system implementation. During my doctoral studies, I not only focused on academic publications but also actively proposed and executed National Science and Technology Council (NSTC) research projects. My research outcomes have been published in top-tier international journals such as <em>Expert Systems with Applications</em> and <em>Computers &amp; Industrial Engineering</em>.
+            I received my Ph.D. in Management from Chang Gung University, specializing in decision analysis, operations research, and artificial intelligence cross-domain applications. Throughout my academic journey, I have developed a strong passion and competence in mathematical modeling and problem analysis. This led me to pursue intelligent decision-making technologies during my graduate studies, actively engaging in both academic research and system development. During my doctoral studies, I focused on writing and submitting research papers, successfully securing and executing National Science and Technology Council (NSTC) research projects. My research has been published in top-tier international journals such as <em>Expert Systems with Applications</em> and <em>Computers &amp; Industrial Engineering</em>.
           </p>
 
-          <!-- Education Timeline -->
+          <!-- Education Timeline with CGU Logo inline -->
           <div class="edu-timeline">
             <div class="edu-timeline-item">
               <div class="edu-time">2023 - 2025</div>
               <div class="edu-title">
                 Chang Gung University | Graduate Institute of Management | Ph.D.
               </div>
-              <div class="edu-desc">Specialized in Decision Sciences, Intelligent Healthcare, and Hybrid Multi-Criteria Decision-Making under supply chain uncertainty.</div>
+              <div class="edu-desc">Focused on decision science, intelligent healthcare, and hybrid decision modeling under supply chain uncertainty.</div>
             </div>
             <div class="edu-timeline-item">
               <div class="edu-time">2019 - 2021</div>
               <div class="edu-title">
-                Chang Gung University | Graduate Institute of Information Management | Master's Degree
+                Chang Gung University | Graduate Institute of Information Management | M.S.
               </div>
-              <div class="edu-desc">Focused on time-series forecasting, utilizing LSTM models for Taiwan index futures prediction.</div>
+              <div class="edu-desc">Specialized in time-series modeling and LSTM models for forecasting Taiwan Index Futures.</div>
             </div>
             <div class="edu-timeline-item">
               <div class="edu-time">2015 - 2019</div>
               <div class="edu-title">
-                Chang Gung University | Department of Information Management | Bachelor's Degree
+                Chang Gung University | Department of Information Management | B.S.
               </div>
-              <div class="edu-desc">Laid down core foundations in information systems development, database design, and algorithmic implementation.</div>
+              <div class="edu-desc">Built core skills in information system development, database design, and algorithm implementation.</div>
             </div>
+          </div>
+          <!-- Next Slide Button -->
+          <div style="text-align: right; margin-top: 30px;">
+            <a href="#core-expertise" class="btn btn-teal" style="font-size: 1rem; padding: 12px 28px; box-shadow: 0 4px 15px rgba(20,110,120,0.25);">
+              ▶️ Next: Core Expertise
+            </a>
           </div>
         </div>
       </div>
+    </div>
 
+    <!-- Slide 3: Core Expertise -->
+    <div class="container slide-section" id="about-expertise">
       <!-- Part 2: Core Expertise Section -->
-      <div class="profile-section-title animate-on-scroll">
-        <span>📐 Core Fields of Expertise</span>
+      <div id="core-expertise" class="profile-section-title animate-on-scroll" style="scroll-margin-top: 100px;">
+        <span>📐 Core Expertise Fields</span>
       </div>
       
       <div class="expertise-cards" style="margin-bottom: 50px;">
@@ -329,25 +333,28 @@
           <div class="expertise-card-icon" style="background: rgba(196,139,88,0.15);">📐</div>
           <h4 class="expertise-card-title">Decision Analysis &amp; Operations Research</h4>
           <p class="expertise-card-desc">
-            Proficient in multi-criteria decision-making methods (AHP, DEMATEL, TOPSIS), multi-objective programming, and fuzzy theory for optimization under complex and uncertain environments.
+            Proficient in multi-criteria decision-making methods (AHP, DEMATEL, TOPSIS), multi-objective programming, and fuzzy theory for handling optimization in complex, uncertain environments.
           </p>
         </div>
         <div class="expertise-card animate-on-scroll stagger-2">
           <div class="expertise-card-icon" style="background: rgba(196,139,88,0.15);">🤖</div>
-          <h4 class="expertise-card-title">AI Agents &amp; Software Implementation</h4>
+          <h4 class="expertise-card-title">AI Agent &amp; Software Application</h4>
           <p class="expertise-card-desc">
-            Specializing in next-generation AI Agent workflows. Proficient in integrating Large Language Models (LLMs), Natural Language Processing (NLP), and intelligent automation for school and business tasks.
+            Specializing in next-generation AI Agent automation workflows (such as Antigravity CLI applications). Capable of integrating Large Language Models (LLMs), NLP, and automation tools to solve business and administrative problems.
           </p>
         </div>
         <div class="expertise-card animate-on-scroll stagger-3">
           <div class="expertise-card-icon" style="background: rgba(196,139,88,0.15);">💻</div>
           <h4 class="expertise-card-title">Full-Stack Development</h4>
           <p class="expertise-card-desc">
-            Experienced with Web MVC architectures, C#, .NET, and MSSQL database design. Competent in building production-ready web systems to implement and deploy decision models.
+            Skilled in Web MVC architecture, C#, .NET, and MSSQL database design and optimization. Capable of independently developing systems that translate mathematical models into production software platforms.
           </p>
         </div>
       </div>
+    </div>
 
+    <!-- Slide 4: Personal Experience -->
+    <div class="container slide-section" id="about-experience">
       <!-- Part 3: Personal Experience Section -->
       <div class="profile-section-title animate-on-scroll">
         <span>🏢 Professional Experience</span>
@@ -359,30 +366,33 @@
           <h4 class="expertise-card-title">R&amp;D Engineer &amp; Assistant to Chairman</h4>
           <p class="expertise-card-desc">
             <strong>Bright Health Business Co., Ltd. (2022.05 - 2023.09)</strong><br>
-            Led the development of a patient Shared Decision-Making (SDM) platform. Also assisted Min Tong Chemical Pharmaceutical with marketing system transformation, media purchase analysis, risk evaluation, and decision SOP formulation.
+            Led the development of a medical Shared Decision Making (SDM) platform. Also assisted Min Tong Pharmaceutical Co., Ltd. in restructuring marketing practices, analyzing media procurement, and establishing risk evaluation SOPs.
           </p>
         </div>
         <div class="expertise-card animate-on-scroll stagger-2">
           <div class="expertise-card-icon">🔬</div>
           <h4 class="expertise-card-title">NSTC Project Research Assistant</h4>
           <p class="expertise-card-desc">
-            <strong>Digital Applications &amp; Operations Management Lab, CGU (2023.09 - 2025.07)</strong><br>
-            Assisted in National Science and Technology Council (NSTC) research proposal applications, budget management, and financial reimbursement. Conducted qualitative and quantitative analysis on the DASH diet project, designed questionnaires, and drafted final reports and journal papers.
+            <strong>Digital Application &amp; Logistics Management Lab, CGU (2023.09 - 2025.07)</strong><br>
+            Managed NSTC research projects, including applications, administration, and financial reporting. Conducted qualitative/quantitative research on DASH diet models, designed questionnaires, and co-authored international journal papers.
           </p>
         </div>
         <div class="expertise-card animate-on-scroll stagger-3">
           <div class="expertise-card-icon">📊</div>
-          <h4 class="expertise-card-title">Institutional Research Center Assistant</h4>
+          <h4 class="expertise-card-title">Institutional Research Assistant</h4>
           <p class="expertise-card-desc">
-            <strong>Institutional Research Center, CGU (2019.09 - 2021.03)</strong><br>
-            Worked as a full-stack engineer developing and maintaining the institutional and financial disclosure portals. Developed SAS Visual Analytics dashboards to analyze student behaviors and support administrative decision-making.
+            <strong>Center for Institutional Research, CGU (2019.09 - 2021.03)</strong><br>
+            Worked as a full-stack developer maintaining public disclosure websites. Developed the internal SAS Visual Analytics dashboard for analyzing student data to support university decisions.
           </p>
         </div>
       </div>
+    </div>
 
+    <!-- Slide 5: Project Execution -->
+    <div class="container slide-section" id="about-projects">
       <!-- Part 4: Project Execution and Screenshots -->
       <div class="profile-section-title animate-on-scroll">
-        <span>📁 Executed Projects &amp; Artifacts (Full Proof Attached)</span>
+        <span>📁 Project Achievements</span>
       </div>
 
       <div class="project-list animate-on-scroll">
@@ -391,7 +401,7 @@
           <div class="project-info-side">
             <h4 class="project-item-title">1. NSTC Project Application &amp; Proposal Writing</h4>
             <p class="project-item-text">
-              Responsible for the drafting, research framework design, and budget allocation of the 2-year NSTC project "Qualitative and Quantitative Analysis of DASH Diet Adoption in Hypertensive Patients". Exhibited mature capability in independent proposal writing.
+              Responsible for writing the two-year NSTC proposal "Qualitative and Quantitative Analysis of DASH Diet for Hypertension Patients," including framework design and budget planning. Possess mature capability in government project management.
             </p>
           </div>
           <div class="project-gallery-side">
@@ -402,15 +412,15 @@
               </div>
               <div class="project-gallery-item">
                 <a href="assets/images/project-plan-2.png" target="_blank"><img src="assets/images/project-plan-2.png" alt="NSTC Project Proposal Cover"></a>
-                <div class="project-gallery-caption">Fig 1-2: NSTC Project Proposal Cover Page</div>
+                <div class="project-gallery-caption">Fig 1-2: NSTC Project Proposal Cover</div>
               </div>
               <div class="project-gallery-item">
-                <a href="assets/images/project-plan-3.png" target="_blank"><img src="assets/images/project-plan-3.png" alt="Research Architecture and Flowchart"></a>
-                <div class="project-gallery-caption">Fig 1-3: Research Architecture and Flowchart</div>
+                <a href="assets/images/project-plan-3.png" target="_blank"><img src="assets/images/project-plan-3.png" alt="Research Methodology Flowchart"></a>
+                <div class="project-gallery-caption">Fig 1-3: Research Methodology Flowchart</div>
               </div>
               <div class="project-gallery-item">
-                <a href="assets/images/project-plan-4.png" target="_blank"><img src="assets/images/project-plan-4.png" alt="Budget Estimation Table"></a>
-                <div class="project-gallery-caption">Fig 1-4: Budget Estimation Table</div>
+                <a href="assets/images/project-plan-4.png" target="_blank"><img src="assets/images/project-plan-4.png" alt="Budget Estimation Sheet"></a>
+                <div class="project-gallery-caption">Fig 1-4: Budget Estimation Sheet</div>
               </div>
             </div>
           </div>
@@ -419,24 +429,24 @@
         <!-- Project 2 (Healthcare SDM) -->
         <div class="project-list-item stagger-2">
           <div class="project-info-side">
-            <h4 class="project-item-title">2. Shared Decision Making (SDM) Support System Development</h4>
+            <h4 class="project-item-title">2. Shared Decision Making (SDM) Support System</h4>
             <p class="project-item-text">
-              Led the development of a patient Shared Decision-Making system under a Web MVC architecture using C#, .NET, and MSSQL. Integrated Google OR-Tools to compute multi-criteria decision-making outputs, digitizing clinical pathways.
+              Led the full-stack development of a web-based SDM support platform using Web MVC, C#, .NET, and MSSQL. Integrated Google OR-Tools to compute multi-criteria utility functions and digitize clinical decision-making.
             </p>
           </div>
           <div class="project-gallery-side">
             <div class="project-gallery-row">
               <div class="project-gallery-item">
-                <a href="assets/images/project-sdm-3.png" target="_blank"><img src="assets/images/project-sdm-3.png" alt="Research Journal Publication"></a>
-                <div class="project-gallery-caption">Fig 2-1: Research Journal Publication</div>
+                <a href="assets/images/project-sdm-3.png" target="_blank"><img src="assets/images/project-sdm-3.png" alt="Research Findings Journal Publication"></a>
+                <div class="project-gallery-caption">Fig 2-1: Research Findings Journal Publication</div>
               </div>
               <div class="project-gallery-item">
-                <a href="assets/images/project-sdm-2.png" target="_blank"><img src="assets/images/project-sdm-2.png" alt="Healthcare Marketing Website Homepage"></a>
-                <div class="project-gallery-caption">Fig 2-2: Clinic Marketing Homepage</div>
+                <a href="assets/images/project-sdm-2.png" target="_blank"><img src="assets/images/project-sdm-2.png" alt="Clinic Portal Homepage"></a>
+                <div class="project-gallery-caption">Fig 2-2: Clinic Portal Homepage</div>
               </div>
               <div class="project-gallery-item">
-                <a href="assets/images/project-sdm-1.png" target="_blank"><img src="assets/images/project-sdm-1.png" alt="Patient and Clinical Evaluation MCDM Interface"></a>
-                <div class="project-gallery-caption">Fig 2-3: Patient &amp; Clinical Multi-Criteria Interface</div>
+                <a href="assets/images/project-sdm-1.png" target="_blank"><img src="assets/images/project-sdm-1.png" alt="Patient and Clinical Evaluation Interface"></a>
+                <div class="project-gallery-caption">Fig 2-3: Patient and Clinical Evaluation Interface</div>
               </div>
             </div>
           </div>
@@ -445,9 +455,9 @@
         <!-- Project 3 (Min Tong SOP) -->
         <div class="project-list-item stagger-3">
           <div class="project-info-side">
-            <h4 class="project-item-title">3. Min Tong Pharmaceutical Marketing &amp; Vendor Selection SOP</h4>
+            <h4 class="project-item-title">3. Min Tong Pharmaceutical Marketing Procurement SOP</h4>
             <p class="project-item-text">
-              Formulated SOPs for media procurement and vendor selection at Min Tong Pharmaceutical. Designed multi-criteria assessment indices encompassing cost, reach, and brand alignment to reduce procurement risks and optimize negotiations.
+              Developed a structured SOP for media procurement and vendor selection for Min Tong Pharmaceutical. Designed indexes covering cost, reach, and brand alignment to mitigate procurement risks and streamline negotiations.
             </p>
           </div>
           <div class="project-gallery-side">
@@ -507,6 +517,12 @@
         </div>
       </div>
 
+      <!-- Next Page Button -->
+      <div class="next-page-btn-container" style="text-align: center; margin-top: 50px;">
+        <a href="publications-en.html" class="btn btn-primary" style="font-size: 1.1rem; padding: 14px 36px; background: linear-gradient(135deg, var(--gold), var(--gold-dark)); box-shadow: 0 4px 20px rgba(196, 139, 88, 0.3); color: var(--white); display: inline-flex; align-items: center; gap: 8px;">
+          Next Page: Research Results (Publications) ▶️
+        </a>
+      </div>
     </div>
   </section>
 

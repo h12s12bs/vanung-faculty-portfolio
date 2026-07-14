@@ -192,7 +192,7 @@
   </nav>
 
   <!-- ==================== HERO SECTION ==================== -->
-  <section class="hero" id="hero" style="min-height: 90vh; padding: 120px 0 60px;">
+  <section class="hero slide-section" id="hero" style="min-height: 90vh; padding: 120px 0 60px;">
     <div class="hero-bg">
       <img src="assets/images/hero-bg-earth.jpg" alt="背景">
     </div>
@@ -225,29 +225,24 @@
         <span id="typing-text" style="color: var(--teal); font-weight: 700;"></span>
       </div>
 
-      <div class="hero-buttons" style="display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; width: 100%;">
-        <a href="publications.html" class="btn btn-primary" style="background: linear-gradient(135deg, var(--gold), var(--gold-dark)); color: var(--white); box-shadow: 0 4px 20px rgba(196, 139, 88, 0.3); padding: 10px 20px; font-size: 0.95rem;">
-          📄 瀏覽研究成果
+      <div class="hero-buttons" style="display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; width: 100%;">
+        <a href="#about" class="btn btn-primary" style="background: linear-gradient(135deg, var(--gold), var(--gold-dark)); color: var(--white); box-shadow: 0 4px 20px rgba(196, 139, 88, 0.3); padding: 12px 24px; font-size: 1rem;">
+          👤 個人專長介紹
         </a>
-        <a href="future-research.html" class="btn btn-outline" style="padding: 10px 20px; font-size: 0.95rem;">
-          💡 未來研究規劃
+        <a href="cooperation.html" class="btn btn-outline" style="padding: 12px 24px; font-size: 1rem; border-color: rgba(255,255,255,0.3); color: var(--white);">
+          🤝 產學合作
         </a>
-        <a href="courses.html" class="btn btn-outline" style="padding: 10px 20px; font-size: 0.95rem;">
-          🎓 可授課程規劃
-        </a>
-        <a href="cooperation.html" class="btn btn-outline" style="padding: 10px 20px; font-size: 0.95rem;">
-          🤝 產學與實習
-        </a>
-        <a href="recruitment.html" class="btn btn-outline" style="padding: 10px 20px; font-size: 0.95rem;">
-          🎯 招生計畫書
+        <a href="recruitment.html" class="btn btn-outline" style="padding: 12px 24px; font-size: 1rem; border-color: rgba(255,255,255,0.3); color: var(--white);">
+          🎯 招生能力
         </a>
       </div>
     </div>
   </section>
 
   <!-- ==================== ABOUT / EXPERTISE ==================== -->
-  <section class="section" id="about">
-    <div class="container">
+  <section class="section" id="about" style="padding: 0;">
+    <!-- Slide 2: Bio -->
+    <div class="container slide-section" id="about-bio">
       <div class="section-header animate-on-scroll">
         <div class="section-label">PORTFOLIO</div>
         <h2 class="section-title">個人<span class="highlight">基本資料與專長</span></h2>
@@ -294,11 +289,20 @@
               <div class="edu-desc">奠定資訊系統開發、資料庫設計與演算法實作之核心技術能力。</div>
             </div>
           </div>
+          <!-- Next Slide Button -->
+          <div style="text-align: right; margin-top: 30px;">
+            <a href="#core-expertise" class="btn btn-teal" style="font-size: 1rem; padding: 12px 28px; box-shadow: 0 4px 15px rgba(20,110,120,0.25);">
+              ▶️ 下一步：核心專業領域
+            </a>
+          </div>
         </div>
       </div>
+    </div>
 
+    <!-- Slide 3: Core Expertise -->
+    <div class="container slide-section" id="about-expertise">
       <!-- Part 2: Core Expertise Section -->
-      <div class="profile-section-title animate-on-scroll">
+      <div id="core-expertise" class="profile-section-title animate-on-scroll" style="scroll-margin-top: 100px;">
         <span>📐 核心專業專長領域</span>
       </div>
       
@@ -325,7 +329,10 @@
           </p>
         </div>
       </div>
+    </div>
 
+    <!-- Slide 4: Personal Experience -->
+    <div class="container slide-section" id="about-experience">
       <!-- Part 3: Personal Experience Section (Separated) -->
       <div class="profile-section-title animate-on-scroll">
         <span>🏢 個人經歷</span>
@@ -357,7 +364,10 @@
           </p>
         </div>
       </div>
+    </div>
 
+    <!-- Slide 5: Project Execution -->
+    <div class="container slide-section" id="about-projects">
       <!-- Part 4: Project Execution and Screenshots (Grid layout, non-cropped large images) -->
       <div class="profile-section-title animate-on-scroll">
         <span>📁 專案執行成果</span>
@@ -433,6 +443,66 @@
               <div class="project-gallery-item">
                 <a href="assets/images/project-mintong-5.png" target="_blank"><img src="assets/images/project-mintong-5.png" alt="專案報告首頁"></a>
                 <div class="project-gallery-caption">圖 3-1：專案報告首頁</div>
+              </div>
+              <div class="project-gallery-item">
+                <a href="assets/images/project-mintong-1.png" target="_blank"><img src="assets/images/project-mintong-1.png" alt="採購SOP訂定解決方案"></a>
+                <div class="project-gallery-caption">圖 3-2：採購SOP訂定解決方案</div>
+              </div>
+              <div class="project-gallery-item">
+                <a href="assets/images/project-mintong-2.png" target="_blank"><img src="assets/images/project-mintong-2.png" alt="媒體採購比較分析"></a>
+                <div class="project-gallery-caption">圖 3-3：媒體採購比較分析</div>
+              </div>
+              <div class="project-gallery-item">
+                <a href="assets/images/project-mintong-3.png" target="_blank"><img src="assets/images/project-mintong-3.png" alt="行銷決策建議"></a>
+                <div class="project-gallery-caption">圖 3-4：行銷決策建議</div>
+              </div>
+              <div class="project-gallery-item">
+                <a href="assets/images/project-mintong-4.png" target="_blank"><img src="assets/images/project-mintong-4.png" alt="SOP實施預期效益"></a>
+                <div class="project-gallery-caption">圖 3-5：SOP實施預期效益</div>
+              </div>
+              <div class="project-gallery-item">
+                <a href="assets/images/project-mintong-6.png" target="_blank"><img src="assets/images/project-mintong-6.png" alt="現有制度風險分析圖"></a>
+                <div class="project-gallery-caption">圖 3-6：現有制度風險分析圖</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 4 (IR Center) -->
+        <div class="project-list-item stagger-4">
+          <div class="project-info-side">
+            <h4 class="project-item-title">4. 長庚大學校務及財務公開專區</h4>
+            <p class="project-item-text">
+              開發校務與財務公開系統與「重要決議暨校長裁示追蹤系統」，運用 .NET 與 MSSQL 優化資料庫結構，提供決策進度追蹤，以資訊化手段支持行政決策與校務管理。
+            </p>
+          </div>
+          <div class="project-gallery-side">
+            <div class="project-gallery-row">
+              <div class="project-gallery-item">
+                <a href="assets/images/project-ir-3.png" target="_blank"><img src="assets/images/project-ir-3.png" alt="校務及財務公開專區首頁"></a>
+                <div class="project-gallery-caption">圖 4-1：校務及財務公開專區首頁</div>
+              </div>
+              <div class="project-gallery-item">
+                <a href="assets/images/project-ir-2.png" target="_blank"><img src="assets/images/project-ir-2.png" alt="畢業生流向與校友表現視覺化分析"></a>
+                <div class="project-gallery-caption">圖 4-2：畢業生流向與校友表現視覺化分析</div>
+              </div>
+              <div class="project-gallery-item">
+                <a href="assets/images/project-ir-1.png" target="_blank"><img src="assets/images/project-ir-1.png" alt="收入結構分析"></a>
+                <div class="project-gallery-caption">圖 4-3：收入結構分析</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Next Page Button -->
+      <div class="next-page-btn-container" style="text-align: center; margin-top: 50px;">
+        <a href="publications.html" class="btn btn-primary" style="font-size: 1.1rem; padding: 14px 36px; background: linear-gradient(135deg, var(--gold), var(--gold-dark)); box-shadow: 0 4px 20px rgba(196, 139, 88, 0.3); color: var(--white); display: inline-flex; align-items: center; gap: 8px;">
+          下一頁：研究成果 (Publications) ▶️
+        </a>
+      </div>
+    </div>
+  </section>3-1：專案報告首頁</div>
               </div>
               <div class="project-gallery-item">
                 <a href="assets/images/project-mintong-1.png" target="_blank"><img src="assets/images/project-mintong-1.png" alt="採購SOP訂定解決方案"></a>
