@@ -48,9 +48,8 @@
   <div style="height: 100px; background: var(--navy);"></div>
 
   <!-- ==================== RECRUITMENT PLAN ==================== -->
-  <section class="section" id="recruitment-page" style="padding: 0;">
-    <!-- Slide 1: Recruitment Highlights -->
-    <div class="container slide-section">
+  <section class="section" id="recruitment-page">
+    <div class="container">
       <div class="section-header animate-on-scroll">
         <div class="section-label">RECRUITMENT PLAN</div>
         <h2 class="section-title">Department <span class="highlight">Admissions Plan</span></h2>
@@ -76,11 +75,16 @@
         <img src="assets/images/recruitment.jpg" alt="VNU Admissions Highlights">
       </div>
 
-    </div>
+      <!-- Tabs -->
+      <div class="recruitment-tabs animate-on-scroll">
+        <button class="tab-btn active" data-tab="tab-traditional">🏫 Traditional Admissions</button>
+        <button class="tab-btn" data-tab="tab-innovative">🤖 AI Agent Strategy</button>
+        <button class="tab-btn" data-tab="tab-timeline">📅 Timeline &amp; Schedule</button>
+        <button class="tab-btn" data-tab="tab-admin">🌐 International Cooperation</button>
+      </div>
 
-    <!-- Slide 2: Traditional Recruitment -->
-    <div class="container slide-section" id="tab-traditional">
-      <h3 class="about-title animate-on-scroll" style="margin-bottom: 24px; text-align: center;">🏫 Traditional Feature Admissions Plans</h3>
+      <!-- Tab 1: Traditional -->
+      <div class="tab-content active" id="tab-traditional">
         <div class="expertise-cards">
           <div class="expertise-card animate-on-scroll stagger-1">
             <div class="expertise-card-icon">🏫</div>
@@ -120,11 +124,8 @@
         </div>
       </div>
 
-    </div>
-
-    <!-- Slide 3: AI Agent Innovation -->
-    <div class="container slide-section" id="tab-innovative">
-      <h3 class="about-title animate-on-scroll" style="margin-bottom: 24px; text-align: center;">🤖 AI Agent Admissions Innovation Strategies</h3>
+      <!-- Tab 2: Innovative -->
+      <div class="tab-content" id="tab-innovative">
         <div class="expertise-cards">
           <div class="expertise-card animate-on-scroll stagger-1">
             <div class="expertise-card-icon">🤖</div>
@@ -164,11 +165,8 @@
         </div>
       </div>
 
-    </div>
-
-    <!-- Slide 4: Timeline & Schedule -->
-    <div class="container slide-section" id="tab-timeline">
-      <h3 class="about-title animate-on-scroll" style="margin-bottom: 24px; text-align: center;">📅 Admissions Implementation Timeline</h3>
+      <!-- Tab 3: Timeline -->
+      <div class="tab-content" id="tab-timeline">
         <div class="timeline">
           <div class="timeline-item animate-on-scroll stagger-1">
             <div class="timeline-item-header">
@@ -226,10 +224,8 @@
         </div>
       </div>
 
-    </div>
-
-    <!-- Slide 5: International Cooperation -->
-    <div class="container slide-section" id="tab-admin">
+      <!-- Tab 4: Administration & International Cooperation -->
+      <div class="tab-content" id="tab-admin">
         <div class="admin-grid" style="display: grid; grid-template-columns: 1.2fr 1fr; gap: 30px; margin-top: 20px; align-items: start;">
           <!-- Text details -->
           <div class="expertise-card animate-on-scroll" style="padding: 30px; background: rgba(10, 25, 50, 0.4); border: 1px solid var(--border-color); border-radius: 12px; height: 100%;">
@@ -270,7 +266,6 @@
           </div>
         </div>
       </div>
-
     </div>
   </section>
 
