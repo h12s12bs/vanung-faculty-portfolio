@@ -183,14 +183,15 @@ ul, ol {
 .nav-logo-icon {
   width: 42px;
   height: 42px;
-  background: url('assets/images/logo-vnu.jpg') no-repeat center center;
-  background-size: contain;
-  border-radius: 50%;
+  background: linear-gradient(135deg, var(--gold), var(--teal));
+  border-radius: 12px;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 0;
-  color: transparent;
+  font-size: 20px;
+  font-weight: 900;
+  color: var(--white);
+  font-family: var(--font-en);
 }
 
 .nav-logo-text {
