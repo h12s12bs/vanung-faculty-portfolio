@@ -1611,13 +1611,8 @@ body.dark-mode .skill-bar-track {
   .footer-top {
     grid-template-columns: 1fr 1fr;
   }
-}
 
-@media (max-width: 768px) {
-  :root {
-    --section-padding: 70px 0;
-  }
-
+  /* Hamburger navigation triggered at 1024px to prevent inline text wrapping */
   .nav-links {
     display: none;
     position: fixed;
@@ -1631,6 +1626,7 @@ body.dark-mode .skill-bar-track {
     align-items: center;
     gap: 16px;
     backdrop-filter: blur(20px);
+    z-index: 1000;
   }
 
   .nav-links.nav-open {
@@ -1644,6 +1640,12 @@ body.dark-mode .skill-bar-track {
 
   .hamburger {
     display: flex;
+  }
+}
+
+@media (max-width: 768px) {
+  :root {
+    --section-padding: 70px 0;
   }
 
   .hero-stats {

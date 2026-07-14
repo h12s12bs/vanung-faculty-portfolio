@@ -249,31 +249,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }, 4000);
   }
 
-  // ---- Language Toggle ----
-  const langToggle = document.getElementById('lang-toggle');
-  if (langToggle) {
-    // Read language state from session/local storage
-    let currentLang = localStorage.getItem('lang') || 'zh';
-    if (currentLang === 'en') {
-      langToggle.textContent = '中';
-    } else {
-      langToggle.textContent = 'EN';
-    }
-
-    langToggle.addEventListener('click', () => {
-      if (currentLang === 'zh') {
-        currentLang = 'en';
-        langToggle.textContent = '中';
-        localStorage.setItem('lang', 'en');
-        showToast('英文版網頁正積極建置中，敬請期待！\nEnglish version is under construction, stay tuned!', '🌐');
-      } else {
-        currentLang = 'zh';
-        langToggle.textContent = 'EN';
-        localStorage.setItem('lang', 'zh');
-        showToast('已切換至中文版網頁', '🌐');
-      }
-    });
-  }
+  // ---- Language Toggle Removed ----
 
   // ---- Automatic Dark Mode based on system preference ----
   const prefersDark = window.matchMedia('(prefers-color-scheme: dark)');
@@ -283,7 +259,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // ---- Typing Effect ----
   const typingElement = document.getElementById('typing-text');
-  const phrases = [
+  const isEnglish = document.documentElement.lang === 'en';
+  const phrases = isEnglish ? [
+    'Decision Sciences & Operations Research',
+    'AI & Smart Healthcare Applications',
+    'Information Systems & Full-stack Development',
+    'Industry-Academia Linkage & Consulting',
+    'Admissions & University Administration'
+  ] : [
     '決策科學與運籌管理研究',
     'AI與智慧醫療跨域應用',
     '資訊系統與全端軟體開發',
@@ -416,5 +399,5 @@ document.addEventListener('DOMContentLoaded', () => {
     card.style.transitionDelay = `${index * 0.08}s`;
   });
 
-  console.log('✨ 邱俊維老師個人網站已載入完成');
+  console.log(isEnglish ? '✨ Dr. Chun-Wei Chiu Faculty Portfolio Loaded Successfully' : '✨ 邱俊維老師個人網站已載入完成');
 });
