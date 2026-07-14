@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Teachable courses and syllabi of Dr. Chun-Wei Chiu. Incorporating Python programming, Big Data, and AI applications into Business Administration.">
+  <meta name="keywords" content="Chun-Wei Chiu, Teachable Courses, Syllabi, Management, Smart Business, Business Intelligence, Operations Management, Decision Analysis">
+  <meta name="author" content="Chun-Wei Chiu">
+  <meta property="og:title" content="Courses | Chun-Wei Chiu — Faculty Application at Vanung University">
+  <meta property="og:description" content="Course syllabus and educational framework integrating theory, IT practical skills, and AI tools.">
+  <meta property="og:type" content="website">
+  <title>Courses | Chun-Wei Chiu — Faculty Application at Vanung University</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎓</text></svg>">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* Unique premium styling for courses */
+    .pillar-section {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 25px;
+      margin-bottom: 50px;
+    }
+    
+    .pillar-card {
+      background: linear-gradient(135deg, var(--navy-light), var(--navy));
+      border: 1px solid rgba(196, 139, 88, 0.25);
+      border-radius: 12px;
+      padding: 30px 24px;
+      text-align: center;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+      transition: transform var(--transition-normal), border-color var(--transition-normal);
+    }
+    
+    .pillar-card:hover {
+      transform: translateY(-8px);
+      border-color: var(--gold);
+    }
+    
+    .pillar-icon {
+      font-size: 3rem;
+      margin-bottom: 15px;
+    }
+    
+    .pillar-title {
+      font-size: 1.25rem;
+      color: var(--gold-light);
+      margin-bottom: 12px;
+      font-weight: 700;
+    }
+    
+    .pillar-desc {
+      font-size: 0.95rem;
+      color: var(--gray-200);
+      line-height: 1.6;
+    }
+    
+    /* Radar-like Skills Panel */
+    .chart-container {
+      background: var(--white);
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      padding: 40px;
+      margin-bottom: 60px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.03);
+    }
+    
+    .chart-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 40px;
+      align-items: center;
+    }
+    
+    @media (max-width: 768px) {
+      .chart-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+    
+    .chart-bar-group {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    
+    .chart-bar-item {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    
+    .chart-bar-label {
+      display: flex;
+      justify-content: space-between;
+      font-weight: 700;
+      color: var(--navy);
+      font-size: 0.95rem;
+    }
+    
+    .chart-bar-bg {
+      background: var(--gray-100);
+      height: 10px;
+      border-radius: 5px;
+      overflow: hidden;
+    }
+    
+    .chart-bar-fill {
+      height: 100%;
+      background: linear-gradient(90deg, var(--gold), var(--teal));
+      border-radius: 5px;
+      transition: width 1.5s ease-in-out;
+    }
+
+    /* Bento Card Course Layout */
+    .courses-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+      gap: 30px;
+    }
+    
+    .course-card {
+      background: var(--white);
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.02);
+      display: flex;
+      flex-direction: column;
+      transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+    }
+    
+    .course-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 35px rgba(0,0,0,0.06);
+    }
+    
+    .course-card-header {
+      background: linear-gradient(135deg, var(--navy), var(--navy-light));
+      padding: 24px;
+      color: var(--white);
+      position: relative;
+    }
+    
+    .course-card-number {
+      position: absolute;
+      top: 15px;
+      right: 20px;
+      font-size: 2.2rem;
+      font-weight: 800;
+      color: rgba(255, 255, 255, 0.08);
+      font-family: var(--font-en);
+    }
+    
+    .course-card-title {
+      font-size: 1.25rem;
+      color: var(--gold-light);
+      font-weight: 700;
+      margin-bottom: 5px;
+    }
+    
+    .course-card-subtitle {
+      font-size: 0.85rem;
+      color: var(--teal);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      font-weight: 600;
+    }
+    
+    .course-card-body {
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+      gap: 20px;
+    }
+    
+    .course-desc {
+      font-size: 0.92rem;
+      color: var(--text-secondary);
+      line-height: 1.6;
+    }
+    
+    .course-outline-box {
+      background: var(--gray-50);
+      border-radius: 8px;
+      padding: 16px;
+      border: 1px dashed var(--border-color);
+    }
+    
+    .course-outline-title {
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 8px;
+    }
+    
+    .course-outline-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    
+    .course-outline-list li {
+      font-size: 0.88rem;
+      color: var(--text-main);
+      display: flex;
+      align-items: flex-start;
+      gap: 6px;
+    }
+    
+    .course-outline-list li::before {
+      content: '⚡';
+      font-size: 0.75rem;
+      margin-top: 2px;
+    }
+    
+    .course-skills-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: auto;
+    }
+    
+    .skill-badge {
+      font-size: 0.75rem;
+      padding: 4px 10px;
+      border-radius: 20px;
+      font-weight: 600;
+      background: var(--gray-100);
+      color: var(--text-main);
+    }
+    
+    .skill-badge.highlight {
+      background: rgba(196, 139, 88, 0.1);
+      color: var(--gold-dark);
+      border: 1px solid rgba(196, 139, 88, 0.2);
+    }
+    
+    .skill-badge.tech {
+      background: rgba(45, 156, 219, 0.1);
+      color: #2D9CDB;
+      border: 1px solid rgba(45, 156, 219, 0.2);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ==================== NAVIGATION ==================== -->
+  <nav class="navbar nav-scrolled" id="navbar">
+    <div class="nav-inner">
+      <a href="index-en.html" class="nav-logo">
+        <div class="nav-logo-icon">邱</div>
+        <div class="nav-logo-text">邱俊維 <span>Chun-Wei Chiu</span></div>
+      </a>
+
+      <div class="nav-links" id="nav-links">
+        <a href="index-en.html">Specialties</a>
+        <a href="publications-en.html">Publications</a>
+        <a href="future-research-en.html">Future Research</a>
+        <a href="courses-en.html" class="active">Courses</a>
+        <a href="cooperation-en.html">Cooperation</a>
+        <a href="recruitment-en.html">Admissions</a>
+        <a href="contact-en.html">Contact</a>
+      </div>
+
+      <div class="nav-actions">
+        <button class="lang-toggle" onclick="location.href='courses.html'" aria-label="Chinese Version">ZH</button>
+        <button class="hamburger" id="hamburger" aria-label="Menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ==================== HEADER BLOCK ==================== -->
+  <div style="height: 100px; background: var(--navy);"></div>
+
+  <!-- ==================== COURSES SECTION ==================== -->
+  <section class="section" id="courses-page">
+    <div class="container">
+      <div class="section-header animate-on-scroll">
+        <div class="section-label">TEACHING PORTFOLIO</div>
+        <h2 class="section-title">Teachable <span class="highlight">Courses &amp; Syllabi</span></h2>
+        <p class="section-desc">
+          Integrating academic theories with advanced technology, incorporating Big Data analytics, Python implementations, and Business Intelligence (BI) tools to cultivate next-gen business leaders.
+        </p>
+      </div>
+
+      <!-- Pillars Overview -->
+      <div class="pillar-section">
+        <!-- Pillar 1 -->
+        <div class="pillar-card animate-on-scroll stagger-1">
+          <div class="pillar-icon">🏫</div>
+          <h3 class="pillar-title">Core Business &amp; Operations</h3>
+          <p class="pillar-desc">
+            Focusing on Introduction to Management and Operations Management. Integrates traditional management roles with ERP, smart manufacturing, and digital transformation.
+          </p>
+        </div>
+        
+        <!-- Pillar 2 -->
+        <div class="pillar-card animate-on-scroll stagger-2">
+          <div class="pillar-icon">🤖</div>
+          <h3 class="pillar-title">Smart Commerce &amp; Analytics</h3>
+          <p class="pillar-desc">
+            Focusing on Smart Business Integration and Business Data Analytics. Utilizes Python, Google Colab, and AWS Cloud for AI applications and KPI decision support.
+          </p>
+        </div>
+        
+        <!-- Pillar 3 -->
+        <div class="pillar-card animate-on-scroll stagger-3">
+          <div class="pillar-icon">📈</div>
+          <h3 class="pillar-title">Quantitative Decisions &amp; Research</h3>
+          <p class="pillar-desc">
+            Focusing on Management Decision Analysis and Research Methods. Emphasizes mathematical programming, optimization, dynamic pricing, and thesis writing.
+          </p>
+        </div>
+      </div>
+
+      <!-- Core Capabilities Chart -->
+      <div class="chart-container animate-on-scroll">
+        <div class="chart-grid">
+          <div>
+            <h3 style="color: var(--navy); font-weight: 800; font-size: 1.6rem; margin-bottom: 15px;">Pedagogical Strengths &amp; Competence Mapping</h3>
+            <p style="color: var(--text-secondary); line-height: 1.7; font-size: 0.95rem; margin-bottom: 0;">
+              This teaching framework deeply embeds programming skills and emerging technologies into traditional management courses. Following the Project-Based Learning (PBL) philosophy, it guides students to make decisions driven by data, translating abstract commercial pain points into concrete mathematical optimization solutions.
+            </p>
+          </div>
+          <div class="chart-bar-group">
+            <!-- Bar 1 -->
+            <div class="chart-bar-item">
+              <div class="chart-bar-label">
+                <span>Advanced Technology Applications (AI Agent / BI / Cloud Architecture)</span>
+                <span>95%</span>
+              </div>
+              <div class="chart-bar-bg">
+                <div class="chart-bar-fill" style="width: 95%;"></div>
+              </div>
+            </div>
+            <!-- Bar 2 -->
+            <div class="chart-bar-item">
+              <div class="chart-bar-label">
+                <span>Practical Capacity Cultivation (Python / Data Visualization / Optimization Solving)</span>
+                <span>90%</span>
+              </div>
+              <div class="chart-bar-bg">
+                <div class="chart-bar-fill" style="width: 90%;"></div>
+              </div>
+            </div>
+            <!-- Bar 3 -->
+            <div class="chart-bar-item">
+              <div class="chart-bar-label">
+                <span>Cross-domain Collaboration &amp; PBL Project Implementation</span>
+                <span>95%</span>
+              </div>
+              <div class="chart-bar-bg">
+                <div class="chart-bar-fill" style="width: 95%;"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Courses Cards Grid -->
+      <div class="courses-grid">
+        <!-- Card 1 -->
+        <div class="course-card animate-on-scroll stagger-1">
+          <div class="course-card-header">
+            <span class="course-card-number">01</span>
+            <h3 class="course-card-title">Introduction to Management</h3>
+            <span class="course-card-subtitle">Foundations &amp; Digital Strategy</span>
+          </div>
+          <div class="course-card-body">
+            <p class="course-desc">
+              Introduces strategic applications of management in the digital economy, focusing on emerging technology integrations to help students understand organizational digital transformation.
+            </p>
+            <div class="course-outline-box">
+              <h4 class="course-outline-title">Core Syllabus</h4>
+              <ul class="course-outline-list">
+                <li>Management Functions &amp; Digital Platform Markets</li>
+                <li>Production Management (ERP &amp; Smart Manufacturing)</li>
+                <li>Marketing Management (AI Marketing, 4P &amp; Dynamic Pricing)</li>
+                <li>Human Resource Management (AI-assisted Recruitment &amp; Selection)</li>
+                <li>Information &amp; Strategy (LLM Applications &amp; Cybersecurity)</li>
+              </ul>
+            </div>
+            <div class="course-skills-container">
+              <span class="skill-badge highlight">PBL Approach</span>
+              <span class="skill-badge tech">Emerging Tech</span>
+              <span class="skill-badge">Digital Transformation</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="course-card animate-on-scroll stagger-2">
+          <div class="course-card-header">
+            <span class="course-card-number">02</span>
+            <h3 class="course-card-title">Smart Business Integration</h3>
+            <span class="course-card-subtitle">Practical Applications &amp; AI</span>
+          </div>
+          <div class="course-card-body">
+            <p class="course-desc">
+              Introduces core artificial intelligence theories and innovation trends in business, analyzing AI-as-a-Service business models and technology-driven marketing.
+            </p>
+            <div class="course-outline-box">
+              <h4 class="course-outline-title">Core Syllabus</h4>
+              <ul class="course-outline-list">
+                <li>AI &amp; Big Data Business Models</li>
+                <li>Machine Learning &amp; Deep Learning Logics</li>
+                <li>Natural Language Processing (NLP) in Commerce</li>
+                <li>Recommender Systems (Collaborative Filtering &amp; E-commerce)</li>
+                <li>AI Security, Privacy, and Ethical Regulations</li>
+              </ul>
+            </div>
+            <div class="course-skills-container">
+              <span class="skill-badge highlight">AI Thinking</span>
+              <span class="skill-badge tech">Recommender Systems</span>
+              <span class="skill-badge">FinTech</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="course-card animate-on-scroll stagger-3">
+          <div class="course-card-header">
+            <span class="course-card-number">03</span>
+            <h3 class="course-card-title">Business Data Analytics</h3>
+            <span class="course-card-subtitle">Big Data &amp; Business Intelligence</span>
+          </div>
+          <div class="course-card-body">
+            <p class="course-desc">
+              Cultivates students' ability to solve management challenges using Business Intelligence (BI) and Big Data technologies. Covers AWS cloud architectures and KPI monitoring.
+            </p>
+            <div class="course-outline-box">
+              <h4 class="course-outline-title">Core Syllabus</h4>
+              <ul class="course-outline-list">
+                <li>BI Project Life Cycle &amp; Dimensional Modeling</li>
+                <li>Cloud Commerce Architecture (AWS)</li>
+                <li>Cross-departmental KPI Analytics &amp; Dashboards</li>
+                <li>Data Mining Algorithms (Clustering, Association Rules)</li>
+                <li>Data-driven Decisions &amp; Business Value Evaluation</li>
+              </ul>
+            </div>
+            <div class="course-skills-container">
+              <span class="skill-badge highlight">Business Intelligence</span>
+              <span class="skill-badge tech">AWS Cloud Practice</span>
+              <span class="skill-badge">Data Mining</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="course-card animate-on-scroll stagger-4">
+          <div class="course-card-header">
+            <span class="course-card-number">04</span>
+            <h3 class="course-card-title">Operations Management</h3>
+            <span class="course-card-subtitle">Production &amp; Service Systems</span>
+          </div>
+          <div class="course-card-body">
+            <p class="course-desc">
+              Explores how firms transform inputs into valuable goods or services via process design, planning, and control, from manufacturing to lean service operations.
+            </p>
+            <div class="course-outline-box">
+              <h4 class="course-outline-title">Core Syllabus</h4>
+              <ul class="course-outline-list">
+                <li>Production/Service System &amp; Process Design</li>
+                <li>Project Management &amp; Scheduling Optimization</li>
+                <li>Total Quality Control (TQC) Practices</li>
+                <li>Supply Chain &amp; Logistics Management</li>
+                <li>Lean Production &amp; Agile Operations</li>
+              </ul>
+            </div>
+            <div class="course-skills-container">
+              <span class="skill-badge highlight">Supply Chain</span>
+              <span class="skill-badge tech">Project Scheduling</span>
+              <span class="skill-badge">Quality Control</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 5 -->
+        <div class="course-card animate-on-scroll stagger-5">
+          <div class="course-card-header">
+            <span class="course-card-number">05</span>
+            <h3 class="course-card-title">Management Decision Analysis</h3>
+            <span class="course-card-subtitle">Operations Research &amp; Python</span>
+          </div>
+          <div class="course-card-body">
+            <p class="course-desc">
+              Introduces core optimization models of Operations Research, focusing on making optimal decisions under resource constraints and uncertainty, with Python implementations.
+            </p>
+            <div class="course-outline-box">
+              <h4 class="course-outline-title">Core Syllabus</h4>
+              <ul class="course-outline-list">
+                <li>Operations Research &amp; Decision Solving Flow</li>
+                <li>Linear Programming Formulation &amp; Simplex Method</li>
+                <li>Uncertainty Analysis &amp; Duality Theory</li>
+                <li>Queueing Theory (Customer Service &amp; Line Planning)</li>
+                <li>Dynamic Programming &amp; Dynamic Pricing Optimization</li>
+              </ul>
+            </div>
+            <div class="course-skills-container">
+              <span class="skill-badge highlight">Optimization</span>
+              <span class="skill-badge tech">Python Solving</span>
+              <span class="skill-badge">Google Colab</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 6 -->
+        <div class="course-card animate-on-scroll stagger-6">
+          <div class="course-card-header">
+            <span class="course-card-number">06</span>
+            <h3 class="course-card-title">Research Methods &amp; Writing</h3>
+            <span class="course-card-subtitle">Methodology &amp; Thesis Guide</span>
+          </div>
+          <div class="course-card-body">
+            <p class="course-desc">
+              Teaches academic research methodologies in business, thesis writing, and literature reviews to build systematic abilities in logical reasoning and publishing.
+            </p>
+            <div class="course-outline-box">
+              <h4 class="course-outline-title">Core Syllabus</h4>
+              <ul class="course-outline-list">
+                <li>Academic Databases Retrieval &amp; Literature Review</li>
+                <li>Research Topic Selection &amp; Framework Design</li>
+                <li>Quantitative Research (Validity, Reliability &amp; Analysis)</li>
+                <li>Qualitative Research Methods &amp; Interview Coding</li>
+                <li>Academic Writing Standards (APA Style) &amp; Thesis Drafting</li>
+              </ul>
+            </div>
+            <div class="course-skills-container">
+              <span class="skill-badge highlight">Thesis Writing</span>
+              <span class="skill-badge tech">Statistical Analysis</span>
+              <span class="skill-badge">Survey Design</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <div class="nav-logo" style="margin-bottom: 8px;">
+            <div class="nav-logo-icon">邱</div>
+            <div class="nav-logo-text">邱俊維 <span>Chun-Wei Chiu</span></div>
+          </div>
+          <p>
+            PhD in Management, Chang Gung University. Specializing in decision sciences, operations research, and cross-domain AI applications. Dedicated to academic-industry collaboration and innovative vocational education.
+          </p>
+        </div>
+
+        <div class="footer-links">
+          <h4>Quick Links</h4>
+          <a href="index-en.html">Specialties</a>
+          <a href="publications-en.html">Publications</a>
+          <a href="future-research-en.html">Future Research</a>
+          <a href="courses-en.html">Courses</a>
+          <a href="cooperation-en.html">Cooperation</a>
+          <a href="recruitment-en.html">Admissions</a>
+          <a href="contact-en.html">Contact</a>
+        </div>
+
+        <div class="footer-links">
+          <h4>Related Links</h4>
+          <a href="https://www.vnu.edu.tw/" target="_blank" rel="noopener">Vanung University Official</a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>© 2025 Chun-Wei Chiu — Vanung University Department of BA Faculty Application</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to Top Button -->
+  <button class="back-to-top" id="back-to-top" aria-label="Back to Top">↑</button>
+
+  <!-- JavaScript -->
+  <script src="script.js"></script>
+</body>
+</html>

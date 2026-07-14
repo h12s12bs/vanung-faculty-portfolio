@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="邱俊維博士的可開授課程規劃。涵蓋經營管理、智慧商務整合、商業資料分析與應用、作業管理、管理決策分析及研究方法，導入 AI 工具與實務案例教學。">
+  <meta name="keywords" content="邱俊維, 可開授課程, 課程大綱, 經營管理, 智慧商務, 商業資料分析, 作業管理, 管理決策分析, 萬能科大">
+  <meta name="author" content="邱俊維">
+  <meta property="og:title" content="可授課程 | 邱俊維 — 萬能科技大學企業管理系專案助理教授應徵">
+  <meta property="og:description" content="結合理論、資訊實務與 AI 工具的教研課程大綱">
+  <meta property="og:type" content="website">
+  <title>可授課程 | 邱俊維 — 萬能科技大學企業管理系專案助理教授應徵</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎓</text></svg>">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* Unique premium styling for courses */
+    .pillar-section {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 25px;
+      margin-bottom: 50px;
+    }
+    
+    .pillar-card {
+      background: linear-gradient(135deg, var(--navy-light), var(--navy));
+      border: 1px solid rgba(196, 139, 88, 0.25);
+      border-radius: 12px;
+      padding: 30px 24px;
+      text-align: center;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+      transition: transform var(--transition-normal), border-color var(--transition-normal);
+    }
+    
+    .pillar-card:hover {
+      transform: translateY(-8px);
+      border-color: var(--gold);
+    }
+    
+    .pillar-icon {
+      font-size: 3rem;
+      margin-bottom: 15px;
+    }
+    
+    .pillar-title {
+      font-size: 1.25rem;
+      color: var(--gold-light);
+      margin-bottom: 12px;
+      font-weight: 700;
+    }
+    
+    .pillar-desc {
+      font-size: 0.95rem;
+      color: var(--gray-200);
+      line-height: 1.6;
+    }
+    
+    /* Radar-like Skills Panel */
+    .chart-container {
+      background: var(--white);
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      padding: 40px;
+      margin-bottom: 60px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.03);
+    }
+    
+    .chart-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 40px;
+      align-items: center;
+    }
+    
+    @media (max-width: 768px) {
+      .chart-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+    
+    .chart-bar-group {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    
+    .chart-bar-item {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    
+    .chart-bar-label {
+      display: flex;
+      justify-content: space-between;
+      font-weight: 700;
+      color: var(--navy);
+      font-size: 0.95rem;
+    }
+    
+    .chart-bar-bg {
+      background: var(--gray-100);
+      height: 10px;
+      border-radius: 5px;
+      overflow: hidden;
+    }
+    
+    .chart-bar-fill {
+      height: 100%;
+      background: linear-gradient(90deg, var(--gold), var(--teal));
+      border-radius: 5px;
+      transition: width 1.5s ease-in-out;
+    }
+
+    /* Bento Card Course Layout */
+    .courses-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+      gap: 30px;
+    }
+    
+    .course-card {
+      background: var(--white);
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.02);
+      display: flex;
+      flex-direction: column;
+      transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+    }
+    
+    .course-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 35px rgba(0,0,0,0.06);
+    }
+    
+    .course-card-header {
+      background: linear-gradient(135deg, var(--navy), var(--navy-light));
+      padding: 24px;
+      color: var(--white);
+      position: relative;
+    }
+    
+    .course-card-number {
+      position: absolute;
+      top: 15px;
+      right: 20px;
+      font-size: 2.2rem;
+      font-weight: 800;
+      color: rgba(255, 255, 255, 0.08);
+      font-family: var(--font-en);
+    }
+    
+    .course-card-title {
+      font-size: 1.25rem;
+      color: var(--gold-light);
+      font-weight: 700;
+      margin-bottom: 5px;
+    }
+    
+    .course-card-subtitle {
+      font-size: 0.85rem;
+      color: var(--teal);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      font-weight: 600;
+    }
+    
+    .course-card-body {
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+      gap: 20px;
+    }
+    
+    .course-desc {
+      font-size: 0.92rem;
+      color: var(--text-secondary);
+      line-height: 1.6;
+    }
+    
+    .course-outline-box {
+      background: var(--gray-50);
+      border-radius: 8px;
+      padding: 16px;
+      border: 1px dashed var(--border-color);
+    }
+    
+    .course-outline-title {
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 8px;
+    }
+    
+    .course-outline-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    
+    .course-outline-list li {
+      font-size: 0.88rem;
+      color: var(--text-main);
+      display: flex;
+      align-items: flex-start;
+      gap: 6px;
+    }
+    
+    .course-outline-list li::before {
+      content: '⚡';
+      font-size: 0.75rem;
+      margin-top: 2px;
+    }
+    
+    .course-skills-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: auto;
+    }
+    
+    .skill-badge {
+      font-size: 0.75rem;
+      padding: 4px 10px;
+      border-radius: 20px;
+      font-weight: 600;
+      background: var(--gray-100);
+      color: var(--text-main);
+    }
+    
+    .skill-badge.highlight {
+      background: rgba(196, 139, 88, 0.1);
+      color: var(--gold-dark);
+      border: 1px solid rgba(196, 139, 88, 0.2);
+    }
+    
+    .skill-badge.tech {
+      background: rgba(45, 156, 219, 0.1);
+      color: #2D9CDB;
+      border: 1px solid rgba(45, 156, 219, 0.2);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ==================== NAVIGATION ==================== -->
+  <nav class="navbar nav-scrolled" id="navbar">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">
+        <div class="nav-logo-icon">邱</div>
+        <div class="nav-logo-text">邱俊維 <span>Chun-Wei Chiu</span></div>
+      </a>
+
+      <div class="nav-links" id="nav-links">
+        <a href="index.html">個人專長</a>
+        <a href="publications.html">研究成果</a>
+        <a href="future-research.html">未來研究</a>
+        <a href="courses.html" class="active">可授課程</a>
+        <a href="cooperation.html">產學與實習</a>
+        <a href="recruitment.html">招生計畫</a>
+        <a href="contact.html">聯繫與結語</a>
+      </div>
+
+      <div class="nav-actions">
+        <button class="lang-toggle" onclick="location.href='courses-en.html'" aria-label="English Version">EN</button>
+        <button class="hamburger" id="hamburger" aria-label="選單">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ==================== HEADER BLOCK ==================== -->
+  <div style="height: 100px; background: var(--navy);"></div>
+
+  <!-- ==================== COURSES SECTION ==================== -->
+  <section class="section" id="courses-page">
+    <div class="container">
+      <div class="section-header animate-on-scroll">
+        <div class="section-label">TEACHING PORTFOLIO</div>
+        <h2 class="section-title">可開授<span class="highlight">課程科目</span></h2>
+        <p class="section-desc">
+          結合理論基礎與前沿科技，導入大數據分析、Python 實作與商業智慧（BI）工具，培養兼具經營思維與資訊實作的企管領袖。
+        </p>
+      </div>
+
+      <!-- Pillars Overview -->
+      <div class="pillar-section">
+        <!-- Pillar 1 -->
+        <div class="pillar-card animate-on-scroll stagger-1">
+          <div class="pillar-icon">🏫</div>
+          <h3 class="pillar-title">核心商業與營運管理</h3>
+          <p class="pillar-desc">
+            教授經營管理概論與作業管理。將傳統管理功能結合 ERP、智慧製造與數位轉型思維，奠定紮實營運架構。
+          </p>
+        </div>
+        
+        <!-- Pillar 2 -->
+        <div class="pillar-card animate-on-scroll stagger-2">
+          <div class="pillar-icon">🤖</div>
+          <h3 class="pillar-title">智慧商務與大數據分析</h3>
+          <p class="pillar-desc">
+            教授智慧商務整合與商業資料分析。使用 Python、Google Colab 與 AWS 雲端，實踐 AI 應用與 KPI 決策分析。
+          </p>
+        </div>
+        
+        <!-- Pillar 3 -->
+        <div class="pillar-card animate-on-scroll stagger-3">
+          <div class="pillar-icon">📈</div>
+          <h3 class="pillar-title">計量決策與學術研究</h3>
+          <p class="pillar-desc">
+            教授管理決策分析與研究方法。聚焦於線性規劃、動態定價與商管論文寫作，培養邏輯建構與模型求解能力。
+          </p>
+        </div>
+      </div>
+
+      <!-- Core Capabilities Chart -->
+      <div class="chart-container animate-on-scroll">
+        <div class="chart-grid">
+          <div>
+            <h3 style="color: var(--navy); font-weight: 800; font-size: 1.6rem; margin-bottom: 15px;">課程教學特色與核心能力對接</h3>
+            <p style="color: var(--text-secondary); line-height: 1.7; font-size: 0.95rem; margin-bottom: 0;">
+              本教學規劃將「程式設計」與「前瞻科技」深度融入傳統管理學科中。著重專題導向學習（Project-Based Learning, PBL），引導學生學會以數據力驅動決策，將抽象的商務痛點化為具體的最佳化解方，完美契合萬能企管「學用合一」的核心教育宗旨。
+            </p>
+          </div>
+          <div class="chart-bar-group">
+            <!-- Bar 1 -->
+            <div class="chart-bar-item">
+              <div class="chart-bar-label">
+                <span>前瞻科技應用 (AI Agent / 商業智慧 / 雲端架構)</span>
+                <span>95%</span>
+              </div>
+              <div class="chart-bar-bg">
+                <div class="chart-bar-fill" style="width: 95%;"></div>
+              </div>
+            </div>
+            <!-- Bar 2 -->
+            <div class="chart-bar-item">
+              <div class="chart-bar-label">
+                <span>實作能力養成 (Python程式 / 資料視覺化 / 決策求解)</span>
+                <span>90%</span>
+              </div>
+              <div class="chart-bar-bg">
+                <div class="chart-bar-fill" style="width: 90%;"></div>
+              </div>
+            </div>
+            <!-- Bar 3 -->
+            <div class="chart-bar-item">
+              <div class="chart-bar-label">
+                <span>跨域協作與 PBL 專題實踐</span>
+                <span>95%</span>
+              </div>
+              <div class="chart-bar-bg">
+                <div class="chart-bar-fill" style="width: 95%;"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Courses Cards Grid -->
+      <div class="courses-grid">
+        <!-- Card 1 -->
+        <div class="course-card animate-on-scroll stagger-1">
+          <div class="course-card-header">
+            <span class="course-card-number">01</span>
+            <h3 class="course-card-title">經營管理概論</h3>
+            <span class="course-card-subtitle">Introduction to Management</span>
+          </div>
+          <div class="course-card-body">
+            <p class="course-desc">
+              介紹經營管理於數位經濟時代的策略應用，重點在於新興科技於經營管理中的應用，幫助學生理解如何運用新興科技來協助企業管理、數位轉型與策略管理。
+            </p>
+            <div class="course-outline-box">
+              <h4 class="course-outline-title">課程核心大綱</h4>
+              <ul class="course-outline-list">
+                <li>企業概論與數位平台市場</li>
+                <li>生產管理（ERP與智慧製造）</li>
+                <li>行銷管理（AI行銷、4P與精準定價）</li>
+                <li>人力資源管理（AI輔助招聘甄選）</li>
+                <li>資訊與策略（LLM應用與資訊安全）</li>
+              </ul>
+            </div>
+            <div class="course-skills-container">
+              <span class="skill-badge highlight">PBL專題導向</span>
+              <span class="skill-badge tech">新興科技應用</span>
+              <span class="skill-badge">數位轉型</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="course-card animate-on-scroll stagger-2">
+          <div class="course-card-header">
+            <span class="course-card-number">02</span>
+            <h3 class="course-card-title">智慧商務整合實務應用</h3>
+            <span class="course-card-subtitle">Smart Business Integration</span>
+          </div>
+          <div class="course-card-body">
+            <p class="course-desc">
+              本課程介紹人工智慧的核心理論與商業創新管理應用趨勢，解構 AI 即服務的商業模式，以及如何運用新興科技驅動金融創新與行銷變革。
+            </p>
+            <div class="course-outline-box">
+              <h4 class="course-outline-title">課程核心大綱</h4>
+              <ul class="course-outline-list">
+                <li>人工智慧與大數據商業模式</li>
+                <li>機器學習與深度學習核心邏輯</li>
+                <li>自然語言處理（NLP）應用</li>
+                <li>推薦系統（協同過濾與電商應用）</li>
+                <li>AI安全、隱私與倫理規範</li>
+              </ul>
+            </div>
+            <div class="course-skills-container">
+              <span class="skill-badge highlight">AI應用思維</span>
+              <span class="skill-badge tech">推薦系統實作</span>
+              <span class="skill-badge">金融科技</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="course-card animate-on-scroll stagger-3">
+          <div class="course-card-header">
+            <span class="course-card-number">03</span>
+            <h3 class="course-card-title">商業資料分析與應用</h3>
+            <span class="course-card-subtitle">Business Data Analytics &amp; BI</span>
+          </div>
+          <div class="course-card-body">
+            <p class="course-desc">
+              培養學生運用商業智慧（BI）與大數據技術解決企業管理問題的能力。內容涵蓋大數據儲存架構、資料建模、雲端運算應用，以及五管 KPI 的數據監控。
+            </p>
+            <div class="course-outline-box">
+              <h4 class="course-outline-title">課程核心大綱</h4>
+              <ul class="course-outline-list">
+                <li>BI專案生命週期與維度建模</li>
+                <li>雲端商用系統（AWS）架構</li>
+                <li>跨部門 KPI 數據分析與儀表板</li>
+                <li>資料探勘演算（集群、購物籃分析）</li>
+                <li>數據決策與企業營運效益評估</li>
+              </ul>
+            </div>
+            <div class="course-skills-container">
+              <span class="skill-badge highlight">商業智慧 (BI)</span>
+              <span class="skill-badge tech">AWS 雲端實務</span>
+              <span class="skill-badge">大數據探勘</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="course-card animate-on-scroll stagger-4">
+          <div class="course-card-header">
+            <span class="course-card-number">04</span>
+            <h3 class="course-card-title">作業管理</h3>
+            <span class="course-card-subtitle">Operations Management</span>
+          </div>
+          <div class="course-card-body">
+            <p class="course-desc">
+              探討企業如何透過流程設計、計畫與控制，將投入資源轉化為具價值的商品或服務。從傳統生產管理延伸至現代服務業之精實營運。
+            </p>
+            <div class="course-outline-box">
+              <h4 class="course-outline-title">課程核心大綱</h4>
+              <ul class="course-outline-list">
+                <li>生產/服務營運系統與流程設計</li>
+                <li>專案管理技術與排程優化</li>
+                <li>全面品質管制（TQC）實務</li>
+                <li>供應鏈與物流管理架構</li>
+                <li>精實生產與敏捷作業模式</li>
+              </ul>
+            </div>
+            <div class="course-skills-container">
+              <span class="skill-badge highlight">供應鏈管理</span>
+              <span class="skill-badge tech">專案排程優化</span>
+              <span class="skill-badge">品質管制</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 5 -->
+        <div class="course-card animate-on-scroll stagger-5">
+          <div class="course-card-header">
+            <span class="course-card-number">05</span>
+            <h3 class="course-card-title">管理決策分析</h3>
+            <span class="course-card-subtitle">Management Decision Analysis</span>
+          </div>
+          <div class="course-card-body">
+            <p class="course-desc">
+              介紹作業研究的核心最佳化模型，重點在於如何在資源限制與不確定性下進行最佳化決策，並結合 Python 進行程式求解實作。
+            </p>
+            <div class="course-outline-box">
+              <h4 class="course-outline-title">課程核心大綱</h4>
+              <ul class="course-outline-list">
+                <li>作業研究與商務決策求解流程</li>
+                <li>線性規劃模型建立與單形法</li>
+                <li>不確定性分析與對偶理論</li>
+                <li>等候理論（數位客服與排隊規劃）</li>
+                <li>動態規劃與動態定價最佳化</li>
+              </ul>
+            </div>
+            <div class="course-skills-container">
+              <span class="skill-badge highlight">最佳化模型</span>
+              <span class="skill-badge tech">Python 程式求解</span>
+              <span class="skill-badge">Google Colab</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 6 -->
+        <div class="course-card animate-on-scroll stagger-6">
+          <div class="course-card-header">
+            <span class="course-card-number">06</span>
+            <h3 class="course-card-title">研究方法與論文寫作</h3>
+            <span class="course-card-subtitle">Research Methods &amp; Writing</span>
+          </div>
+          <div class="course-card-body">
+            <p class="course-desc">
+              教導學生商管領域的學術研究方法、論文寫作、文獻庫回顧，系統化培養邏輯論證、文獻整合與學術論文的獨立撰寫與發表能力。
+            </p>
+            <div class="course-outline-box">
+              <h4 class="course-outline-title">課程核心大綱</h4>
+              <ul class="course-outline-list">
+                <li>學術論文資料庫檢索與文獻回顧</li>
+                <li>研究題目選定與架構設計</li>
+                <li>量化研究（問卷信效度、資料分析）</li>
+                <li>質性研究方法與訪談編碼</li>
+                <li>學術引用規範（APA格式）與論文撰寫</li>
+              </ul>
+            </div>
+            <div class="course-skills-container">
+              <span class="skill-badge highlight">學術論文寫作</span>
+              <span class="skill-badge tech">資料統計分析</span>
+              <span class="skill-badge">問卷設計</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <div class="nav-logo" style="margin-bottom: 8px;">
+            <div class="nav-logo-icon">邱</div>
+            <div class="nav-logo-text">邱俊維 <span>Chun-Wei Chiu</span></div>
+          </div>
+          <p>
+            長庚大學管理研究所博士。專精決策分析、運籌管理與 AI 跨領域應用，致力於產學合作創新與技職教育招生策略革新。
+          </p>
+        </div>
+
+        <div class="footer-links">
+          <h4>快速導覽</h4>
+          <a href="index.html">個人專長</a>
+          <a href="publications.html">研究成果</a>
+          <a href="future-research.html">未來研究</a>
+          <a href="courses.html">可授課程</a>
+          <a href="cooperation.html">產學與實習</a>
+          <a href="recruitment.html">招生計畫</a>
+          <a href="contact.html">聯繫與結語</a>
+        </div>
+
+        <div class="footer-links">
+          <h4>相關連結</h4>
+          <a href="https://www.vnu.edu.tw/" target="_blank" rel="noopener">萬能科技大學官網</a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>© 2025 邱俊維 — 萬能科技大學企業管理系專案助理教授應徵</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to Top Button -->
+  <button class="back-to-top" id="back-to-top" aria-label="回到頂部">↑</button>
+
+  <!-- JavaScript -->
+  <script src="script.js"></script>
+</body>
+</html>
