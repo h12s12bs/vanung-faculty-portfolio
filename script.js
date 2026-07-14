@@ -251,12 +251,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // ---- Language Toggle Removed ----
 
-  // ---- Automatic Dark Mode based on system preference ----
-  const prefersDark = window.matchMedia('(prefers-color-scheme: dark)');
-  if (prefersDark.matches && !localStorage.getItem('theme')) {
-    document.body.classList.add('dark-mode');
-  }
-
   // ---- Typing Effect ----
   const typingElement = document.getElementById('typing-text');
   const isEnglish = document.documentElement.lang === 'en';
