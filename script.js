@@ -263,15 +263,11 @@ document.addEventListener('DOMContentLoaded', () => {
   const phrases = isEnglish ? [
     'Decision Sciences & Operations Research',
     'AI & Smart Healthcare Applications',
-    'Information Systems & Full-stack Development',
-    'Industry-Academia Linkage & Consulting',
-    'Admissions & University Administration'
+    'Information Systems & Full-stack Development'
   ] : [
     '決策科學與運籌管理研究',
     'AI與智慧醫療跨域應用',
-    '資訊系統與全端軟體開發',
-    '產學鏈結與企業管理輔導',
-    '招生推廣與校務行政協助'
+    '資訊系統與全端軟體開發'
   ];
   let phraseIndex = 0;
   let charIndex = 0;

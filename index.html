@@ -129,29 +129,13 @@
     }
     .project-gallery-row {
       display: flex;
+      flex-wrap: wrap;
       gap: 20px;
-      overflow-x: auto;
       padding: 10px 5px;
-      scroll-snap-type: x mandatory;
-      -webkit-overflow-scrolling: touch;
-    }
-    .project-gallery-row::-webkit-scrollbar {
-      height: 8px;
-    }
-    .project-gallery-row::-webkit-scrollbar-track {
-      background: var(--gray-100);
-      border-radius: 4px;
-    }
-    .project-gallery-row::-webkit-scrollbar-thumb {
-      background: var(--gold-light);
-      border-radius: 4px;
-    }
-    .project-gallery-row::-webkit-scrollbar-thumb:hover {
-      background: var(--gold);
     }
     .project-gallery-item {
-      flex: 0 0 460px; /* Large width so you see details */
-      scroll-snap-align: start;
+      flex: 1 1 340px; /* Let it grow and wrap nicely */
+      max-width: 480px;
       background: var(--white);
       border: 1px solid var(--border-color);
       border-radius: 10px;
@@ -162,7 +146,7 @@
     }
     @media (max-width: 768px) {
       .project-gallery-item {
-        flex: 0 0 85vw; /* Adaptive on mobile */
+        flex: 1 1 100%; /* Take full width on mobile */
       }
     }
     .project-gallery-item img {
@@ -221,9 +205,9 @@
     <div id="particles-container"></div>
 
     <div class="hero-content" style="max-width: 800px; margin: 0 auto; text-align: center;">
-      <!-- Vanung University Dept Logo Container (Hides automatically if logo-vnu.png does not exist) -->
+      <!-- Vanung University Dept Logo Container (Hides automatically if logo-vnu.jpg does not exist) -->
       <div class="hero-logo-container" style="margin-bottom: 20px; display: flex; justify-content: center; gap: 15px; align-items: center;">
-        <img src="assets/images/logo-vnu.png" alt="萬能科大企管系 Logo" style="height: 65px; max-width: 100%; object-fit: contain; filter: drop-shadow(0 4px 10px rgba(0,0,0,0.3));" onerror="this.style.display='none';">
+        <img src="assets/images/logo-vnu.jpg" alt="萬能科大企管系 Logo" style="height: 65px; max-width: 100%; object-fit: contain; filter: drop-shadow(0 4px 10px rgba(0,0,0,0.3));" onerror="this.style.display='none';">
       </div>
 
       <div class="hero-badge" style="background: rgba(196, 139, 88, 0.15); border: 1px solid rgba(196, 139, 88, 0.3); color: var(--gold-light); letter-spacing: 1px; font-weight: 600; padding: 6px 16px; display: inline-flex; align-items: center; gap: 8px;">
@@ -385,9 +369,9 @@
         </div>
       </div>
 
-      <!-- Part 4: Project Execution and Screenshots (Horizontal scroll, non-cropped large images) -->
+      <!-- Part 4: Project Execution and Screenshots (Grid layout, non-cropped large images) -->
       <div class="profile-section-title animate-on-scroll">
-        <span>📁 專案執行與實績成果 (附全實體佐證)</span>
+        <span>📁 專案執行與實績成果</span>
       </div>
 
       <div class="project-list animate-on-scroll">
