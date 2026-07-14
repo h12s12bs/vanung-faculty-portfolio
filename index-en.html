@@ -128,14 +128,12 @@
       margin-top: 10px;
     }
     .project-gallery-row {
-      display: flex;
-      flex-wrap: wrap;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
       gap: 20px;
       padding: 10px 5px;
     }
     .project-gallery-item {
-      flex: 1 1 340px; /* Let it grow and wrap nicely */
-      max-width: 480px;
       background: var(--white);
       border: 1px solid var(--border-color);
       border-radius: 10px;
@@ -143,11 +141,7 @@
       box-shadow: 0 6px 15px rgba(45, 34, 25, 0.04);
       display: flex;
       flex-direction: column;
-    }
-    @media (max-width: 768px) {
-      .project-gallery-item {
-        flex: 1 1 100%; /* Take full width on mobile */
-      }
+      width: 100%;
     }
     .project-gallery-item img {
       width: 100%;
@@ -205,9 +199,10 @@
     <div id="particles-container"></div>
 
     <div class="hero-content" style="max-width: 800px; margin: 0 auto; text-align: center;">
-      <!-- Vanung University Dept Logo Container -->
-      <div class="hero-logo-container" style="margin-bottom: 20px; display: flex; justify-content: center; gap: 15px; align-items: center;">
-        <img src="assets/images/logo-vnu.jpg" alt="VNU Logo" style="height: 65px; max-width: 100%; object-fit: contain; filter: drop-shadow(0 4px 10px rgba(0,0,0,0.3));" onerror="this.style.display='none';">
+      <!-- Vanung University & Dept Logo Container -->
+      <div class="hero-logo-container" style="margin-bottom: 20px; display: flex; justify-content: center; gap: 20px; align-items: center; flex-wrap: wrap;">
+        <img src="assets/images/logo-vnu.jpg" alt="Vanung University Logo" style="height: 65px; max-width: 100%; object-fit: contain; filter: drop-shadow(0 4px 10px rgba(0,0,0,0.3));" onerror="this.style.display='none';">
+        <img src="assets/images/logo-vnuba.jpg" alt="Vanung University BA Department Logo" style="height: 65px; max-width: 100%; object-fit: contain; filter: drop-shadow(0 4px 10px rgba(0,0,0,0.3));" onerror="this.style.display='none';">
       </div>
 
       <div class="hero-badge" style="background: rgba(196, 139, 88, 0.15); border: 1px solid rgba(196, 139, 88, 0.3); color: var(--gold-light); letter-spacing: 1px; font-weight: 600; padding: 6px 16px; display: inline-flex; align-items: center; gap: 8px;">
@@ -228,14 +223,13 @@
         <span id="typing-text" style="color: var(--teal); font-weight: 700;"></span>
       </div>
 
-      <div class="hero-desc" style="max-width: 720px; margin: 0 auto 30px; background: rgba(5, 12, 25, 0.7); padding: 22px 25px; border-radius: 12px; border: 1px solid rgba(255, 255, 255, 0.08); backdrop-filter: blur(10px); text-align: left; box-shadow: 0 10px 30px rgba(0,0,0,0.3);">
-        <p style="margin-bottom: 12px; font-size: 1.05rem; line-height: 1.6; color: var(--gray-200);">
-          <strong>Presenter: Chun-Wei Chiu, Ph.D. (邱俊維 博士)</strong><br>
-          PhD: Graduate Institute of Management, Chang Gung University | Advisor: Chin-Te Chang, Ph.D.
+      <div class="hero-desc" style="max-width: 720px; margin: 0 auto 30px; text-align: center; color: var(--gray-200);">
+        <p style="margin-bottom: 12px; font-size: 1.1rem; line-height: 1.6; color: var(--gray-200);">
+          Presenter: Chun-Wei Chiu, Ph.D. (邱俊維 博士)<br>
+          PhD: Graduate Institute of Management, Chang Gung University | Advisor: Ching-Ter Chang, Ph.D.
         </p>
-        <hr style="border: 0; border-top: 1px solid rgba(255, 255, 255, 0.1); margin: 12px 0;">
-        <p style="font-size: 0.95rem; line-height: 1.6; color: var(--gold-light); margin: 0;">
-          <strong>Opening Remark:</strong> Welcome, committee members and President. This website serves as my application presentation platform, presenting my personal expertise, journal publications, future research plans, industry-academia cooperation, student internship designs, and admissions strategy. I look forward to contributing my data decision-making and practical IT capabilities to the Department of Business Administration at Vanung University.
+        <p style="font-size: 1.02rem; line-height: 1.6; color: var(--gold-light); margin: 0;">
+          Opening Remark: Welcome, committee members and President. This website serves as my application presentation platform, presenting my personal expertise, journal publications, future research plans, industry-academia cooperation, student internship designs, and admissions strategy. I look forward to contributing my data decision-making and practical IT capabilities to the Department of Business Administration at Vanung University.
         </p>
       </div>
 
@@ -371,7 +365,7 @@
 
       <!-- Part 4: Project Execution and Screenshots -->
       <div class="profile-section-title animate-on-scroll">
-        <span>📁 Executed Projects &amp; Artifacts</span>
+        <span>📁 Project Execution Outcomes</span>
       </div>
 
       <div class="project-list animate-on-scroll">
@@ -446,16 +440,8 @@
                 <div class="project-gallery-caption">Fig 3-1: Project Report Title Page</div>
               </div>
               <div class="project-gallery-item">
-                <a href="assets/images/project-mintong-6.png" target="_blank"><img src="assets/images/project-mintong-6.png" alt="Existing System Risk Analysis Chart"></a>
-                <div class="project-gallery-caption">Fig 3-6: Risk Analysis Chart of Existing Setup</div>
-              </div>
-              <div class="project-gallery-item">
                 <a href="assets/images/project-mintong-1.png" target="_blank"><img src="assets/images/project-mintong-1.png" alt="Procurement SOP Resolution"></a>
                 <div class="project-gallery-caption">Fig 3-2: Procurement SOP Resolution Plan</div>
-              </div>
-              <div class="project-gallery-item">
-                <a href="assets/images/project-mintong-4.png" target="_blank"><img src="assets/images/project-mintong-4.png" alt="Expected Benefits of SOP Implementation"></a>
-                <div class="project-gallery-caption">Fig 3-5: Expected Benefits of SOP Implementation</div>
               </div>
               <div class="project-gallery-item">
                 <a href="assets/images/project-mintong-2.png" target="_blank"><img src="assets/images/project-mintong-2.png" alt="Comparative Analysis of Media Procurement"></a>
@@ -464,6 +450,14 @@
               <div class="project-gallery-item">
                 <a href="assets/images/project-mintong-3.png" target="_blank"><img src="assets/images/project-mintong-3.png" alt="Marketing Decision Proposals"></a>
                 <div class="project-gallery-caption">Fig 3-4: Marketing Decision Proposals</div>
+              </div>
+              <div class="project-gallery-item">
+                <a href="assets/images/project-mintong-4.png" target="_blank"><img src="assets/images/project-mintong-4.png" alt="Expected Benefits of SOP Implementation"></a>
+                <div class="project-gallery-caption">Fig 3-5: Expected Benefits of SOP Implementation</div>
+              </div>
+              <div class="project-gallery-item">
+                <a href="assets/images/project-mintong-6.png" target="_blank"><img src="assets/images/project-mintong-6.png" alt="Existing System Risk Analysis Chart"></a>
+                <div class="project-gallery-caption">Fig 3-6: Risk Analysis Chart of Existing Setup</div>
               </div>
             </div>
           </div>
