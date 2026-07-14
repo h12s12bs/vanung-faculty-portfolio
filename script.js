@@ -262,11 +262,11 @@ document.addEventListener('DOMContentLoaded', () => {
   const isEnglish = document.documentElement.lang === 'en';
   const phrases = isEnglish ? [
     'Decision Sciences & Operations Research',
-    'AI & Smart Healthcare Applications',
+    'AI Cross-domain Applications',
     'Information Systems & Full-stack Development'
   ] : [
     '決策科學與運籌管理研究',
-    'AI與智慧醫療跨域應用',
+    'AI跨領域應用',
     '資訊系統與全端軟體開發'
   ];
   let phraseIndex = 0;

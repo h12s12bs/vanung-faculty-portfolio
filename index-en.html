@@ -128,12 +128,30 @@
       margin-top: 10px;
     }
     .project-gallery-row {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      display: flex;
       gap: 20px;
+      overflow-x: auto;
       padding: 10px 5px;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+    }
+    .project-gallery-row::-webkit-scrollbar {
+      height: 8px;
+    }
+    .project-gallery-row::-webkit-scrollbar-track {
+      background: var(--gray-100);
+      border-radius: 4px;
+    }
+    .project-gallery-row::-webkit-scrollbar-thumb {
+      background: var(--gold-light);
+      border-radius: 4px;
+    }
+    .project-gallery-row::-webkit-scrollbar-thumb:hover {
+      background: var(--gold);
     }
     .project-gallery-item {
+      flex: 0 0 460px; /* Large width so you see details */
+      scroll-snap-align: start;
       background: var(--white);
       border: 1px solid var(--border-color);
       border-radius: 10px;
@@ -141,7 +159,11 @@
       box-shadow: 0 6px 15px rgba(45, 34, 25, 0.04);
       display: flex;
       flex-direction: column;
-      width: 100%;
+    }
+    @media (max-width: 768px) {
+      .project-gallery-item {
+        flex: 0 0 85vw; /* Adaptive on mobile */
+      }
     }
     .project-gallery-item img {
       width: 100%;
@@ -199,9 +221,8 @@
     <div id="particles-container"></div>
 
     <div class="hero-content" style="max-width: 800px; margin: 0 auto; text-align: center;">
-      <!-- Vanung University & Dept Logo Container -->
-      <div class="hero-logo-container" style="margin-bottom: 20px; display: flex; justify-content: center; gap: 20px; align-items: center; flex-wrap: wrap;">
-        <img src="assets/images/logo-vnu.jpg" alt="Vanung University Logo" style="height: 65px; max-width: 100%; object-fit: contain; filter: drop-shadow(0 4px 10px rgba(0,0,0,0.3));" onerror="this.style.display='none';">
+      <!-- Vanung University BA Dept Logo Container -->
+      <div class="hero-logo-container" style="margin-bottom: 20px; display: flex; justify-content: center; gap: 15px; align-items: center;">
         <img src="assets/images/logo-vnuba.jpg" alt="Vanung University BA Department Logo" style="height: 65px; max-width: 100%; object-fit: contain; filter: drop-shadow(0 4px 10px rgba(0,0,0,0.3));" onerror="this.style.display='none';">
       </div>
 
@@ -221,16 +242,6 @@
       <div class="hero-subtitle-wrapper" style="margin-bottom: 20px; display: flex; justify-content: center; align-items: center; gap: 8px;">
         <span style="color: var(--white); font-weight: 600;">Research Specialties:</span>
         <span id="typing-text" style="color: var(--teal); font-weight: 700;"></span>
-      </div>
-
-      <div class="hero-desc" style="max-width: 720px; margin: 0 auto 30px; text-align: center; color: var(--gray-200);">
-        <p style="margin-bottom: 12px; font-size: 1.1rem; line-height: 1.6; color: var(--gray-200);">
-          Presenter: Chun-Wei Chiu, Ph.D. (邱俊維 博士)<br>
-          PhD: Graduate Institute of Management, Chang Gung University | Advisor: Ching-Ter Chang, Ph.D.
-        </p>
-        <p style="font-size: 1.02rem; line-height: 1.6; color: var(--gold-light); margin: 0;">
-          Opening Remark: Welcome, committee members and President. This website serves as my application presentation platform, presenting my personal expertise, journal publications, future research plans, industry-academia cooperation, student internship designs, and admissions strategy. I look forward to contributing my data decision-making and practical IT capabilities to the Department of Business Administration at Vanung University.
-        </p>
       </div>
 
       <div class="hero-buttons" style="display: flex; justify-content: center; gap: 15px; flex-wrap: wrap;">
@@ -365,7 +376,7 @@
 
       <!-- Part 4: Project Execution and Screenshots -->
       <div class="profile-section-title animate-on-scroll">
-        <span>📁 Project Execution Outcomes</span>
+        <span>📁 Executed Projects &amp; Artifacts (Full Proof Attached)</span>
       </div>
 
       <div class="project-list animate-on-scroll">
