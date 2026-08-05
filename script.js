@@ -389,5 +389,59 @@ document.addEventListener('DOMContentLoaded', () => {
     card.style.transitionDelay = `${index * 0.08}s`;
   });
 
-  console.log(isEnglish ? '✨ Dr. Chun-Wei Chiu Faculty Portfolio Loaded Successfully' : '✨ 邱俊維老師個人網站已載入完成');
+  // ---- Contact Form Email Handler (Send to kevin87332000@gmail.com) ----
+  const contactForm = document.getElementById('contact-form');
+  if (contactForm) {
+    contactForm.addEventListener('submit', async function(e) {
+      e.preventDefault();
+      
+      const submitBtn = contactForm.querySelector('button[type="submit"]');
+      const originalText = submitBtn.innerHTML;
+      submitBtn.disabled = true;
+      submitBtn.innerHTML = '⏳ 傳送 Email 中...';
+
+      const nameVal = (document.getElementById('name') || {}).value || '';
+      const emailVal = (document.getElementById('email') || {}).value || '';
+      const subjectVal = (document.getElementById('subject') || {}).value || '萬能企管網站諮詢留言';
+      const messageVal = (document.getElementById('message') || {}).value || '';
+
+      const recipient = 'kevin87332000@gmail.com';
+
+      try {
+        const response = await fetch(`https://formsubmit.co/ajax/${recipient}`, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+          },
+          body: JSON.stringify({
+            _subject: `【萬能企管諮詢】${subjectVal}`,
+            _template: 'table',
+            姓名: nameVal,
+            電子郵件: emailVal,
+            主旨: subjectVal,
+            留言內容: messageVal
+          })
+        });
+
+        if (response.ok) {
+          alert(`感謝您的留言，${nameVal}！您填寫的欄位資料已成功傳送至 Email：${recipient}。我們將儘快回覆您！`);
+          contactForm.reset();
+        } else {
+          throw new Error('FormSubmit response not ok');
+        }
+      } catch (err) {
+        console.warn('FormSubmit AJAX failed, activating mailto fallback:', err);
+        const mailtoUrl = `mailto:${recipient}?subject=${encodeURIComponent('【萬能企管諮詢】' + subjectVal)}&body=${encodeURIComponent(`姓名: ${nameVal}\nEmail: ${emailVal}\n主旨: ${subjectVal}\n\n留言內容:\n${messageVal}`)}`;
+        window.location.href = mailtoUrl;
+        alert(`已為您開啟郵件系統，將您的留言資料傳送至 ${recipient}，感謝您的聯繫！`);
+        contactForm.reset();
+      } finally {
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = originalText;
+      }
+    });
+  }
+
+  console.log(typeof isEnglish !== 'undefined' && isEnglish ? '✨ Dr. Chun-Wei Chiu Faculty Portfolio Loaded Successfully' : '✨ 邱俊維老師個人網站已載入完成');
 });

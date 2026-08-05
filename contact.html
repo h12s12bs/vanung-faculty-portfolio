@@ -181,25 +181,30 @@
 
         <div class="contact-form">
           <h3>📝 留言板</h3>
-          <form id="contact-form" onsubmit="event.preventDefault(); alert('感謝您的來信！我會盡快回覆。');">
+          <form id="contact-form" action="https://formsubmit.co/kevin87332000@gmail.com" method="POST">
+            <!-- FormSubmit hidden configuration -->
+            <input type="hidden" name="_subject" value="【萬能企管網站諮詢留言】">
+            <input type="hidden" name="_template" value="table">
+            <input type="hidden" name="_captcha" value="false">
+            
             <div class="form-group">
               <label for="name">您的姓名</label>
-              <input type="text" id="name" placeholder="請輸入您的姓名" required>
+              <input type="text" id="name" name="姓名" placeholder="請輸入您的姓名" required>
             </div>
             <div class="form-group">
               <label for="email">電子郵件</label>
-              <input type="email" id="email" placeholder="example@mail.com" required>
+              <input type="email" id="email" name="電子郵件" placeholder="example@mail.com" required>
             </div>
             <div class="form-group">
               <label for="subject">主旨</label>
-              <input type="text" id="subject" placeholder="例如：產學合作或課程諮詢">
+              <input type="text" id="subject" name="主旨" placeholder="例如：產學合作或課程諮詢">
             </div>
             <div class="form-group">
               <label for="message">留言內容</label>
-              <textarea id="message" placeholder="請輸入您的留言..." required></textarea>
+              <textarea id="message" name="留言內容" placeholder="請輸入您的留言..." required></textarea>
             </div>
             <button type="submit" class="btn btn-teal" style="width: 100%; justify-content: center;">
-              📩 送出留言
+              📩 送出留言 (傳送 Email 至 kevin87332000@gmail.com)
             </button>
           </form>
         </div>
@@ -233,9 +238,13 @@
         </div>
 
         <div class="footer-links">
-          <h4>相關連結</h4>
+          <h4>相關連結與社群</h4>
           <a href="https://ba.vnu.edu.tw/" target="_blank" rel="noopener">萬能科技大學企管系官網</a>
           <a href="https://www.vnu.edu.tw/" target="_blank" rel="noopener">萬能科技大學官網</a>
+          <a href="https://www.youtube.com/channel/UCM5HC-DtMx5NRY3r2xFHsFA" target="_blank" rel="noopener">萬能企管 YouTube</a>
+          <a href="https://www.instagram.com/vnubas/" target="_blank" rel="noopener">萬能企管 Instagram</a>
+          <a href="https://www.threads.com/@vnubas" target="_blank" rel="noopener">萬能企管 Threads</a>
+          <a href="https://www.facebook.com/vnumba/" target="_blank" rel="noopener">萬能企管 Facebook</a>
         </div>
       </div>
 
