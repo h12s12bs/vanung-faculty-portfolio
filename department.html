@@ -572,48 +572,130 @@
         </table>
       </div>
 
-      <!-- Corporate Documents Checklist Box -->
+      <!-- Corporate Documents Checklist Section with Interactive Tabs -->
       <div class="doc-checklist-box animate-on-scroll">
-        <h4 style="font-size: 1.25rem; font-weight: 800; color: var(--navy); margin-bottom: 8px; display: flex; align-items: center; gap: 8px;">
-          📋 合作企業準備資料 Check-List (用印與審查文件)
-        </h4>
-        <p style="font-size: 0.93rem; color: var(--text-secondary); margin-bottom: 12px;">
-          為確保產學合作順利通過教育審查，請合作廠商協助填寫 word 檔草稿並準備以下大小章用印影本：
-        </p>
-        <ul class="checklist-list">
-          <li class="checklist-item">
-            <span style="font-size: 1.2rem;">📑</span>
-            <div><strong>合作廠商基本資料表</strong><br><small style="color: #718096;">填寫基本資料與崗位人數</small></div>
-          </li>
-          <li class="checklist-item">
-            <span style="font-size: 1.2rem;">✒️</span>
-            <div><strong>產學合作合約與工作契約</strong><br><small style="color: #718096;">需蓋公司大、小章與負責人章</small></div>
-          </li>
-          <li class="checklist-item">
-            <span style="font-size: 1.2rem;">🛡️</span>
-            <div><strong>合作廠商自我評估表</strong><br><small style="color: #718096;">檢附場所安全衛生設備佐證</small></div>
-          </li>
-          <li class="checklist-item">
-            <span style="font-size: 1.2rem;">💳</span>
-            <div><strong>當月勞工保險繳款單影本</strong><br><small style="color: #718096;">需包含投保總人數之頁面</small></div>
-          </li>
-          <li class="checklist-item">
-            <span style="font-size: 1.2rem;">🧾</span>
-            <div><strong>最近一期納稅或免稅證明</strong><br><small style="color: #718096;">營業稅或所得稅完稅證明</small></div>
-          </li>
-          <li class="checklist-item">
-            <span style="font-size: 1.2rem;">🏢</span>
-            <div><strong>商工登記或工廠登記證</strong><br><small style="color: #718096;">公示資料或工廠登記證影本</small></div>
-          </li>
-          <li class="checklist-item">
-            <span style="font-size: 1.2rem;">🧯</span>
-            <div><strong>1年內消防設備檢查合格證明</strong><br><small style="color: #718096;">必須為實際工作場所地址證明</small></div>
-          </li>
-          <li class="checklist-item">
-            <span style="font-size: 1.2rem;">🤝</span>
-            <div><strong>MOU 合作意向書</strong><br><small style="color: #718096;">新南向與海青班適用用印檔</small></div>
-          </li>
-        </ul>
+        <div style="text-align: center; margin-bottom: 20px;">
+          <h4 style="font-size: 1.35rem; font-weight: 800; color: var(--navy); margin-bottom: 8px;">
+            📋 合作企業準備資料 Check-List (用印與審查文件對照)
+          </h4>
+          <p style="font-size: 0.95rem; color: var(--text-secondary);">
+            請點擊下方按鈕選擇貴公司擬合作的專班，查看專屬需填寫之 Word 表格與需準備之大小章用印證明文件：
+          </p>
+        </div>
+
+        <!-- Class Selection Tabs -->
+        <div class="recruitment-tabs" style="margin-bottom: 25px; justify-content: center;">
+          <button class="tab-btn active" data-tab="tab-checklist-coop">🏪 115/116 產學攜手僑生專班</button>
+          <button class="tab-btn" data-tab="tab-checklist-south">🏢 116 新南向國際專班</button>
+          <button class="tab-btn" data-tab="tab-checklist-haiqing">🏭 116 海青班 (海外青年專班)</button>
+        </div>
+
+        <!-- Tab 1: 115/116 產學攜手僑生專班 -->
+        <div class="tab-content active" id="tab-checklist-coop">
+          <div style="background: #EBF8FF; border-left: 4px solid #3182CE; padding: 14px 18px; border-radius: 8px; margin-bottom: 18px; font-size: 0.93rem; color: #2B6CB0;">
+            <strong>📌 產學攜手僑生專班 (服務業) 申辦說明：</strong> 需填寫 4 項 Word 表格並準備 4 大資質用印證明，請先將草稿送交萬能科大企管系確認後，再進行大、小章用印。
+          </div>
+          <ul class="checklist-list">
+            <li class="checklist-item">
+              <span style="font-size: 1.3rem;">📑</span>
+              <div><strong>1. 合作廠商基本資料表</strong><br><small style="color: #718096;">填寫公司基本資料、資本額/營業額與崗位人數 (用印)</small></div>
+            </li>
+            <li class="checklist-item">
+              <span style="font-size: 1.3rem;">✒️</span>
+              <div><strong>2. 產學攜手合作合約書</strong><br><small style="color: #718096;">技專端與廠商合約 (需蓋公司大、小章與負責人章)</small></div>
+            </li>
+            <li class="checklist-item">
+              <span style="font-size: 1.3rem;">📝</span>
+              <div><strong>3. 產學攜手合作教育工作契約</strong><br><small style="color: #718096;">學生、廠商與學校三方契約 (需蓋公司大、小章與負責人章)</small></div>
+            </li>
+            <li class="checklist-item">
+              <span style="font-size: 1.3rem;">🛡️</span>
+              <div><strong>4. 合作廠商自我評估表</strong><br><small style="color: #718096;">檢核訓練場所安衛、消防設施佈置與宿舍/交通要點</small></div>
+            </li>
+            <li class="checklist-item">
+              <span style="font-size: 1.3rem;">💳</span>
+              <div><strong>5. 當月勞工保險繳款單影本</strong><br><small style="color: #718096;">需包含「投保總人數」頁面 (需蓋公司大、小章)</small></div>
+            </li>
+            <li class="checklist-item">
+              <span style="font-size: 1.3rem;">🧾</span>
+              <div><strong>6. 最近一期納稅或免稅證明</strong><br><small style="color: #718096;">最近一期營業稅 (401表) 或所得稅完稅證明 (蓋大、小章)</small></div>
+            </li>
+            <li class="checklist-item">
+              <span style="font-size: 1.3rem;">🏢</span>
+              <div><strong>7. 商工登記或工廠登記證影本</strong><br><small style="color: #718096;">經濟部商工登記公示資料影本 (需蓋公司大、小章)</small></div>
+            </li>
+            <li class="checklist-item">
+              <span style="font-size: 1.3rem;">🧯</span>
+              <div><strong>8. 1年內消防設備檢查合格證明</strong><br><small style="color: #718096;">必須為學生實際工作店址 (如中壢店)，含檢修申報單 (蓋大、小章)</small></div>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Tab 2: 116 新南向國際專班 -->
+        <div class="tab-content" id="tab-checklist-south">
+          <div style="background: #FEFCBF; border-left: 4px solid #D69E2E; padding: 14px 18px; border-radius: 8px; margin-bottom: 18px; font-size: 0.93rem; color: #744210;">
+            <strong>📌 新南向國際專班 (製造業) 申辦說明：</strong> 適合已於或預計前往新南向國家發展之製造業企業，需填寫基本資料、簽署 MOU 合作意向書並準備相關能力資質影本。
+          </div>
+          <ul class="checklist-list">
+            <li class="checklist-item">
+              <span style="font-size: 1.3rem;">🤝</span>
+              <div><strong>1. 116 新南向國際專班-合作意向書 (MOU)</strong><br><small style="color: #718096;">填寫合作意向書，負責人簽署並加蓋公司大、小章</small></div>
+            </li>
+            <li class="checklist-item">
+              <span style="font-size: 1.3rem;">🏢</span>
+              <div><strong>2. 企業基本資料與需求調查表</strong><br><small style="color: #718096;">填寫製造業行業類別、跨域行政職缺與南向發展規劃</small></div>
+            </li>
+            <li class="checklist-item">
+              <span style="font-size: 1.3rem;">💳</span>
+              <div><strong>3. 當月勞工保險繳款單影本</strong><br><small style="color: #718096;">包含投保總人數頁面，並加蓋公司大、小章</small></div>
+            </li>
+            <li class="checklist-item">
+              <span style="font-size: 1.3rem;">🧾</span>
+              <div><strong>4. 最近一期納稅或免稅證明文件</strong><br><small style="color: #718096;">營業稅申報書或所得稅完稅證明影本 (加蓋大、小章)</small></div>
+            </li>
+            <li class="checklist-item">
+              <span style="font-size: 1.3rem;">🏬</span>
+              <div><strong>5. 商工登記資料或工廠登記證影本</strong><br><small style="color: #718096;">符合經濟部標準行業分類證明影本 (加蓋大、小章)</small></div>
+            </li>
+            <li class="checklist-item">
+              <span style="font-size: 1.3rem;">🧯</span>
+              <div><strong>6. 1年內消防設備檢查合格證明</strong><br><small style="color: #718096;">實際工作廠址之消防檢驗申報與合格受理單 (蓋大、小章)</small></div>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Tab 3: 116 海外青年技術訓練專班 (海青班) -->
+        <div class="tab-content" id="tab-checklist-haiqing">
+          <div style="background: #E6FFFA; border-left: 4px solid #319795; padding: 14px 18px; border-radius: 8px; margin-bottom: 18px; font-size: 0.93rem; color: #234E52;">
+            <strong>📌 海外青年技術訓練專班 (海青班) 申辦說明：</strong> 專為製造產業營運與行政管理人才設計，採用彈性時薪實習制，申辦手續簡便迅速。
+          </div>
+          <ul class="checklist-list">
+            <li class="checklist-item">
+              <span style="font-size: 1.3rem;">🤝</span>
+              <div><strong>1. 116 海青班-合作意向書 (MOU)</strong><br><small style="color: #718096;">空白意向書填寫，負責人簽名並加蓋公司大、小章</small></div>
+            </li>
+            <li class="checklist-item">
+              <span style="font-size: 1.3rem;">🏢</span>
+              <div><strong>2. 公司簡介一覽表與基本資料表</strong><br><small style="color: #718096;">填寫主要產品服務、資本額、員工數與擬提供崗位</small></div>
+            </li>
+            <li class="checklist-item">
+              <span style="font-size: 1.3rem;">💳</span>
+              <div><strong>3. 當月勞工保險繳款單影本</strong><br><small style="color: #718096;">需包含投保總人數之頁面 (加蓋公司大、小章)</small></div>
+            </li>
+            <li class="checklist-item">
+              <span style="font-size: 1.3rem;">🧾</span>
+              <div><strong>4. 最近一期納稅或免稅證明</strong><br><small style="color: #718096;">營業稅申報完稅證明或免稅證明影本 (加蓋大、小章)</small></div>
+            </li>
+            <li class="checklist-item">
+              <span style="font-size: 1.3rem;">🏬</span>
+              <div><strong>5. 商工登記資料或工廠登記證影本</strong><br><small style="color: #718096;">公司登記登錄證明或工廠登記影本 (加蓋大、小章)</small></div>
+            </li>
+            <li class="checklist-item">
+              <span style="font-size: 1.3rem;">🧯</span>
+              <div><strong>6. 1年內消防設備檢查合格證明</strong><br><small style="color: #718096;">工作場所消防安全設備檢修申報合格證明影本 (蓋大、小章)</small></div>
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
 

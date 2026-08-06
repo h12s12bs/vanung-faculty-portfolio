@@ -297,16 +297,20 @@ document.addEventListener('DOMContentLoaded', () => {
 
   setTimeout(typeEffect, 1000);
 
-  // ---- Tab Switching ----
+  // ---- Tab Switching (Scoped per section) ----
   const tabBtns = document.querySelectorAll('.tab-btn');
-  const tabContents = document.querySelectorAll('.tab-content');
 
   tabBtns.forEach(btn => {
     btn.addEventListener('click', () => {
       const targetTab = btn.getAttribute('data-tab');
+      const parentSection = btn.closest('.slide-section') || btn.closest('section') || document;
 
-      tabBtns.forEach(b => b.classList.remove('active'));
-      tabContents.forEach(c => c.classList.remove('active'));
+      // Deactivate only sibling buttons and sibling tab contents in the same section
+      const sectionBtns = parentSection.querySelectorAll('.tab-btn');
+      const sectionContents = parentSection.querySelectorAll('.tab-content');
+
+      sectionBtns.forEach(b => b.classList.remove('active'));
+      sectionContents.forEach(c => c.classList.remove('active'));
 
       btn.classList.add('active');
       const targetContent = document.getElementById(targetTab);
