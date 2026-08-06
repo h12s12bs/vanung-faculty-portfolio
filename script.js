@@ -425,7 +425,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
         if (response.ok) {
-          alert(`感謝您的留言，${nameVal}！您填寫的欄位資料已成功傳送至 Email：${recipient}。我們將儘快回覆您！`);
+          alert(`感謝您的留言，${nameVal}！您填寫的欄位資料已成功傳送，我們將儘快回覆您！`);
           contactForm.reset();
         } else {
           throw new Error('FormSubmit response not ok');
@@ -434,7 +434,7 @@ document.addEventListener('DOMContentLoaded', () => {
         console.warn('FormSubmit AJAX failed, activating mailto fallback:', err);
         const mailtoUrl = `mailto:${recipient}?subject=${encodeURIComponent('【萬能企管諮詢】' + subjectVal)}&body=${encodeURIComponent(`姓名: ${nameVal}\nEmail: ${emailVal}\n主旨: ${subjectVal}\n\n留言內容:\n${messageVal}`)}`;
         window.location.href = mailtoUrl;
-        alert(`已為您開啟郵件系統，將您的留言資料傳送至 ${recipient}，感謝您的聯繫！`);
+        alert(`已為您開啟郵件系統，感謝您的聯繫！`);
         contactForm.reset();
       } finally {
         submitBtn.disabled = false;
