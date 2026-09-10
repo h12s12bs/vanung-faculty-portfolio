@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://h12s12bs.github.io/vanung-faculty-portfolio/sitemap.xml
