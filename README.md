@@ -34,7 +34,7 @@ vanung-faculty-portfolio/
 
 ## 🌐 線上預覽
 
-部署於 GitHub Pages：https://kevin87332000.github.io/vanung-faculty-portfolio/
+部署於 GitHub Pages：https://h12s12bs.github.io/vanung-faculty-portfolio/
 
 ---
 
